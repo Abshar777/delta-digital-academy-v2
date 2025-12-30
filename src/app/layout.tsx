@@ -1,16 +1,22 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono,Poppins, Special_Gothic_Expanded_One, } from "next/font/google";
 import "./globals.css";
+import IndexLayout from "@/components/layout/indexLayout";
+import { Inter } from "next/font/google";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+
+
+const poppins = Poppins({
+  variable: "--font-poppins",
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+});
+const specialGothicExpandedOne = Special_Gothic_Expanded_One({
+  variable: "--font-special-gothic-expanded-one",
+  subsets: ["latin"],
+  weight: ["400",],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -25,9 +31,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={` ${specialGothicExpandedOne.variable} ${poppins.variable} relative antialiased`}
       >
-        {children}
+        <IndexLayout>{children}</IndexLayout>
       </body>
     </html>
   );
