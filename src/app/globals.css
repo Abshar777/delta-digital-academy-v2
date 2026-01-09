@@ -120,10 +120,10 @@
 
 @layer base {
   * {
-    @apply border-border outline-ring/50;
+    @apply border-border outline-ring/50 outline-1 outline-red-500;
   }
   body {
-    @apply bg-background text-foreground overflow-x-hidden w-full;
+    @apply bg-background text-foreground overflow-x-hidden  w-screen ;
   }
   
   .expanded-one{

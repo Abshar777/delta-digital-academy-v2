@@ -21,7 +21,7 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <AboutUs />
+      {/* <AboutUs />
       <Services />
       <Marquee text="High Performance Services" />
       <Courses />
@@ -31,10 +31,10 @@ export default function Home() {
       <TestimonialSection />
       <CTASection />
       <Graduates />
-      <FAQSection />
-      <LifeGallery />
-      <Blogs />
-      <ApplyModal />
+      <FAQSection /> */}
+      {/* <LifeGallery /> */}
+      {/* <Blogs />
+      <ApplyModal /> */}
       {/* <GallerySection />   */}
     </>
   );

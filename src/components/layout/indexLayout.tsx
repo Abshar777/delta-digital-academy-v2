@@ -10,8 +10,8 @@ const IndexLayout = ({ children }: { children: React.ReactNode }) => {
       {/* <TopBar /> */}
       <Nav />
       {children}
-      <BottomBar />
-      <Footer />
+      {/* <BottomBar /> */}
+      {/* <Footer /> */}
     </>
   );
 };

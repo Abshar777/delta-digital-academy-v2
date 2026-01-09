@@ -53,7 +53,7 @@ const Hero = () => {
           </Button>
         </div>
       </div>
-      <div className="w-full px-20 py-20 flex justify-between items-center h-[10vh] bg-foreground">
+      <div className="w-full px-20 md:py-20 py-10 flex md:flex-row flex-col gap-10 justify-between items-center md:h-[10vh] bg-foreground">
         <h2 className="text-white text-4xl font-semibold  font-poppins">
           Be A Skilled Professional <br />
           <span className="text-primary font-bold ">
@@ -64,7 +64,7 @@ const Hero = () => {
         <div className="flex items-center gap-10">
           {counters.map((counter, index) => (
             <div key={index} className="flex flex-col  gap-2">
-              <h3 className="text-white text-3xl  expanded-one">
+              <h3 className="text-white md:text-3xl  expanded-one">
                 {counter.value}+
               </h3>
               <p className="text-white text-sm font-poppins">
