@@ -1,5 +1,7 @@
 import React from "react";
 import ServiceCard from "../global/serviceCard";
+import { FaGoogle, FaLinkedin, FaWordpress } from "react-icons/fa";
+import { FaMeta } from "react-icons/fa6";
 
 export const SERVICES = [
   {
@@ -9,19 +11,7 @@ export const SERVICES = [
       "We build high-octane digital experiences. From rapid prototypes to enterprise-grade web applications, our code is as sharp as our design.",
     tags: ["React", "Next.js", "Performance"],
     icon: (
-      <svg
-        className="w-8 h-8"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={2.5}
-          d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
-        />
-      </svg>
+     <FaWordpress className="w-8 h-8"/>
     ),
   },
   {
@@ -53,19 +43,7 @@ export const SERVICES = [
       "Precision targeting that turns searches into sales. Our PPC campaigns are data-backed and ROI-driven to maximize every dollar spent.",
     tags: ["PPC", "Conversions", "Bidding"],
     icon: (
-      <svg
-        className="w-8 h-8"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={2.5}
-          d="M13 10V3L4 14h7v7l9-11h-7z"
-        />
-      </svg>
+      <FaGoogle className="w-8 h-8"/>
     ),
   },
   {
@@ -97,25 +75,7 @@ export const SERVICES = [
       "Stop the scroll on Facebook & Instagram. We leverage Meta's powerful algorithm to scale your sales with surgical precision.",
     tags: ["Scaling", "FB/IG", "Retargeting"],
     icon: (
-      <svg
-        className="w-8 h-8"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={2.5}
-          d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
-        />
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={2.5}
-          d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
-        />
-      </svg>
+      <FaMeta className="w-8 h-8"/>
     ),
   },
   {
@@ -141,25 +101,13 @@ export const SERVICES = [
     ),
   },
   {
-    id: "personal-branding",
-    title: "Personal Branding",
+    id: "linkedin ads",
+    title: "LinkedIn ads",
     description:
-      "Become the authority in your niche. We help founders and executives build an unshakeable digital presence that commands respect.",
+      "We help founders and executives build an unshakeable digital presence that commands respect.",
     tags: ["Authority", "LinkedIn", "Strategy"],
     icon: (
-      <svg
-        className="w-8 h-8"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={2.5}
-          d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
-        />
-      </svg>
+     <FaLinkedin className="w-8 h-8"/>
     ),
   },
   {

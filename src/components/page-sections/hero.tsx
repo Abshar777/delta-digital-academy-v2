@@ -1,6 +1,7 @@
 import React from "react";
 import { Button } from "../ui/button";
 import { FaDownload } from "react-icons/fa";
+import Timer from "./timer";
 
 const Hero = () => {
   const counters = [
@@ -21,22 +22,22 @@ const Hero = () => {
   return (
     <div className="w-full flex flex-col min-h-screen bg-foreground">
       <div className="w-full bg-background  rounded-b-[4rem]  grid-bg flex flex-col justify-center items-center h-[90vh] ">
-        <p className="text-lg font-bold font-poppins">
+        <p className="text-lg  font-bold font-poppins">
           School of <span className="text-primary ">Digital </span>Marketing
         </p>
         <h1 className="text-7xl italic relative text-center flex items-center  uppercase font-bold expanded-one">
-          Endorsed <img src="/peace.gif" className="w-20 h-20 " alt="" />{" "}
-          bypeace
+         Building &nbsp;<img src="/peace.gif" className="w-20 h-20 " alt="" />{" "}
+         the Future 
         </h1>
         <h1 className="text-7xl italic relative text-center flex items-center  uppercase font-bold expanded-one">
-          Marketing{" "}
+         Marketing {" "}
           <span className="text-primary color-flicker-text ps-2">
             {" "}
             Leaders.
           </span>
         </h1>
         <p className="text-center font-semibold text-lg font-poppins mt-2">
-          Built in Collaboration with Top Digital Marketing Professionals.
+          Built in Collaboration with Top Digital Marketing Professionals With Delta Digital Academy
         </p>
         <div className="flex mt-4 gap-4 justify-center items-center">
           <Button
@@ -62,16 +63,7 @@ const Hero = () => {
           </span>
         </h2>
         <div className="flex items-center gap-10">
-          {counters.map((counter, index) => (
-            <div key={index} className="flex flex-col  gap-2">
-              <h3 className="text-white md:text-3xl  expanded-one">
-                {counter.value}+
-              </h3>
-              <p className="text-white text-sm font-poppins">
-                {counter.description}
-              </p>
-            </div>
-          ))}
+         <Timer/>
         </div>
       </div>
     </div>

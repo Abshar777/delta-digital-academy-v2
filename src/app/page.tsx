@@ -23,7 +23,7 @@ export default function Home() {
       <Hero />
       <AboutUs />
       <Services />
-      <Marquee text="High Performance Services" />
+      <Marquee text1=" Delta Digital Academy" text2="Delta Digital Academy" />
       <Courses />
       <VideoTestimonials />
       <AIProfessionalSection />
@@ -35,7 +35,7 @@ export default function Home() {
       <LifeGallery />
       <Blogs />
       <ApplyModal />
-      <GallerySection />  
+      
     </>
   );
 }

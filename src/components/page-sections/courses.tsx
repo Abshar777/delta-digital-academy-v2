@@ -1,6 +1,7 @@
 import React from "react";
 import ProgramCard from "../global/programCard";
 import {
+  FaAd,
   FaEdit,
   FaGoogle,
   FaLinkedin,
@@ -10,12 +11,14 @@ import {
 } from "react-icons/fa";
 import { FaMeta } from "react-icons/fa6";
 import { IoMailSharp, IoShareSocialSharp } from "react-icons/io5";
+import { LuBot } from "react-icons/lu";
+import { SiMarketo } from "react-icons/si";
 
 const Courses = () => {
   const PROGRAMS = [
     {
       title: "Delta Dominate",
-      duration: "12-Month Full Time",
+      duration: "3.5 Months",
       mode: "Classroom",
       image: "/c1.jpg",
       stats: [
@@ -34,8 +37,11 @@ const Courses = () => {
         // ✔ Linkedin ads
         // ✔ Content Creation & Strategy
         // ✔ Internship Opportunity
+        // Campaign Strategy
+        // AI Integrated Course
+        // Fundamentals of Marketing
         {
-          label: "Search Engine Optimization",
+          label: "Google Ads",
           value: "",
           icon: <FaGoogle className="w-6 h-6 " />,
         },
@@ -73,6 +79,21 @@ const Courses = () => {
           label: "Internship Opportunity",
           value: "",
           icon: <FaUserGraduate className="w-6 h-6 " />,
+        },
+        {
+          label: "Campaign Strategy",
+          value: "",
+          icon: <FaAd className="w-6 h-6 " />,
+        },
+        {
+          label: "AI Integrated Course",
+          value: "",
+          icon: <LuBot className="w-6 h-6 " />,
+        },
+        {
+          label: "Fundamentals of Marketing",
+          value: "",
+          icon: <SiMarketo className="w-6 h-6 " />,
         },
       ],
     },

@@ -27,14 +27,13 @@ const EnrollForm: React.FC = () => {
       <div className="max-w-6xl mx-auto flex flex-col lg:flex-row gap-20 items-center">
         <div className="flex-1">
           <div className="bg-primary text-black rounded-full p-3 font-poppins inline-block font-black uppercase tracking-widest text-xs  mb-6 transform -rotate-2">
-            JOIN THE ELITE
+            Enroll Form
           </div>
           <h2 className="text-6xl md:text-8xl font-black text-[#171717] capitalize font-poppins tracking-tighter leading-none mb-8">
             ENROLL <br /> NOW.
           </h2>
           <p className="text-xl font-bold text-[#171717] max-w-md">
-            Seats are limited. Ego is optional. Results are mandatory. 
-            Fill out the form to secure your slot in our next cohort.
+           Seats are limited. Fill out the form to secure your slot today.
           </p>
           
           <div className="mt-12 flex items-center gap-6">
@@ -42,8 +41,8 @@ const EnrollForm: React.FC = () => {
               !
             </div>
             <p className="text-sm font-black uppercase tracking-widest leading-none">
-              98% Success Rate <br />
-              <span className="opacity-50">Last Cohort</span>
+              Now A Limted Offer  <br />
+              <span className="opacity-50">Book Now</span>
             </p>
           </div>
         </div>
@@ -67,14 +66,28 @@ const EnrollForm: React.FC = () => {
                   className="w-full bg-primary rounded-2xl font-poppins border-4 border-[#171717] p-4 font-bold placeholder:opacity-30 focus:outline-none focus:bg-[#C1F42D] transition-colors"
                 />
               </div>
-              <div className="space-y-2">
-                <label className="text-sm font-poppins font-black capitalize tracking-widest text-[#171717]">Interested Program</label>
-                <select className="w-full bg-primary rounded-2xl font-poppins border-4 border-[#171717] p-4 font-bold focus:outline-none focus:bg-[#C1F42D] transition-colors appearance-none">
-                  <option>LEADERSHIP & AI</option>
-                  <option>DIGITAL MARKETING PRO</option>
-                  <option>PERFORMANCE MARKETING</option>
-                </select>
-              </div>
+                <div className="grid grid-cols-3 gap-2">
+                    <div className="col-span-1 space-y-1">
+                      <label className="text-sm font-poppins font-black uppercase tracking-widest text-[#171717]">
+                        Code
+                      </label>
+                      <select className="w-full bg-primary rounded-2xl border-4 border-[#171717] p-4 font-bold focus:bg-[#C1F42D] focus:outline-none appearance-none cursor-pointer">
+                        <option>+91 IN</option>
+                        <option>+1 US</option>
+                        <option>+44 UK</option>
+                      </select>
+                    </div>
+                    <div className="col-span-2 space-y-1">
+                      <label className="text-sm font-poppins font-black uppercase tracking-widest text-[#171717]">
+                        Mobile Number
+                      </label>
+                      <input
+                        type="tel"
+                        className="w-full bg-primary rounded-2xl border-4 border-[#171717] p-4 font-bold focus:bg-[#C1F42D] transition-colors focus:outline-none"
+                        placeholder="00000 00000"
+                      />
+                    </div>
+                  </div>
               <button className="w-full shadow-[4px_4px_0px_0px_#C1F42D]  hover:shadow-none rounded-2xl bg-[#171717] text-[#C1F42D] font-black text-xl capitalize py-6 border-4 border-[#171717] hover:bg-[#C1F42D] hover:text-[#171717] transition-all duration-300">
                 Submit Application
               </button>

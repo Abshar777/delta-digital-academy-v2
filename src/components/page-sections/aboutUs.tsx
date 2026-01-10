@@ -1,5 +1,3 @@
-
-
 const AboutUs = () => {
   return (
     <div className="w-full min-h-screen bg-foreground px ">
@@ -25,15 +23,23 @@ const AboutUs = () => {
               <div className="w-full h-full bg-primary border-2 border-foreground  p-6 shadow-[3px_3px_0_0_#000] rounded-2xl">
                 <h3 className="text-2xl font-bold font-poppins">Vision</h3>
                 <p className="text-xs mt-2 font-semibold font-poppins">
-                  To drive measurable growth for businesses through strategic
-                  and creative digital solutions.
+                  To make digital education accessible to
+                  everyone—students, professionals, homemakers, and
+                  entrepreneurs—no matter their time or situation. We aim to
+                  build confident future marketers by offering flexible,
+                  high-quality digital marketing education that removes the
+                  limits of traditional learning in Dubai and supports anyone
+                  who wants to grow.
                 </p>
               </div>
               <div className="w-full h-full bg-primary border-2 border-foreground  p-6 shadow-[3px_3px_0_0_#000] rounded-2xl">
                 <h3 className="text-2xl font-bold font-poppins">Mission</h3>
                 <p className="text-xs mt-2 font-semibold font-poppins">
-                  To be a go-to digital partner for startups, creators, and
-                  enterprises looking to win online.
+                  To make digital marketing a skill that everyone can learn,
+                  understand, and confidently use. Our mission is to offer
+                  flexible, practical, and affordable digital marketing training
+                  that empowers every individual—regardless of their
+                  background—to become digitally capable.
                 </p>
               </div>
             </div>

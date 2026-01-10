@@ -69,7 +69,7 @@ const ProgramCard: React.FC<ProgramCardProps> = ({ title, duration, mode, stats,
         <div className="absolute inset-0 bg-[#C1F42D] mix-blend-multiply opacity-20 group-hover:opacity-0 transition-opacity"></div>
         {/* Floating Tag */}
         <div className="absolute bottom-6 right-6 bg-white border-4 border-[#171717] px-4 py-2 font-black uppercase tracking-widest text-sm shadow-[4px_4px_0px_0px_#171717]">
-          Module 0{index + 1}
+          Now Available In Offer
         </div>
       </div>
     </div>

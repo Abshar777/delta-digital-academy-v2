@@ -41,7 +41,7 @@ const CTASection: React.FC = () => {
         ✦
       </div>
       <div className="cta-float absolute bottom-20 right-20 w-32 h-12 bg-[#171717] text-white flex items-center justify-center font-black uppercase tracking-widest text-xs transform -rotate-12 shadow-[4px_4px_0px_0px_white]">
-        Now Hiring
+       Limited Offer
       </div>
       <div className="cta-float absolute top-1/2 right-10 w-16 h-16 border-4 border-[#171717] rounded-full bg-white hidden lg:flex items-center justify-center font-black text-3xl">
         !

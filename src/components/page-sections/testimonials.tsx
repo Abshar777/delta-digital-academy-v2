@@ -80,7 +80,7 @@ const TestimonialSection: React.FC = () => {
             testimonials
           </p>
           <h2 className="text-7xl gap-2 flex items-center   font-black mt-7 text-[#171717] capitalize tracking-tighter leading-none itaic mb-6">
-            User{" "}
+            Student{" "}
             <div className="flex justify-center -space-x-4 ">
           {[1,2,3,4].map((i) => (
             <div key={i} className="w-14 h-14 rounded-full border-4 border-[#171717] overflow-hidden bg-white shadow-md">
@@ -90,7 +90,7 @@ const TestimonialSection: React.FC = () => {
         
         </div>
             <span className="">
-              Propaganda
+              Endorsements
             </span>
           </h2>
           <p className="text-md font-bold uppercase tracking-widest opacity-60">

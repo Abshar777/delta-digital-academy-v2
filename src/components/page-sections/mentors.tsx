@@ -16,29 +16,29 @@ interface Professional {
 const PROFESSIONALS: Professional[] = [
   {
     name: "Minhath ",
-    role: "Co-Founder & Chief Executive Officer",
+    role: "Academic Head",
     description:
-      "Guides the company's strategic direction with a particular focus on its technological trajectory.",
+      " Leads a network of mentors, aligning strong theoretical foundations with hands-on industry execution.",
     image:
       "/m1-1.png",
   },
   {
-    name: "ASHIK",
-    role: "Co-Founder & Chief Customer Officer",
+    name: "A R S Ashik",
+    role: "Chief Mentor",
     description:
-      "Fostering a customer-centric culture, he drives strategic initiatives to create value across marketing, sales and operations.",
+      "Builds industry-ready professionals through practical, performance-driven learning.",
     image:
       "/m2.png",
   },
-  {
-    name: "AARIA",
-    role: "Chief Evangelist & Strategy Officer",
-    description:
-      "Drives SaaS strategy, product roadmap, and go-to-market for no-code AI agents.",
-    image:
-      "/m3.png",
+  // {
+  //   name: "AARIA",
+  //   role: "Chief Evangelist & Strategy Officer",
+  //   description:
+  //     "Drives SaaS strategy, product roadmap, and go-to-market for no-code AI agents.",
+  //   image:
+  //     "/m3.png",
 
-  },
+  // },
 
 ];
 
@@ -92,7 +92,7 @@ const AIProfessionalSection: React.FC = () => {
         </h2>
       </div>
 
-      <div className="grid px-10 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-8">
+      <div className="grid px-10 grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 md:w-3/4 mx-auto">
         {PROFESSIONALS.map((pro, index) => (
           <div
             key={index}
@@ -132,14 +132,14 @@ const AIProfessionalSection: React.FC = () => {
             </div>
 
             {/* Info */}
-            <div className="space-y-">
+            <div className="space-y- flex flex-col items-center justify-center">
               <h3 className="text-xl font-black text-white uppercase tracking-tight">
                 {pro.name}
               </h3>
               <p className="text-[#C1F42D] text-xs font-bold uppercase tracking-widest leading-snug min-h-[30px]">
                 {pro.role}
               </p>
-              <p className="text-gray-400 text-sm leading-relaxed font-medium">
+              <p className="text-gray-400 w-3/4 text-center text-sm leading-relaxed font-medium">
                 {pro.description}
               </p>
             </div>
