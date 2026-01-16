@@ -7,7 +7,7 @@ import { FaPhone } from 'react-icons/fa6';
 const BottomBar = () => {
     const { isModalOpen, setIsModalOpen } = useStore();
   return (
-    <div className="fixed bottom-2 md:w-auto w-[85%] left-1/2 -translate-x-1/2 z-[60] bg-white border-2 border-[#171717] rounded-full p-2 flex items-center gap-4">
+    <div className="fixed md:scale-100 scale-80 bottom-2 md:w-auto w-[85%] left-1/2 -translate-x-1/2 z-[60] bg-white border-2 border-[#171717] rounded-full p-2 flex items-center gap-4">
     <button 
       onClick={() => setIsModalOpen(true)}
       className="bg-primary border-4 border-[#171717] text-black px-5 py-3  rounded-full font-black font-poppins text-sm shadow-[5px_5px_0px_0px_rgba(23,23,23,1)] hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all flex items-center gap-3"
