@@ -99,14 +99,14 @@ const Courses = () => {
     },
   ];
   return (
-    <div className="">
-      <section className="w-full bg-background grid-bg px-20  flex flex-col justify-start items-center ">
+    <div className="md:mt-0 mt-20">
+      <section className="w-full bg-background grid-bg md:px-20 px-4 flex flex-col justify-start items-center ">
         <div className="flex flex-col  justify-center  items-center mb-20  gap-8">
           <div className="flex flex-col justify-between items-center gap-3">
             <p className=" w-fit bg-primary px-6 text-center  rounded-full text-foreground bg text-md py-2 font-semibold font-poppins">
               our courses
             </p>
-            <h2 className="text-5xl  font-black text-[#171717] capitalize tracking-tighter leading-none">
+            <h2 className="md:text-5xl text-4xl text-center font-black text-[#171717] capitalize tracking-tighter leading-none">
               Digital Marketing Certification Courses
             </h2>
           </div>

@@ -112,7 +112,7 @@ export const SERVICES = [
   },
   {
     id: "soft-skill",
-    title: "Soft Skill Development",
+    title: "Campaign Strategy",
     description:
       "The future is human. We train teams in high-level communication, leadership, and emotional intelligence to drive collective success.",
     tags: ["Leadership", "EQ", "Coaching"],
@@ -136,14 +136,14 @@ export const SERVICES = [
 
 const Services = () => {
   return (
-    <section className=" px-6  grid-bg  ">
-      <div className="max-w-7xl  mx-auto">
-        <div className="flex flex-col md:flex-row justify-center  items-end mb-20  gap-8">
+    <section className=" md:px-6  px-4 lg:mt-0 mt-10  grid-bg  ">
+      <div className="md:max-w-7xl  md:mx-auto ">
+        <div className="flex flex-col md:flex-row justify-center  md:items-end mb-20  gap-8">
           <div className="flex flex-col justify-between items-center gap-3">
-            <p className=" w-fit bg-primary px-6 text-center  rounded-full text-foreground bg text-md py-2 font-semibold font-poppins">
+            <p className=" w-fit bg-primary px-6 text-center  rounded-full text-foreground bg md:text-md  text-sm py-2 font-semibold font-poppins">
               what we offer
             </p>
-            <h2 className="text-5xl  font-black text-[#171717] capitalize tracking-tighter leading-none">
+            <h2 className="md:text-5xl text-5xl font-black text-[#171717] capitalize tracking-tighter leading-none">
               Our Services
             </h2>
           </div>
@@ -155,7 +155,7 @@ const Services = () => {
           </div> */}
         </div>
 
-        <div className="grid grid-cols-1 -mt-10   md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 justify-items-center  gap-8">
+        <div className="grid grid-cols-2 -mt-10 md:ml-0   md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 justify-items-center  md:gap-8 gap-3">
           {SERVICES.map((service) => (
             <ServiceCard key={service.id} service={service} />
           ))}

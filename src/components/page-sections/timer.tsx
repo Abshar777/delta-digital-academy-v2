@@ -34,7 +34,7 @@ const Timer = () => {
             },
           },
         }}
-        className="grid  lg:grid-cols-4  z-20"
+        className="grid  grid-cols-4  z-20"
       >
         <motion.div
           variants={{

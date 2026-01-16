@@ -60,7 +60,7 @@ const ProgramCard: React.FC<ProgramCardProps> = ({ title, duration, mode, stats,
       </div>
 
       {/* Image Side */}
-      <div className="lg:w-2/5 relative h-[78vh] border-t-4 lg:border-t-0 lg:border-l-4 border-[#171717] overflow-hidden bg-[#F5F5F5]">
+      <div className="lg:w-2/5 relative md:h-[78vh] h-[50vh] border-t-4 lg:border-t-0 lg:border-l-4 border-[#171717] overflow-hidden bg-[#F5F5F5]">
         <img 
           src={image} 
           alt={title} 

@@ -13,7 +13,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service }) => {
         <div className="mb-6 p-2 bg-[#C1F42D] border-2 border-[#171717] inline-block shadow-[4px_4px_0px_0px_rgba(23,23,23,1)]">
           {service.icon}
         </div>
-        <h3 className="text-2xl font-black text-[#171717] mb-4 uppercase tracking-tighter leading-none">
+        <h3 className="md:text-2xl text-lg font-black text-[#171717] mb-4 uppercase tracking-tighter leading-none">
           {service.title}
         </h3>
         {/* <p className="text-[#171717] text-sm font-medium leading-relaxed mb-6">

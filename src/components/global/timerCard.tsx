@@ -44,7 +44,7 @@ const TimerCard: React.FC<TimerCardProps> = ({ value, label }) => {
       
       
       {/* Number Container */}
-      <div className="relative flex items-center justify-center mb-2 z-10   text-4xl ">
+      <div className="relative flex items-center justify-center mb-2 z-10   md:text-4xl text-3xl ">
         {digits.map((digit, idx) => (
           <Digit key={`${label}-digit-${idx}`} digit={digit} />
         ))}

@@ -18,7 +18,7 @@ const PROFESSIONALS: Professional[] = [
     name: "Minhath ",
     role: "Academic Head",
     description:
-      " Leads a network of mentors, aligning strong theoretical foundations with hands-on industry execution.",
+      "Guides the academy’s vision by upholding high curriculum standards and delivering training that bridges theory with real world industry execution.",
     image:
       "/m1-1.png",
   },
@@ -26,7 +26,7 @@ const PROFESSIONALS: Professional[] = [
     name: "A R S Ashik",
     role: "Chief Mentor",
     description:
-      "Builds industry-ready professionals through practical, performance-driven learning.",
+      "Leads a network of mentors, aligning strong theoretical foundations with hands on industry execution. Builds industry ready professionals through practical, performance driven learning.",
     image:
       "/m2.png",
   },
@@ -78,13 +78,13 @@ const AIProfessionalSection: React.FC = () => {
   return (
     <section
       ref={sectionRef}
-      className="bg-[#171717] w-full py-32 px-6 overflow-hidden"
+      className="bg-[#171717] -mt-1 w-full py-32 md:px-6 px-3 overflow-hidden"
     >
       <div className="flex  mb-20 ai-title flex-col justify-center w-full items-center gap-3">
-        <p className=" w-fit bg-primary px-6 text-center  rounded-full text-foreground bg text-md py-2 font-semibold font-poppins">
+        <p className=" w-fit  bg-primary px-6 text-center  rounded-full text-foreground bg md:text-md text-sm py-2 font-semibold font-poppins">
           our mentors
         </p>
-        <h2 className="text-5xl  text-center font-black text-background capitalize tracking-tighter leading-none">
+        <h2 className="md:text-5xl text-4xl  text-center font-black text-background capitalize tracking-tighter leading-none">
           Meet Our Leading{" "} <br />
           <span className="text-[#C1F42D]">
             Digital Marketing Professionals
@@ -92,7 +92,7 @@ const AIProfessionalSection: React.FC = () => {
         </h2>
       </div>
 
-      <div className="grid px-10 grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 md:w-3/4 mx-auto">
+      <div className="grid md:px-10 px-2 grid-cols-1 sm:grid-cols-2 md:gap-0 gap-8 lg:grid-cols-2 md:w-3/4 mx-auto">
         {PROFESSIONALS.map((pro, index) => (
           <div
             key={index}

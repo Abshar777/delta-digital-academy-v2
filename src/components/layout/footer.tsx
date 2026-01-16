@@ -3,14 +3,14 @@ import { FaInstagram, FaFacebook, FaLinkedin, FaTwitter, FaMapMarker, FaPhone, F
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-[#171717] text-white pt-20 px-6 overflow-hidden">
+    <footer className="bg-[#171717] -mt-1 text-white pt-20 px-6 overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 mb-32">
           <div>
             <img src="/logo.png" alt="logo" className="-ml-4 h-25" />
             <p className="text-xs opacity-60 max-w-md  mb-12">
-              The only agency that prioritizes speed,
-              <br /> aesthetics, and pure performance. <br />
+             Built in Collaboration with Top Digital Marketing 
+              <br /> Professionals With Delta Digital Academy <br />
             </p>
             <div className="flex gap-6">
               {[FaTwitter, FaLinkedin, FaFacebook, FaInstagram].map(

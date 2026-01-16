@@ -5,12 +5,12 @@ export const navLinks = [
     },
     {
         name: "About",
-        href: "/about",
+        href: "#about",
     },
 
     {
         name: "Contact",
-        href: "/contact",
+        href: "#enroll",
     },
     {
         name: "Call Us",
