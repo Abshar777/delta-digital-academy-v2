@@ -35,10 +35,10 @@ const EnrollForm: React.FC = () => {
             <div className="bg-primary text-black rounded-full p-3 font-poppins inline-block font-black uppercase tracking-widest text-xs  mb-6 transform -rotate-2">
               Fill Form
             </div>
-            <h2 className="text-6xl md:text-8xl font-black text-[#171717] capitalize font-poppins tracking-tighter leading-none mb-8">
+            <h2 className="text-5xl md:text-8xl font-black text-[#171717] capitalize font-poppins tracking-tighter leading-none mb-8">
               ENROLL <br /> NOW.
             </h2>
-            <p className="text-xl font-bold text-[#171717] max-w-md">
+            <p className="md:text-xl text-lg font-bold text-[#171717] max-w-md">
               Seats are limited. secure your slot today.
             </p>
 

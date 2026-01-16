@@ -20,7 +20,7 @@ const Courses = () => {
       title: "Delta Dominate",
       duration: "3.5 Months",
       mode: "Classroom",
-      image: "/c1.jpg",
+      image: "/c1.png",
       stats: [
         {
           label: "Search Engine Optimization",
@@ -99,7 +99,7 @@ const Courses = () => {
     },
   ];
   return (
-    <div className="md:mt-0 mt-20">
+    <div className="md:mt-20 mt-20">
       <section className="w-full bg-background grid-bg md:px-20 px-4 flex flex-col justify-start items-center ">
         <div className="flex flex-col  justify-center  items-center mb-20  gap-8">
           <div className="flex flex-col justify-between items-center gap-3">

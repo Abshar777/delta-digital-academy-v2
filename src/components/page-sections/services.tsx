@@ -19,7 +19,7 @@ export const SERVICES = [
       "We build high-octane digital experiences. From rapid prototypes to enterprise-grade web applications, our code is as sharp as our design.",
     tags: ["React", "Next.js", "Performance"],
     icon: (
-     <FaWordpress className="w-8 h-8"/>
+     <FaWordpress className="md:w-8 md:h-8 h-6 w-6"/>
     ),
   },
   {
@@ -30,7 +30,7 @@ export const SERVICES = [
     tags: ["Growth", "Keywords", "Analytics"],
     icon: (
       <svg
-        className="w-8 h-8"
+        className="md:w-8 md:h-8 h-6 w-6"
         fill="none"
         stroke="currentColor"
         viewBox="0 0 24 24"
@@ -51,7 +51,7 @@ export const SERVICES = [
       "Precision targeting that turns searches into sales. Our PPC campaigns are data-backed and ROI-driven to maximize every dollar spent.",
     tags: ["PPC", "Conversions", "Bidding"],
     icon: (
-      <FaGoogle className="w-8 h-8"/>
+      <FaGoogle className="md:w-8 md:h-8 h-6 w-6"/>
     ),
   },
   {
@@ -62,7 +62,7 @@ export const SERVICES = [
     tags: ["Community", "Engagement", "Viral"],
     icon: (
       <svg
-        className="w-8 h-8"
+        className="md:w-8 md:h-8 h-6 w-6"
         fill="none"
         stroke="currentColor"
         viewBox="0 0 24 24"
@@ -83,7 +83,7 @@ export const SERVICES = [
       "Stop the scroll on Facebook & Instagram. We leverage Meta's powerful algorithm to scale your sales with surgical precision.",
     tags: ["Scaling", "FB/IG", "Retargeting"],
     icon: (
-      <FaMeta className="w-8 h-8"/>
+      <FaMeta className="md:w-8 md:h-8 h-6 w-6"/>
     ),
   },
   {
@@ -94,7 +94,7 @@ export const SERVICES = [
     tags: ["Video", "Design", "Copywriting"],
     icon: (
       <svg
-        className="w-8 h-8"
+        className="md:w-8 md:h-8 h-6 w-6"
         fill="none"
         stroke="currentColor"
         viewBox="0 0 24 24"
@@ -115,7 +115,7 @@ export const SERVICES = [
       "We help founders and executives build an unshakeable digital presence that commands respect.",
     tags: ["Authority", "LinkedIn", "Strategy"],
     icon: (
-     <FaLinkedin className="w-8 h-8"/>
+     <FaLinkedin className="md:w-8 md:h-8 h-6 w-6"/>
     ),
   },
   {
@@ -126,7 +126,7 @@ export const SERVICES = [
     tags: ["Leadership", "EQ", "Coaching"],
     icon: (
       <svg
-        className="w-8 h-8"
+        className="md:w-8 md:h-8 h-6 w-6"
         fill="none"
         stroke="currentColor"
         viewBox="0 0 24 24"
@@ -199,7 +199,7 @@ const Services = () => {
             </p>
           </div>
           <div className="overflow-hidden">
-            <h2 className="service-title-part md:text-5xl text-5xl font-black text-[#171717] capitalize tracking-tighter leading-none">
+            <h2 className="service-title-part md:text-5xl text-4xl font-black text-[#171717] capitalize tracking-tighter leading-none">
               Our Services
             </h2>
           </div>

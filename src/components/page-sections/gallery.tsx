@@ -50,7 +50,7 @@ export const PinDesktopGallery = () => {
         scrollTrigger: {
           trigger: triggerRef.current,
           start: "top top",
-          end: "2000 top",
+          end: "3000 top",
           scrub: 0.6,
           pin: true,
           anticipatePin: 1,

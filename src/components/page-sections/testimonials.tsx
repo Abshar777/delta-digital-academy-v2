@@ -73,7 +73,7 @@ const TestimonialSection: React.FC = () => {
           <p className=" w-fit bg-primary px-6 text-center  rounded-full text-foreground bg md:text-md text-sm py-2 font-semibold font-poppins">
             testimonials
           </p>
-          <h2 className="md:text-7xl text-5xl  gap-2 flex md:flex-row  flex-col items-center   font-black mt-7 text-[#171717] capitalize tracking-tighter leading-none itaic mb-6">
+          <h2 className="md:text-7xl text-4xl  gap-2 flex md:flex-row  flex-col items-center   font-black mt-7 text-[#171717] capitalize tracking-tighter leading-none itaic mb-6">
             <div className="flex items-center gap-2">
               Student
             <div className="flex justify-center -space-x-4 ">
@@ -89,7 +89,7 @@ const TestimonialSection: React.FC = () => {
             </div>
             <span className="">Endorsements</span>
           </h2>
-          <p className="mdLtext-md  text-sm font-bold uppercase tracking-widest opacity-60">
+          <p className="md:text-md  text-sm font-bold uppercase tracking-widest opacity-60">
             Don't take our word for it. Take theirs.
           </p>
         </div>

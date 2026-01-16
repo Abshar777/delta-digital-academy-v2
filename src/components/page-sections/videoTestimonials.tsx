@@ -72,9 +72,9 @@ const Testimonials: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.1 }}
-                className="text-5xl   font-black text-[#171717] capitalize tracking-tighter leading-none"
+                className="md:text-5xl text-4xl   font-black text-[#171717] capitalize tracking-tighter leading-none"
               >
-                See how our students are <br />
+                See how our students are <br  className="md:block hidden"/>
                 <span className=" color-flicker-text pe-2 ">crushing </span>the
                 markets
               </motion.h2>
