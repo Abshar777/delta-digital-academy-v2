@@ -1,7 +1,15 @@
-import React from "react";
+"use client";
+import React, { useEffect, useRef } from "react";
 import ServiceCard from "../global/serviceCard";
 import { FaGoogle, FaLinkedin, FaWordpress } from "react-icons/fa";
 import { FaMeta } from "react-icons/fa6";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { motion } from "framer-motion";
+
+if (typeof window !== "undefined") {
+  gsap.registerPlugin(ScrollTrigger);
+}
 
 export const SERVICES = [
   {
@@ -133,34 +141,84 @@ export const SERVICES = [
     ),
   },
 ];
-
 const Services = () => {
+  const sectionRef = useRef(null);
+  const titleRef = useRef(null);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      // 1. Title & Badge Animation
+      gsap.from(".service-title-part", {
+        y: 80,
+        opacity: 0,
+        rotateX: -20,
+        duration: 1.2,
+        stagger: 0.2,
+        ease: "power4.out",
+        scrollTrigger: {
+          trigger: titleRef.current,
+          start: "top 90%",
+        },
+      });
+
+      // 2. Grid Cards Staggered Animation
+      // We animate them with a slight 3D rotation and scale
+      gsap.from(".service-card-wrapper", {
+        y: 100,
+        opacity: 0,
+        scale: 0.9,
+        rotateX: -15,
+        duration: 1,
+        stagger: {
+          amount: 0.8, // Total time spread across all elements
+          grid: "auto",
+          from: "start",
+        },
+        ease: "expo.out",
+        scrollTrigger: {
+          trigger: ".services-grid",
+          start: "top 85%",
+        },
+      });
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, []);
+
   return (
-    <section className=" md:px-6  px-4 lg:mt-0 mt-10  grid-bg  ">
-      <div className="md:max-w-7xl  md:mx-auto ">
-        <div className="flex flex-col md:flex-row justify-center  md:items-end mb-20  gap-8">
-          <div className="flex flex-col justify-between items-center gap-3">
-            <p className=" w-fit bg-primary px-6 text-center  rounded-full text-foreground bg md:text-md  text-sm py-2 font-semibold font-poppins">
+    <section 
+      ref={sectionRef} 
+      className="md:px-6 px-4 lg:mt-0 mt-10 grid-bg perspective-1000"
+    >
+      <div className="md:max-w-7xl md:mx-auto">
+        {/* Header Section */}
+        <div ref={titleRef} className="flex flex-col justify-center items-center mb-20 gap-3">
+          <div className="service-title-part">
+            <p className="w-fit bg-primary px-6 text-center rounded-full text-foreground md:text-md text-sm py-2 font-semibold font-poppins">
               what we offer
             </p>
-            <h2 className="md:text-5xl text-5xl font-black text-[#171717] capitalize tracking-tighter leading-none">
+          </div>
+          <div className="overflow-hidden">
+            <h2 className="service-title-part md:text-5xl text-5xl font-black text-[#171717] capitalize tracking-tighter leading-none">
               Our Services
             </h2>
           </div>
-
-          {/* <div className="bg-[#171717] text-white p-6 border-4 border-[#171717] shadow-[8px_8px_0px_0px_rgba(255,255,255,1)]">
-            <p className="font-bold uppercase tracking-widest text-sm italic">
-              Scroll to explore our toolkit
-            </p>
-          </div> */}
         </div>
 
-        <div className="grid grid-cols-2 -mt-10 md:ml-0   md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 justify-items-center  md:gap-8 gap-3">
+        {/* Services Grid */}
+        <div className="services-grid grid grid-cols-2 -mt-10 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 justify-items-center md:gap-8 gap-3">
           {SERVICES.map((service) => (
-            <ServiceCard key={service.id} service={service} />
+            <motion.div
+              key={service.id}
+              className="service-card-wrapper w-full"
+              whileHover={{ y: -10, transition: { duration: 0.3 } }} // Interactive lift
+            >
+              <ServiceCard service={service} />
+            </motion.div>
           ))}
         </div>
-        <div className="h-5"></div>
+        
+        <div className="h-10"></div>
       </div>
     </section>
   );

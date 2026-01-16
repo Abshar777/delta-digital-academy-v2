@@ -6,6 +6,7 @@ import Timer from "./timer";
 import { IoIosPaperPlane } from "react-icons/io";
 import { motion } from "framer-motion";
 import gsap from "gsap";
+import { useRouter } from "next/navigation";
 
 const Hero = () => {
   const containerRef = useRef(null);
@@ -40,6 +41,8 @@ const Hero = () => {
 
     return () => ctx.revert();
   }, []);
+
+  const router=useRouter();
 
   return (
     <div ref={containerRef} className="w-full flex flex-col min-h-screen bg-foreground overflow-hidden">
@@ -90,6 +93,9 @@ const Hero = () => {
           <div className="animate-btn">
             <Button
               size={"xl"}
+              onClick={() => {
+                router.push("#enroll");
+              }}
               className="rounded-full hover:bg-foreground w-full hover:text-background hover:shadow-[1px_1px_0_0_#000] transition-all text-md ease-in font-semibold font-poppins text-foreground border-2 border-foreground shadow-[3px_3px_0_0_#000]"
             >
               Apply Now
@@ -99,6 +105,14 @@ const Hero = () => {
           <div className="animate-btn">
             <Button
               size={"xl"}
+              onClick={() => {
+                // download brochure
+                const link = document.createElement("a");
+                link.href = "/1.pdf";
+                link.download = "brochure.pdf";
+                link.click();
+               if(typeof window !== "undefined") window.open("/1.pdf", "_blank");
+              }}
               className="rounded-full hover:bg-foreground hover:text-background hover:shadow-[1px_1px_0_0_#000] transition-all text-md bg-white ease-in font-semibold font-poppins text-foreground border-2 border-foreground shadow-[3px_3px_0_0_#000]"
             >
               Download Brochure <FaDownload />
