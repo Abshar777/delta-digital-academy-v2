@@ -58,7 +58,7 @@ const Blogs: React.FC = () => {
   }, []);
 
   return (
-    <div className="bg-foreground -mt-1 pt-2">
+    <div id="blogs" className="bg-foreground -mt-1 pt-2">
       <section
         ref={containerRef}
         className="

@@ -1,3 +1,4 @@
+import { links } from "@/const";
 import React from "react";
 import { FaInstagram, FaFacebook, FaLinkedin, FaTwitter, FaMapMarker, FaPhone, FaEnvelope } from "react-icons/fa";
 
@@ -13,14 +14,14 @@ const Footer: React.FC = () => {
               <br /> Professionals With Delta Digital Academy <br />
             </p>
             <div className="flex gap-6">
-              {[FaTwitter, FaLinkedin, FaFacebook, FaInstagram].map(
-                (ICon, i) => (
+              {links.map(
+                (link, i) => (
                   <a
                     key={i}
-                    href="#"
+                    href={link.href}
                     className="w-12 h-12  hover:border-[#C1F42D] hover:text-[#C1F42D] flex items-center justify-center font-black transition-all"
                   >
-                    <ICon className="text-2xl" />
+                    <link.icon className="text-2xl" />
                   </a>
                 )
               )}
@@ -34,22 +35,22 @@ const Footer: React.FC = () => {
               </h5>
               <ul className="space-y-4 font-bold uppercase tracking-tighter">
                 <li>
-                  <a href="#" className="hover:line-through">
+                  <a href="#services" className="hover:line-through">
                     Services
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:line-through">
-                    Our Work
+                  <a href="#about" className="hover:line-through">
+                    about us
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:line-through">
+                  <a href="#courses" className="hover:line-through">
                     Programs
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:line-through">
+                  <a href="#graduates" className="hover:line-through">
                     Alumni
                   </a>
                 </li>
@@ -90,13 +91,13 @@ const Footer: React.FC = () => {
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:line-through flex items-center gap-2">
+                  <a href="tel:+971521240237" className="hover:line-through flex items-center gap-2">
                     <FaPhone className="text-xl scale-x-[-1] text-primary" />
                     +971 52 124 0237
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:line-through flex items-center gap-2">
+                  <a href="mailto:info@deltadigitalacademy.com" className="hover:line-through flex items-center gap-2">
                     <FaEnvelope className="text-xl flex-shrink-0 text-primary" />
                     info@deltadigitalacademy.com
                   </a>

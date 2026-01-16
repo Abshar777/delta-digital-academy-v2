@@ -65,6 +65,7 @@ const TestimonialSection: React.FC = () => {
 
   return (
     <section
+    id="testimonials"
       ref={sectionRef}
       className="md:py-32 py-10 px-6 bg-background -mt-1 grid-bg overflow-hidden"
     >

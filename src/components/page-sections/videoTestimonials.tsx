@@ -54,7 +54,7 @@ export const TESTIMONIALS = [
 
 const Testimonials: React.FC = () => {
   return (
-    <div className=" bg-foreground pb-4">
+    <div id="v-testimonials" className=" bg-foreground pb-4">
       <section className="md:py-24 py-16 -mt-2 bg-background grid-bg rounded-b-[4rem] overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 mb-16">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">

@@ -83,7 +83,7 @@ const Graduates: React.FC = () => {
   }, []);
 
   return (
-    <div className="w-full">
+    <div id="graduates" className="w-full">
       <section
         ref={sectionRef}
         className="pt-16 pb-8 px-6   bg-background grid-bg overflow-hidden"

@@ -53,9 +53,10 @@ const ProgramCard: React.FC<ProgramCardProps> = ({ title, duration, mode, stats,
 
         <Button
             size={"xl"}
+            
             className="rounded-full hover:bg-foreground  hover:text-background hover:shadow-[1px_1px_0_0_#000] transition-all text-md ease-in font-semibold font-poppins  text-foreground border-2 border-foreground  shadow-[3px_3px_0_0_#000]"
           >
-            Apply Now
+           <a href="#enroll" className="w-full "> Apply Now</a>
           </Button>
       </div>
 

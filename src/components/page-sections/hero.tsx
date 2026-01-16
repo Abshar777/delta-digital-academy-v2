@@ -7,6 +7,7 @@ import { IoIosPaperPlane } from "react-icons/io";
 import { motion } from "framer-motion";
 import gsap from "gsap";
 import { useRouter } from "next/navigation";
+import { downloadBrochure } from "@/const";
 
 const Hero = () => {
   const containerRef = useRef(null);
@@ -14,12 +15,14 @@ const Hero = () => {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      const tl = gsap.timeline({ defaults: { ease: "expo.out", duration: 1.5 } });
+      const tl = gsap.timeline({
+        defaults: { ease: "expo.out", duration: 1.5 },
+      });
 
       // 1. Initial State: Hide text content
       gsap.set(".animate-text", { y: 100, opacity: 0 });
       gsap.set(".animate-btn", { scale: 0.9, opacity: 0 });
-      
+
       // 2. The Sequence
       tl.to(".animate-text", {
         y: 0,
@@ -27,30 +30,40 @@ const Hero = () => {
         stagger: 0.1,
         delay: 0.2,
       })
-      .to(".animate-btn", {
-        scale: 1,
-        opacity: 1,
-        stagger: 0.1,
-      }, "-=1") // Overlap with text animation
-      .from(".grid-bg", {
-        scale: 1.2,
-        opacity: 0,
-        duration: 2,
-      }, 0); // Start at the very beginning
+        .to(
+          ".animate-btn",
+          {
+            scale: 1,
+            opacity: 1,
+            stagger: 0.1,
+          },
+          "-=1"
+        ) // Overlap with text animation
+        .from(
+          ".grid-bg",
+          {
+            scale: 1.2,
+            opacity: 0,
+            duration: 2,
+          },
+          0
+        ); // Start at the very beginning
     }, containerRef);
 
     return () => ctx.revert();
   }, []);
 
-  const router=useRouter();
+  const router = useRouter();
 
   return (
-    <div ref={containerRef} className="w-full flex flex-col min-h-screen bg-foreground overflow-hidden">
+    <div
+      ref={containerRef}
+      className="w-full flex flex-col min-h-screen bg-foreground overflow-hidden"
+    >
       {/* Immersive Background Wrapper */}
       <div className="w-full bg-background rounded-b-[4rem] grid-bg flex flex-col justify-center items-center md:h-[90vh] h-[100vh] relative">
-        
         {/* Subtitle with Framer Motion for a subtle float */}
-        <motion.p 
+        <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.5 }}
@@ -62,7 +75,8 @@ const Hero = () => {
         {/* Desktop Headings - Masked Reveal Effect */}
         <div className="overflow-hidden py-1">
           <h1 className="md:text-7xl text-4xl italic relative text-center md:flex hidden items-center uppercase font-bold expanded-one animate-text">
-            Building &nbsp;<img src="/peace.gif" className="w-20 h-20" alt="" /> the Future
+            Building &nbsp;
+            <img src="/peace.gif" className="w-20 h-20" alt="" /> the Future
           </h1>
         </div>
 
@@ -84,7 +98,8 @@ const Hero = () => {
 
         <div className="overflow-hidden">
           <p className="text-center font-semibold md:text-lg text-sm font-poppins md:mt-2 mt-4 animate-text">
-            Built in Collaboration with Top Digital Marketing Professionals With Delta Digital Academy
+            Built in Collaboration with Top Digital Marketing Professionals With
+            Delta Digital Academy
           </p>
         </div>
 
@@ -105,14 +120,7 @@ const Hero = () => {
           <div className="animate-btn">
             <Button
               size={"xl"}
-              onClick={() => {
-                // download brochure
-                const link = document.createElement("a");
-                link.href = "/1.pdf";
-                link.download = "brochure.pdf";
-                link.click();
-               if(typeof window !== "undefined") window.open("/1.pdf", "_blank");
-              }}
+              onClick={downloadBrochure}
               className="rounded-full hover:bg-foreground hover:text-background hover:shadow-[1px_1px_0_0_#000] transition-all text-md bg-white ease-in font-semibold font-poppins text-foreground border-2 border-foreground shadow-[3px_3px_0_0_#000]"
             >
               Download Brochure <FaDownload />
@@ -122,7 +130,7 @@ const Hero = () => {
       </div>
 
       {/* Footer Section with Slide-up Animation */}
-      <motion.div 
+      <motion.div
         initial={{ y: 50, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
         viewport={{ once: true }}

@@ -49,7 +49,7 @@ const FAQSection: React.FC = () => {
   }, []);
 
   return (
-    <div className="bg-foreground">
+    <div id="faq" className="bg-foreground">
       <section
         ref={sectionRef}
         className="

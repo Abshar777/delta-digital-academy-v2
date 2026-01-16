@@ -4,6 +4,7 @@ import gsap from 'gsap';
 import { BsGlobe } from 'react-icons/bs';
 import Image from 'next/image';
 import LogoD from "@/../public/logoD.png"
+import { downloadBrochure } from '@/const';
 
 const CTASection: React.FC = () => {
   const containerRef = useRef<HTMLElement>(null);
@@ -62,14 +63,11 @@ const CTASection: React.FC = () => {
         </h2>
 
         <div className="flex flex-col sm:flex-row items-center justify-center md:gap-8 gap-4">
-          <button className="group  cursor-pointer  rounded-2xl relative bg-[#171717] text-white md:px-12 md:py-8 px-8 py-6 md:text-2xl  font-black uppercase  shadow-[8px_8px_0px_0px_white] hover:shadow-none hover:translate-x-2 hover:translate-y-2 transition-all w-full sm:w-auto">
-            Book a Strategy Call
-            <div className="absolute -top-4 -right-4 bg-[#E63946] border-2 border-[#171717] px-2 py-1  font-black text-xs font-poppins text-white transform rotate-12 opacity-0 group-hover:opacity-100 transition-opacity">
-              LIMITED SLOTS
-            </div>
+          <button  className="group  cursor-pointer  rounded-2xl relative bg-[#171717] text-white md:px-12 md:py-8 px-8 py-6 md:text-2xl  font-black uppercase  shadow-[8px_8px_0px_0px_white] hover:shadow-none hover:translate-x-2 hover:translate-y-2 transition-all w-full sm:w-auto">
+            <a href="https://wa.me/+971521240237">Book a Strategy Call</a>
           </button>
           
-          <button className="bg-white cursor-pointer rounded-2xl shadow-[4px_4px_0px_0px_#171717] text-[#171717] border-4 border-[#171717]  md:px-12 md:py-8 px-8 py-6 md:text-2xl  font-black uppercase tracking-tighter neo-shadow hover:translate-x-2 hover:translate-y-2 hover:shadow-none transition-all w-full sm:w-auto">
+          <button onClick={downloadBrochure} className="bg-white cursor-pointer rounded-2xl shadow-[4px_4px_0px_0px_#171717] text-[#171717] border-4 border-[#171717]  md:px-12 md:py-8 px-8 py-6 md:text-2xl  font-black uppercase tracking-tighter neo-shadow hover:translate-x-2 hover:translate-y-2 hover:shadow-none transition-all w-full sm:w-auto">
             Download Brochure
           </button>
         </div>

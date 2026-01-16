@@ -77,6 +77,7 @@ const AIProfessionalSection: React.FC = () => {
 
   return (
     <section
+    id="mentors"
       ref={sectionRef}
       className="bg-[#171717] -mt-1 w-full py-32 md:px-6 px-3 overflow-hidden"
     >

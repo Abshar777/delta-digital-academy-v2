@@ -187,6 +187,7 @@ const Services = () => {
 
   return (
     <section 
+    id="services"
       ref={sectionRef} 
       className="md:px-6 px-4 lg:mt-0 mt-10 grid-bg perspective-1000"
     >

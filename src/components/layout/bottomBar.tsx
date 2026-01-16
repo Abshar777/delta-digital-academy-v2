@@ -3,6 +3,7 @@ import React from 'react'
 import { useStore } from '@/store';
 import { FaWhatsapp } from 'react-icons/fa';
 import { FaPhone } from 'react-icons/fa6';
+import { phoneRedirect, whatsappRedirect } from '@/const';
 
 const BottomBar = () => {
     const { isModalOpen, setIsModalOpen } = useStore();
@@ -19,10 +20,10 @@ const BottomBar = () => {
     </button>
     
     <div className="flex gap-2">
-      <button className="w-10 h-10 bg-[#25D366] border-4 border-[#171717] rounded-full  justify-center text-white shadow-[3px_3px_0px_0px_rgba(23,23,23,1)] hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all flex items-center">
+      <button onClick={whatsappRedirect} className="w-10 h-10 bg-[#25D366] border-4 border-[#171717] rounded-full  justify-center text-white shadow-[3px_3px_0px_0px_rgba(23,23,23,1)] hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all flex items-center">
        <FaWhatsapp className="text-2xl" />
       </button>
-      <button className="w-10 h-10 bg-white border-4 border-[#171717] rounded-full justify-center text-[#171717] shadow-[3px_3px_0px_0px_rgba(23,23,23,1)] hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all flex items-center">
+      <button onClick={phoneRedirect} className="w-10 h-10 bg-white border-4 border-[#171717] rounded-full justify-center text-[#171717] shadow-[3px_3px_0px_0px_rgba(23,23,23,1)] hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all flex items-center">
         <FaPhone className="text-xl" />
       </button>
     </div>
