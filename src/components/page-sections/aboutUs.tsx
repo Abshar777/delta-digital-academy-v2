@@ -37,7 +37,7 @@ const AboutUs = () => {
           trigger: '.video',
           start: "top 90%",
           end: "bottom center",
-          scrub: 1, // Smooth parallax as you scroll
+          // scrub: 1, // Smooth parallax as you scroll
         },
       });
 
