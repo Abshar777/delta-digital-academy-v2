@@ -41,14 +41,14 @@ const CTASection: React.FC = () => {
   <div className="md:p-4 p-2">
       <section ref={containerRef} className="md:py-20 py-16 grid-bg px-6 bg-[#C1F42D] border-4 rounded-2xl border-[#171717] relative overflow-hidden">
       {/* Decorative Floating Elements */}
-      <div className="cta-float md:block hidden absolute top-10 left-10 w-20 h-20 border-4 border-[#171717] bg-white transform rotate-12 flex items-center justify-center font-black text-4xl shadow-[4px_4px_0px_0px_#171717]">
+      <div className="cta-float md:flex hidden absolute top-10 left-10 w-20 h-20 border-4 border-[#171717] bg-white transform rotate-12  items-center justify-center font-black text-4xl shadow-[4px_4px_0px_0px_#171717]">
            <Image alt='logo' className='' src={LogoD} width={100} height={100}/>
 
       </div>
-      <div className="cta-float md:block hidden absolute bottom-20 right-20 w-32 h-12 bg-[#171717] text-white flex items-center justify-center font-black uppercase tracking-widest text-xs transform -rotate-12 shadow-[4px_4px_0px_0px_white]">
+      <div className="cta-float md:flex hidden absolute bottom-20 right-20 w-32 h-12 bg-[#171717] text-white  items-center justify-center font-black uppercase tracking-widest text-xs transform -rotate-12 shadow-[4px_4px_0px_0px_white]">
        Limited Offer
       </div>
-      <div className="cta-float md:block hidden absolute top-1/2 right-10 w-16 h-16 border-4 border-[#171717] rounded-full bg-white hidden lg:flex items-center justify-center font-black text-3xl">
+      <div className="cta-float md:flex hidden absolute top-1/2 right-10 w-16 h-16 border-4 border-[#171717] rounded-full bg-white  lg:flex items-center justify-center font-black text-3xl">
        <Image alt='logo' className='' src={LogoD} width={100} height={100}/>
       </div>
 
