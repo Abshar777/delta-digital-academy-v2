@@ -35,22 +35,22 @@ const Footer: React.FC = () => {
               </h5>
               <ul className="space-y-4 font-bold uppercase tracking-tighter">
                 <li>
-                  <a href="#services" className="hover:line-through">
+                  <a href="#services" className="hover:text-primary">
                     Services
                   </a>
                 </li>
                 <li>
-                  <a href="#about" className="hover:line-through">
+                  <a href="#about" className="hover:text-primary">
                     about us
                   </a>
                 </li>
                 <li>
-                  <a href="#courses" className="hover:line-through">
+                  <a href="#courses" className="hover:text-primary">
                     Programs
                   </a>
                 </li>
                 <li>
-                  <a href="#graduates" className="hover:line-through">
+                  <a href="#graduates" className="hover:text-primary">
                     Alumni
                   </a>
                 </li>
@@ -84,27 +84,27 @@ const Footer: React.FC = () => {
               </h5>
               <ul className="space-y-4 font-semibold font-poppins capitalize tracking-tighter">
                 <li>
-                  <a href="#" className="hover:line-through flex items-start gap-2">
+                  <a href="#" className="hover:text-primary flex items-start gap-2">
                     <FaMapMarker className="text-xl flex-shrink-0 mt-2 text-primary" />
                     M09, Al Shaibani building, Near Al Qiyada metro station, Abu
                     Hail , Dubai
                   </a>
                 </li>
                 <li>
-                  <a href="tel:+971521240237" className="hover:line-through flex items-center gap-2">
+                  <a href="tel:+971521240237" className="hover:text-primary flex items-center gap-2">
                     <FaPhone className="text-xl scale-x-[-1] text-primary" />
                     +971 52 124 0237
                   </a>
                 </li>
                 <li>
-                  <a href="mailto:info@deltadigitalacademy.com" className="hover:line-through flex items-center gap-2">
+                  <a href="mailto:info@deltadigitalacademy.com" className="hover:text-primary flex items-center gap-2">
                     <FaEnvelope className="text-xl flex-shrink-0 text-primary" />
                     info@deltadigitalacademy.com
                   </a>
                 </li>
               </ul>
             </div>
-            <div className="col-span-2 pt-12 border-t border-white/10">
+            {/* <div className="col-span-2 pt-12 border-t border-white/10">
               <h5 className="text-[#C1F42D] font-black uppercase tracking-widest text-sm mb-6">Newsletter</h5>
               <div className="flex flex-col sm:flex-row gap-4">
                 <input 
@@ -116,7 +116,7 @@ const Footer: React.FC = () => {
                   Subscribe
                 </button>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
 

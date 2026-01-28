@@ -101,7 +101,7 @@ const ApplyModal: React.FC = () => {
               initial={{ scale: 0.9, opacity: 0, y: 20, rotate: -1 }}
               animate={{ scale: 1, opacity: 1, y: 0, rotate: 0 }}
               exit={{ scale: 0.9, opacity: 0, y: 20 }}
-              className="bg-white  rounded-2xl border-8 border-[#171717] w-full max-w-5xl md:h-[99%] flex flex-col md:flex-row neo-shadow relative overflow-hidden"
+              className="bg-white  rounded-2xl border-8 border-[#171717] w-full max-w-3xl md:h-[99%] flex flex-col md:flex-row neo-shadow relative overflow-hidden"
             >
               {/* Close Button */}
               <button
@@ -124,44 +124,7 @@ const ApplyModal: React.FC = () => {
               </button>
 
               {/* LEFT IMAGE */}
-              <div className="hidden md:block w-5/12 relative bg-[#F5F5F5]  border-r-8 border-[#171717]">
-                <img
-                  src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&q=80&w=800"
-                  alt="Student"
-                  className="w-full h-full object-cover grayscale-[30%]"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#171717]/80 via-transparent to-transparent" />
-
-                {/* Floating Badge */}
-                <motion.div
-                  initial={{ x: -20, opacity: 0 }}
-                  animate={{ x: 0, opacity: 1 }}
-                  transition={{ delay: 0.3 }}
-                  className="absolute top-1/2 left-4 transform -translate-y-1/2"
-                >
-                  <div className="bg-[#25D366] border-4 border-[#171717] p-4 shadow-[6px_6px_0px_0px_#171717] transform -rotate-3">
-                    <p className="text-[10px] font-black uppercase text-white mb-1">
-                     Apply Now
-                    </p>
-                    <p className="text-4xl font-black text-white leading-none">
-                      EMI
-                    </p>
-                    <p className="text-[10px] font-black uppercase text-white mt-1">
-                      is Available
-                    </p>
-                  </div>
-                </motion.div>
-
-                <div className="absolute bottom-8 left-8 right-8">
-                  <h3 className="text-white text-2xl font-black uppercase tracking-tighter leading-none mb-2">
-                    Delta <br /> Digital Academy
-                  </h3>
-                  <p className="text-[#C1F42D] text-xs font-bold uppercase tracking-widest">
-                    EMI Available
-                  </p>
-                </div>
-              </div>
-
+              
               {/* RIGHT FORM */}
               <div className="flex-1 p-4 md:p-12 overflow-y-auto">
                 <div className="mb-6 md:mb-7">
