@@ -10,6 +10,7 @@ interface Professional {
   name: string;
   role: string;
   description: string;
+  specilisation: string;
   image: string;
 }
 
@@ -17,18 +18,20 @@ const PROFESSIONALS: Professional[] = [
   {
     name: "Minhath ",
     role: "Academic Head",
+    specilisation: "Specialized in Performance Marketing",
+    // description:
+    //   "Guides the academy’s vision by upholding high curriculum standards and delivering training that bridges theory with real world industry execution.",
     description:
-      "Guides the academy’s vision by upholding high curriculum standards and delivering training that bridges theory with real world industry execution.",
-    image:
-      "/m1-1.png",
+      "Handled and scaled ₹5.2 Crore+ ad  budgets across Meta & Google platforms, driving measurable growth for brands across multiple industries.",
+    image: "/m1-1.png",
   },
   {
     name: "A R S Ashik",
     role: "Chief Mentor",
+    specilisation: "Specialized in SEO and Digital Advertising ",
     description:
-      "Leads a network of mentors, aligning strong theoretical foundations with hands on industry execution. Builds industry ready professionals through practical, performance driven learning.",
-    image:
-      "/m2.png",
+      "A multi-certified digital marketing expert with certifications from Google, LinkedIn, NIDM, SEMrush, HubSpot Academy, and NSDC. Managed ₹10 Lakhs+ ad spend, with hands on expertise in Google Ads, SEO, analytics, and conversion optimisation, blending certified knowledge with real world execution.",
+    image: "/m2.png",
   },
   // {
   //   name: "AARIA",
@@ -39,7 +42,6 @@ const PROFESSIONALS: Professional[] = [
   //     "/m3.png",
 
   // },
-
 ];
 
 const AIProfessionalSection: React.FC = () => {
@@ -77,7 +79,7 @@ const AIProfessionalSection: React.FC = () => {
 
   return (
     <section
-    id="mentors"
+      id="mentors"
       ref={sectionRef}
       className="bg-[#171717] -mt-1 w-full py-32 md:px-6 px-3 overflow-hidden"
     >
@@ -86,7 +88,7 @@ const AIProfessionalSection: React.FC = () => {
           our mentors
         </p>
         <h2 className="md:text-5xl text-4xl  text-center font-black text-background capitalize tracking-tighter leading-none">
-          Meet Our Leading{" "} <br />
+          Meet Our Leading <br />
           <span className="text-[#C1F42D]">
             Digital Marketing Professionals
           </span>
@@ -139,6 +141,9 @@ const AIProfessionalSection: React.FC = () => {
               </h3>
               <p className="text-[#C1F42D] text-xs font-bold uppercase tracking-widest leading-snug min-h-[30px]">
                 {pro.role}
+              </p>
+              <p className="text-[#C1F42D] text-xs font-bold uppercase tracking-widest leading-snug min-h-[30px]">
+                {pro.specilisation}
               </p>
               <p className="text-gray-400 w-3/4 text-center text-sm leading-relaxed font-medium">
                 {pro.description}
