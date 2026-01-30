@@ -9,7 +9,6 @@ import EnrollForm from "@/components/page-sections/enrollForm";
 import TestimonialSection from "@/components/page-sections/testimonials";
 import FAQSection from "@/components/page-sections/faq";
 import CTASection from "@/components/page-sections/cta";
-import GallerySection from "@/components/page-sections/blog";
 import MentorsWorkWith from "@/components/page-sections/mentorsWorkWith";
 import Graduates from "@/components/page-sections/graduates";
 import LifeGallery from "@/components/page-sections/gallery";
@@ -17,16 +16,16 @@ import Blogs from "@/components/page-sections/blog";
 import ApplyModal from "@/components/page-sections/applyModal";
 
 export default function Home() {
-  
   return (
     <>
       <Hero />
       <AboutUs />
       <Services />
-      <Marquee text1=" Delta Digital Academy" text2="Delta Digital Academy" />
+      <Marquee text1="Delta Digital Academy" text2="Building Future Leaders" />
       <Courses />
       <VideoTestimonials />
       <AIProfessionalSection />
+      <MentorsWorkWith />
       <EnrollForm />
       <TestimonialSection />
       <CTASection />
@@ -35,7 +34,6 @@ export default function Home() {
       <LifeGallery />
       <Blogs />
       <ApplyModal />
-      
     </>
   );
 }

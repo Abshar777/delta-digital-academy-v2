@@ -4,73 +4,57 @@ import { motion } from "framer-motion";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-gsap.registerPlugin(ScrollTrigger);
+if (typeof window !== "undefined") {
+  gsap.registerPlugin(ScrollTrigger);
+}
 
 interface Professional {
   name: string;
   role: string;
-  description: string;
   specilisation: string;
+  description: string;
   image: string;
 }
 
 const PROFESSIONALS: Professional[] = [
   {
-    name: "Minhath ",
+    name: "Minhath",
     role: "Academic Head",
-    specilisation: "Specialized in Performance Marketing",
-    // description:
-    //   "Guides the academy’s vision by upholding high curriculum standards and delivering training that bridges theory with real world industry execution.",
+    specilisation: "Performance Marketing",
     description:
-      "Handled and scaled ₹5.2 Crore+ ad  budgets across Meta & Google platforms, driving measurable growth for brands across multiple industries.",
+      "Handled and scaled ₹5.2 Crore+ ad budgets across Meta & Google platforms, driving measurable growth for brands across multiple industries.",
     image: "/m1-1.png",
   },
   {
     name: "A R S Ashik",
     role: "Chief Mentor",
-    specilisation: "Specialized in SEO and Digital Advertising ",
+    specilisation: "SEO & Digital Advertising",
     description:
-      "A multi-certified digital marketing expert with certifications from Google, LinkedIn, NIDM, SEMrush, HubSpot Academy, and NSDC. Managed ₹10 Lakhs+ ad spend, with hands on expertise in Google Ads, SEO, analytics, and conversion optimisation, blending certified knowledge with real world execution.",
+      "Multi-certified digital marketing expert with certifications from Google, LinkedIn, NIDM, SEMrush, HubSpot Academy, and NSDC. Managed ₹10 Lakhs+ ad spend with hands-on expertise.",
     image: "/m2.png",
   },
-  // {
-  //   name: "AARIA",
-  //   role: "Chief Evangelist & Strategy Officer",
-  //   description:
-  //     "Drives SaaS strategy, product roadmap, and go-to-market for no-code AI agents.",
-  //   image:
-  //     "/m3.png",
-
-  // },
 ];
 
 const AIProfessionalSection: React.FC = () => {
   const sectionRef = useRef<HTMLElement>(null);
-  const cardsRef = useRef<HTMLDivElement[]>([]);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.from(".ai-title", {
-        scrollTrigger: {
-          trigger: ".ai-title",
-          start: "top 85%",
-        },
+      gsap.from(".mentor-header", {
         y: 50,
         opacity: 0,
         duration: 1,
         ease: "power3.out",
+        scrollTrigger: { trigger: sectionRef.current, start: "top 80%" },
       });
 
-      gsap.from(cardsRef.current, {
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top 70%",
-        },
-        y: 100,
+      gsap.from(".mentor-card", {
+        y: 60,
         opacity: 0,
-        duration: 0.8,
         stagger: 0.2,
-        ease: "back.out(1.7)",
+        duration: 1,
+        ease: "power3.out",
+        scrollTrigger: { trigger: ".mentor-grid", start: "top 80%" },
       });
     }, sectionRef);
 
@@ -78,79 +62,60 @@ const AIProfessionalSection: React.FC = () => {
   }, []);
 
   return (
-    <section
-      id="mentors"
-      ref={sectionRef}
-      className="bg-[#171717] -mt-1 w-full py-32 md:px-6 px-3 overflow-hidden"
-    >
-      <div className="flex  mb-20 ai-title flex-col justify-center w-full items-center gap-3">
-        <p className=" w-fit  bg-primary px-6 text-center  rounded-full text-foreground bg md:text-md text-sm py-2 font-semibold font-poppins">
-          our mentors
-        </p>
-        <h2 className="md:text-5xl text-4xl  text-center font-black text-background capitalize tracking-tighter leading-none">
-          Meet Our Leading <br />
-          <span className="text-[#C1F42D]">
-            Digital Marketing Professionals
+    <section id="mentors" ref={sectionRef} className="py-28 md:py-36 relative">
+      <div className="absolute inset-0 line-grid opacity-30" />
+      {/* Gold ambient */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-[#C6F83A]/[0.03] rounded-full blur-[120px]" />
+
+      <div className="max-w-6xl mx-auto px-6 md:px-12 relative z-10">
+        {/* Header */}
+        <div className="mentor-header text-center mb-20">
+          <span className="text-[#C6F83A] text-xs tracking-[0.3em] uppercase font-medium">
+            Our Mentors
           </span>
-        </h2>
-      </div>
+          <h2 className="text-4xl md:text-6xl font-bold text-[#171717] mt-4 tracking-tight">
+            Meet Our Leading
+            <br />
+            <span className="italic text-[#C6F83A]">Digital Marketing</span> Professionals
+          </h2>
+        </div>
 
-      <div className="grid md:px-10 px-2 grid-cols-1 sm:grid-cols-2 md:gap-0 gap-8 lg:grid-cols-2 md:w-3/4 mx-auto">
-        {PROFESSIONALS.map((pro, index) => (
-          <div
-            key={index}
-            ref={(el) => {
-              if (el) cardsRef.current[index] = el;
-            }}
-            className="flex flex-col items-center text-center group"
-          >
-            {/* Image Container with Offset Shape */}
-            <div className="relative mb-10">
-              {/* Background Offset Shape */}
-              <motion.div
-                className="absolute -top-3 -right-3 w-48 h-56 bg-[#C1F42D] rounded-3xl z-0"
-                animate={{
-                  rotate: [2, -2, 2],
-                  scale: [1, 1.02, 1],
-                }}
-                transition={{
-                  duration: 4,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
-              />
-
-              {/* Image Frame */}
-              <motion.div
-                className="relative w-48 h-56 bg-white rounded-3xl overflow-hidden border-4 border-[#171717] z-10"
-                whileHover={{ scale: 1.05, rotate: -2 }}
-                transition={{ type: "spring", stiffness: 300, damping: 20 }}
-              >
+        {/* Cards */}
+        <div className="mentor-grid grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          {PROFESSIONALS.map((pro, index) => (
+            <motion.div
+              key={index}
+              whileHover={{ y: -6 }}
+              transition={{ duration: 0.4 }}
+              className="mentor-card glass-panel rounded-3xl overflow-hidden group"
+            >
+              {/* Image */}
+              <div className="relative h-80 md:h-96 overflow-hidden">
                 <img
                   src={pro.image}
                   alt={pro.name}
-                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                  className="w-full h-full object-cover object-top transition-all duration-700 group-hover:scale-105"
                 />
-              </motion.div>
-            </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-[#FFFFF]/80 via-transparent to-transparent" />
+              </div>
 
-            {/* Info */}
-            <div className="space-y- flex flex-col items-center justify-center">
-              <h3 className="text-xl font-black text-white uppercase tracking-tight">
-                {pro.name}
-              </h3>
-              <p className="text-[#C1F42D] text-xs font-bold uppercase tracking-widest leading-snug min-h-[30px]">
-                {pro.role}
-              </p>
-              <p className="text-[#C1F42D] text-xs font-bold uppercase tracking-widest leading-snug min-h-[30px]">
-                {pro.specilisation}
-              </p>
-              <p className="text-gray-400 w-3/4 text-center text-sm leading-relaxed font-medium">
-                {pro.description}
-              </p>
-            </div>
-          </div>
-        ))}
+              {/* Info */}
+              <div className="p-6">
+                <p className="text-[#00b359] text-xs tracking-[0.2em] uppercase font-medium mb-1">
+                  {pro.role}
+                </p>
+                <h3 className="text-[#171717] text-2xl font-bold mb-1">{pro.name}</h3>
+                <p className="text-[#2db300] text-xs tracking-wider mb-4">
+                  {pro.specilisation}
+                </p>
+                <div className="editorial-line mb-4" />
+                <p className="text-[#171717]/90 text-sm leading-relaxed font-light">
+                  {pro.description}
+                </p>
+              </div>
+            </motion.div>
+          ))}
+        </div>
       </div>
     </section>
   );

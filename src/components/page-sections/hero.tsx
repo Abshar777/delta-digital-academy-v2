@@ -1,9 +1,6 @@
 "use client";
 import React, { useEffect, useRef } from "react";
-import { Button } from "../ui/button";
-import { FaDownload } from "react-icons/fa";
 import Timer from "./timer";
-import { IoIosPaperPlane } from "react-icons/io";
 import { motion } from "framer-motion";
 import gsap from "gsap";
 import { useRouter } from "next/navigation";
@@ -11,141 +8,103 @@ import { downloadBrochure } from "@/const";
 
 const Hero = () => {
   const containerRef = useRef(null);
-  const textRef = useRef(null);
+  const router = useRouter();
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      const tl = gsap.timeline({
-        defaults: { ease: "expo.out", duration: 1.5 },
-      });
+      const tl = gsap.timeline({ defaults: { ease: "power4.out", duration: 1.4 } });
 
-      // 1. Initial State: Hide text content
-      gsap.set(".animate-text", { y: 100, opacity: 0 });
-      gsap.set(".animate-btn", { scale: 0.9, opacity: 0 });
+      gsap.set(".hero-text", { y: 80, opacity: 0 });
+      gsap.set(".hero-btn", { y: 30, opacity: 0 });
+      gsap.set(".hero-line", { scaleX: 0 });
 
-      // 2. The Sequence
-      tl.to(".animate-text", {
-        y: 0,
-        opacity: 1,
-        stagger: 0.1,
-        delay: 0.2,
-      })
-        .to(
-          ".animate-btn",
-          {
-            scale: 1,
-            opacity: 1,
-            stagger: 0.1,
-          },
-          "-=1"
-        ) // Overlap with text animation
-        .from(
-          ".grid-bg",
-          {
-            scale: 1.2,
-            opacity: 0,
-            duration: 2,
-          },
-          0
-        ); // Start at the very beginning
+      tl.to(".hero-text", { y: 0, opacity: 1, stagger: 0.15, delay: 0.3 })
+        .to(".hero-line", { scaleX: 1, duration: 1, ease: "expo.inOut" }, "-=0.8")
+        .to(".hero-btn", { y: 0, opacity: 1, stagger: 0.1 }, "-=0.6");
     }, containerRef);
 
     return () => ctx.revert();
   }, []);
 
-  const router = useRouter();
-
   return (
-    <div
-      ref={containerRef}
-      className="w-full flex flex-col min-h-screen bg-foreground overflow-hidden"
-    >
-      {/* Immersive Background Wrapper */}
-      <div className="w-full bg-background rounded-b-[4rem] grid-bg flex flex-col justify-center items-center md:h-[90vh] h-[100vh] relative">
-        {/* Subtitle with Framer Motion for a subtle float */}
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 0.5 }}
-          className="md:text-lg text-sm font-bold font-poppins animate-text"
-        >
-          School of <span className="text-primary">Digital </span>Marketing
-        </motion.p>
+    <div ref={containerRef} className="w-full flex flex-col min-h-screen relative overflow-hidden">
+      {/* Background texture */}
+      <div className="absolute inset-0 dot-grid opacity-50" />
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#FDFFF7]" />
 
-        {/* Desktop Headings - Masked Reveal Effect */}
-        <div className="overflow-hidden py-1">
-          <h1 className="md:text-7xl text-4xl italic relative text-center md:flex hidden items-center uppercase font-bold expanded-one animate-text">
-            Building &nbsp;
-            <img src="/peace.gif" className="w-20 h-20" alt="" /> the Future
+      {/* Ambient gold glow */}
+      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#C6F83A]/5 rounded-full blur-[120px]" />
+      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-[#C6F83A]/3 rounded-full blur-[100px]" />
+
+      {/* Main Hero Content */}
+      <div className="flex-1 flex flex-col justify-center items-center relative z-10 px-6 pt-24 pb-16">
+        {/* Eyebrow */}
+        <motion.div className="hero-text mb-6">
+          <span className="text-[#C6F83A] text-xs md:text-sm font-medium tracking-[0.35em] uppercase">
+            School of Digital Marketing &mdash; Dubai
+          </span>
+        </motion.div>
+
+        {/* Main headline */}
+        <div className="overflow-hidden">
+          <h1 className="hero-text md:text-[5.5rem] text-[2.8rem] leading-[0.95] text-center font-bold italic text-[#171717] tracking-tight">
+            Building the Future
           </h1>
         </div>
-
-        <div className="overflow-hidden py-1">
-          <h1 className="md:text-7xl text-4xl italic relative text-center md:flex hidden items-center uppercase font-bold expanded-one animate-text">
+        <div className="overflow-hidden mt-1">
+          <h1 className="hero-text md:text-[5.5rem] text-[2.8rem] leading-[0.95] text-center font-bold italic tracking-tight">
             Marketing{" "}
-            <span className="text-primary color-flicker-text ps-2">
-              Leaders.
-            </span>
+            <span className="gold-shimmer">Leaders</span>
           </h1>
         </div>
 
-        {/* Mobile Heading */}
-        <div className="overflow-hidden">
-          <h1 className="md:text-7xl md:mt-0 mt-2 text-[2.7rem] leading-[2.7rem] italic relative text-center md:hidden flex items-center uppercase font-bold expanded-one animate-text">
-            Building the &nbsp;Marketing Leaders
-          </h1>
-        </div>
+        {/* Divider */}
+        <div className="hero-line w-24 h-px bg-[#C6F83A]/40 mt-8 mb-6 origin-center" />
 
+        {/* Sub text */}
         <div className="overflow-hidden">
-          <p className="text-center font-semibold md:text-lg text-sm font-poppins md:mt-2 mt-4 animate-text">
-            Built in Collaboration with Top Digital Marketing Professionals With
-            Delta Digital Academy
+          <p className="hero-text text-center text-[#171717]/90 md:text-lg text-sm max-w-xl font-light leading-relaxed">
+            Built in collaboration with top digital marketing professionals.
+            <br className="hidden md:block" />
+            Your journey to excellence starts here.
           </p>
         </div>
 
-        {/* Buttons with Staggered Scale-In */}
-        <div className="flex md:flex-row flex-col mt-8 gap-4 justify-center items-center">
-          <div className="animate-btn">
-            <Button
-              size={"xl"}
-              onClick={() => {
-                router.push("#enroll");
-              }}
-              className="rounded-full hover:bg-foreground w-full hover:text-background hover:shadow-[1px_1px_0_0_#000] transition-all text-md ease-in font-semibold font-poppins text-foreground border-2 border-foreground shadow-[3px_3px_0_0_#000]"
-            >
-              Apply Now
-              <IoIosPaperPlane />
-            </Button>
-          </div>
-          <div className="animate-btn">
-            <Button
-              size={"xl"}
-              onClick={downloadBrochure}
-              className="rounded-full hover:bg-foreground hover:text-background hover:shadow-[1px_1px_0_0_#000] transition-all text-md bg-white ease-in font-semibold font-poppins text-foreground border-2 border-foreground shadow-[3px_3px_0_0_#000]"
-            >
-              Download Brochure <FaDownload />
-            </Button>
-          </div>
+        {/* Buttons */}
+        <div className="flex md:flex-row flex-col mt-10 gap-4 justify-center items-center">
+          <button
+            onClick={() => router.push("#enroll")}
+            className="hero-btn btn-luxury px-10 py-4 rounded-full text-sm tracking-widest cursor-pointer"
+          >
+            Apply Now
+          </button>
+          <button
+            onClick={downloadBrochure}
+            className="hero-btn btn-outline-gold px-10 py-4 rounded-full text-sm tracking-wider cursor-pointer"
+          >
+            Download Brochure
+          </button>
         </div>
       </div>
 
-      {/* Footer Section with Slide-up Animation */}
+      {/* Bottom bar with timer */}
       <motion.div
         initial={{ y: 50, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8, ease: "easeOut" }}
-        className="w-full md:px-20 px-4 md:py-20 py-10 flex md:flex-row flex-col md:gap-10 gap-2 justify-between items-center md:h-[10vh] bg-foreground"
+        className="w-full md:px-20 px-6 py-8 flex md:flex-row flex-col md:gap-10 gap-4 justify-between items-center border-t-2 border-[#171717] relative z-10"
       >
-        <h2 className="text-white md:text-4xl text-2xl font-semibold font-poppins">
-          Be A Skilled Professional <br />
-          <span className="text-primary font-bold ">
-            Learn Today. Lead Tomorrow
-          </span>
-        </h2>
-        <div className="flex items-center gap-10">
-          <Timer />
+        <div>
+          <p className="text-[#171717]/90 text-xs uppercase tracking-[0.2em] mb-1">
+            Begin your transformation
+          </p>
+          <h2 className="text-[#171717] md:text-2xl text-xl font-semibold">
+            Learn Today.{" "}
+            <span className="text-[#C6F83A] italic">Lead Tomorrow.</span>
+          </h2>
         </div>
+        <Timer />
       </motion.div>
     </div>
   );

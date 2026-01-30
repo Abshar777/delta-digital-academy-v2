@@ -1,74 +1,37 @@
 import type { Metadata } from "next";
-import {
-  Geist,
-  Geist_Mono,
-  Poppins,
-  Special_Gothic_Expanded_One,
-} from "next/font/google";
+import { Playfair_Display, Outfit } from "next/font/google";
 import "./globals.css";
 import IndexLayout from "@/components/layout/indexLayout";
-import { Inter } from "next/font/google";
 
-const poppins = Poppins({
-  variable: "--font-poppins",
+const playfair = Playfair_Display({
+  variable: "--font-playfair",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  weight: ["400", "500", "600", "700", "800", "900"],
+  style: ["normal", "italic"],
 });
-const specialGothicExpandedOne = Special_Gothic_Expanded_One({
-  variable: "--font-special-gothic-expanded-one",
+
+const outfit = Outfit({
+  variable: "--font-outfit",
   subsets: ["latin"],
-  weight: ["400"],
+  weight: ["300", "400", "500", "600", "700", "800"],
 });
 
 export const metadata: Metadata = {
-  title: "Delta Digital Academy",
+  title: "Delta&nbsp;Digital&nbsp;Academy | Dubai's Best Digital Marketing Academy",
   description:
-    "Best Digital Marketing Academy in Dubai,Building The Future Marketing Leaders, Dubai's Top Digital Marketing Academy",
+    "Building The Future Marketing Leaders. Dubai's Top Digital Marketing Academy offering world-class training, mentorship, and placement support.",
   keywords: [
-    "Digital Marketing",
-    "Marketing",
-    "Digital Marketing Academy",
-    "Dubai",
-    "Marketing Leaders",
-    "Dubai's Top Digital Marketing Academy",
-    // add some keywords
+    "Digital Marketing Academy Dubai",
     "Delta Digital Academy",
-    "Digital Marketing Academy",
-    "Digital Marketing Course",
-    "Digital Marketing Courses",
-    "Digital Marketing Courses Dubai",
-    "Digital Marketing Courses in Dubai",
-    "Digital Marketing Courses in Dubai UAE",
-    "Digital Marketing Courses in Dubai UAE Online",
-    "Digital Marketing Courses in Dubai UAE Offline",
-    "Digital Marketing Courses in Dubai UAE Online and Offline",
-    "Digital Marketing Courses in Dubai UAE Online and Offline with Certificate",
-    "Digital Marketing Courses in Dubai UAE Online and Offline with Certificate and Placement",
-    "Digital Marketing Courses in Dubai UAE Online and Offline with Certificate and Placement and Job Guarantee",
-    "Digital Marketing Courses in Dubai UAE Online and Offline with Certificate and Placement and Job Guarantee and Placement Support",
-    "Digital Marketing Courses in Dubai UAE Online and Offline with Certificate and Placement and Job Guarantee and Placement Support and Job Placement",
-    "Digital Marketing Courses in Dubai UAE Online and Offline with Certificate and Placement and Job Guarantee and Placement Support and Job Placement and Job Placement Support",
-    "Digital Marketing Courses in Dubai UAE Online and Offline with Certificate and Placement and Job Guarantee and Placement Support and Job Placement and Job Placement Support and Job Placement Support",
-    "Digital Marketing Courses in Dubai UAE Online and Offline with Certificate and Placement and Job Guarantee and Placement Support and Job Placement and Job Placement Support and Job Placement Support and Job Placement Support",
-    "Digital Marketing Courses in Dubai UAE Online and Offline with Certificate and Placement and Job Guarantee and Placement Support and Job Placement and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support",
-    "Digital Marketing Courses in Dubai UAE Online and Offline with Certificate and Placement and Job Guarantee and Placement Support and Job Placement and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support",
-    "Digital Marketing Courses in Dubai UAE Online and Offline with Certificate and Placement and Job Guarantee and Placement Support and Job Placement and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support",
-    "Digital Marketing Courses in Dubai UAE Online and Offline with Certificate and Placement and Job Guarantee and Placement Support and Job Placement and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support",
-    "Digital Marketing Courses in Dubai UAE Online and Offline with Certificate and Placement and Job Guarantee and Placement Support and Job Placement and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support",
-    "Digital Marketing Courses in Dubai UAE Online and Offline with Certificate and Placement and Job Guarantee and Placement Support and Job Placement and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support",
-    "Digital Marketing Courses in Dubai UAE Online and Offline with Certificate and Placement and Job Guarantee and Placement Support and Job Placement and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support",
-    "Digital Marketing Courses in Dubai UAE Online and Offline with Certificate and Placement and Job Guarantee and Placement Support and Job Placement and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support",
-    "Digital Marketing Courses in Dubai UAE Online and Offline with Certificate and Placement and Job Guarantee and Placement Support and Job Placement and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support",
-    "Digital Marketing Courses in Dubai UAE Online and Offline with Certificate and Placement and Job Guarantee and Placement Support and Job Placement and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support",
-    "Digital Marketing Courses in Dubai UAE Online and Offline with Certificate and Placement and Job Guarantee and Placement Support and Job Placement and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support",
-    "Digital Marketing Courses in Dubai UAE Online and Offline with Certificate and Placement and Job Guarantee and Placement Support and Job Placement and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support",
-    "Digital Marketing Courses in Dubai UAE Online and Offline with Certificate and Placement and Job Guarantee and Placement Support and Job Placement and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support",
-    "Digital Marketing Courses in Dubai UAE Online and Offline with Certificate and Placement and Job Guarantee and Placement Support and Job Placement and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support",
-    "Digital Marketing Courses in Dubai UAE Online and Offline with Certificate and Placement and Job Guarantee and Placement Support and Job Placement and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support",
-    "Digital Marketing Courses in Dubai UAE Online and Offline with Certificate and Placement and Job Guarantee and Placement Support and Job Placement and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support",
-    "Digital Marketing Courses in Dubai UAE Online and Offline with Certificate and Placement",
+    "Digital Marketing Course Dubai",
+    "Digital Marketing Training UAE",
+    "SEO Course Dubai",
+    "Google Ads Training",
+    "Social Media Marketing Course",
+    "Best Digital Marketing Institute Dubai",
   ],
 };
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -77,7 +40,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={` ${specialGothicExpandedOne.variable} ${poppins.variable} relative antialiased`}
+        className={`${playfair.variable} ${outfit.variable} relative antialiased`}
       >
         <IndexLayout>{children}</IndexLayout>
       </body>

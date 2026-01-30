@@ -1,7 +1,12 @@
 "use client";
 import React, { useState, useEffect, useRef } from "react";
 import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { cn } from "@/lib/utils";
+
+if (typeof window !== "undefined") {
+  gsap.registerPlugin(ScrollTrigger);
+}
 
 const FAQS = [
   {
@@ -18,11 +23,11 @@ const FAQS = [
   },
   {
     q: "What if I miss classes?",
-    a: "We ensure that you’ll be placed in an alternate batch covering the same topics, or we’ll schedule extra sessions depending on the mentor’s availability.",
+    a: "We ensure that you'll be placed in an alternate batch covering the same topics, or we'll schedule extra sessions depending on the mentor's availability.",
   },
   {
     q: "What makes Delta Digital Academy stand out?",
-    a: "We offer a 100% internship guarantee for selected students, setting us apart from traditional institutes. Along with this, our training is built on real-world learning — live projects, practical assignments, agency-style workflows, and continuous mentor support. Our industry-aligned curriculum ensures students develop job-ready skills from day one.",
+    a: "We offer a 100% internship guarantee for selected students. Our training is built on real-world learning — live projects, practical assignments, agency-style workflows, and continuous mentor support.",
   },
 ];
 
@@ -32,120 +37,91 @@ const FAQSection: React.FC = () => {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
+      gsap.from(".faq-header", {
+        y: 50,
+        opacity: 0,
+        duration: 1,
+        ease: "power3.out",
+        scrollTrigger: { trigger: sectionRef.current, start: "top 80%" },
+      });
       gsap.from(".faq-item", {
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top 80%",
-        },
         y: 30,
         opacity: 0,
         stagger: 0.1,
         duration: 0.8,
         ease: "power2.out",
+        scrollTrigger: { trigger: ".faq-list", start: "top 85%" },
       });
     }, sectionRef);
-
     return () => ctx.revert();
   }, []);
 
   return (
-    <div id="faq" className="bg-foreground">
-      <section
-        ref={sectionRef}
-        className="
-          py-16 px-4
-          md:py-32 md:px-20
-          bg-background rounded-b-[4rem] grid-bg
-        "
-      >
-        <div className="w-full grid grid-cols-1 md:grid-cols-2  md:gap-10 mx-auto">
-          {/* LEFT */}
-          <div className="mb-12 md:mb-20">
-            <div className="bg-primary text-black rounded-full p-3 font-poppins inline-block font-black uppercase tracking-widest text-xs mb-2">
-              JOIN THE ELITE
-            </div>
-
-            <h2
-              className="
-                text-4xl sm:text-5xl md:text-7xl
-                font-black text-[#171717]
-                capitalize tracking-tighter leading-none
-              "
-            >
-              frequently <br /> asked questions
+    <section id="faq" ref={sectionRef} className="py-28 md:py-36 relative">
+      <div className="absolute inset-0 dot-grid opacity-20" />
+      <div className="max-w-6xl mx-auto px-6 md:px-12 relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
+          {/* Left */}
+          <div className="faq-header">
+            <span className="text-[#C6F83A] text-xs tracking-[0.3em] uppercase font-medium">
+              Have Questions?
+            </span>
+            <h2 className="text-4xl md:text-6xl font-bold text-[#171717] mt-4 tracking-tight leading-[1.1]">
+              Frequently
+              <br />
+              Asked
+              <br />
+              <span className="italic text-[#C6F83A]">Questions</span>
             </h2>
-
-            <p className="text-sm mt-3 font-semibold font-poppins">
-              Got questions? We've got answers for you.
+            <p className="text-[#171717]/90 text-sm mt-6 font-light">
+              Got questions? We&rsquo;ve got answers for you.
             </p>
           </div>
 
-          {/* RIGHT */}
-          <div className="space-y-4 md:space-y-6">
+          {/* Right */}
+          <div className="faq-list space-y-3">
             {FAQS.map((faq, i) => (
-              <div key={i} className="faq-item group">
-                <div
-                  onClick={() =>
-                    setOpenIndex(openIndex === i ? null : i)
-                  }
-                  className={`
-                    w-full relative cursor-pointer overflow-hidden
-                    transition-all duration-300 ease-in
-                    flex flex-col text-left p-3
-                    shadow-[4px_4px_0px_0px_#171717]
-                    rounded-2xl border-2 border-[#171717]
-                    ${
-                      openIndex === i
-                        ? "bg-[#C1F42D]"
-                        : "bg-white hover:bg-[#C1F42D]/30"
-                    }
-                  `}
+              <div key={i} className="faq-item">
+                <button
+                  onClick={() => setOpenIndex(openIndex === i ? null : i)}
+                  className={cn(
+                    "w-full text-left p-5 rounded-xl border transition-all duration-300",
+                    openIndex === i
+                      ? "bg-[#C6F83A]/5 border-[#171717]/15"
+                      : "bg-transparent border-[#171717]/10 hover:border-[#C6F83A]"
+                  )}
                 >
-                  <div className="w-full flex justify-between items-center gap-4">
-                    <span
-                      className="
-                        text-base sm:text-lg
-                        font-poppins font-black
-                      "
-                    >
+                  <div className="flex justify-between items-center gap-4">
+                    <span className="text-[#171717] text-sm md:text-base font-medium">
                       {faq.q}
                     </span>
-
                     <span
-                      className={`
-                        text-2xl sm:text-3xl md:text-4xl
-                        transition-transform duration-300
-                        ${openIndex === i ? "rotate-45" : ""}
-                      `}
+                      className={cn(
+                        "text-[#C6F83A] text-xl transition-transform duration-300 flex-shrink-0",
+                        openIndex === i ? "rotate-45" : ""
+                      )}
                     >
                       +
                     </span>
                   </div>
 
-                  <span
+                  <div
                     className={cn(
-                      `
-                        mt-3 bg-white rounded-2xl
-                        border-2 border-[#171717]
-                        transition-all duration-300
-                        p-3 sm:p-4
-                        text-sm sm:text-base md:text-lg
-                        font-medium leading-relaxed
-                      `,
-                      openIndex === i
-                        ? "scale-y-100 opacity-100"
-                        : "absolute scale-y-0 opacity-0"
+                      "overflow-hidden transition-all duration-300",
+                      openIndex === i ? "max-h-60 mt-4" : "max-h-0"
                     )}
                   >
-                    {faq.a}
-                  </span>
-                </div>
+                    <p className="text-[#171717]/90 text-sm leading-relaxed font-light">
+                      {faq.a}
+                    </p>
+                  </div>
+                </button>
               </div>
             ))}
           </div>
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
   );
 };
 

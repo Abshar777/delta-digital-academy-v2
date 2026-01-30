@@ -1,6 +1,5 @@
-
-import React from 'react';
-import { Service } from '@/types';
+import React from "react";
+import { Service } from "@/types";
 
 interface ServiceCardProps {
   service: Service;
@@ -8,26 +7,13 @@ interface ServiceCardProps {
 
 const ServiceCard: React.FC<ServiceCardProps> = ({ service }) => {
   return (
-    <div className="group w-full relative rounded-2xl bg-white border-2 border-[#171717] p-6 shadow-[4px_4px_0px_0px_#000] hover:shadow-[8px_8px_0px_0px_#000] neo-shadow transition-all duration-300 ease-in-out neo-shadow-hover flex flex-col justify-between h-full">
-      <div>
-        <div className="mb-6 p-2 bg-[#C1F42D] border-2 border-[#171717] inline-block shadow-[4px_4px_0px_0px_rgba(23,23,23,1)]">
-          {service.icon}
-        </div>
-        <h3 className="md:text-2xl text-md font-black text-[#171717] mb-4 uppercase tracking-tighter leading-none">
-          {service.title}
-        </h3>
-        {/* <p className="text-[#171717] text-sm font-medium leading-relaxed mb-6">
-          {service.description}
-        </p> */}
+    <div className="glass-panel rounded-2xl p-6 h-full flex flex-col gap-4 group cursor-default hover:border-[#C6F83A] transition-colors">
+      <div className="w-10 h-10 rounded-xl bg-[#C6F83A]/10 border border-[#171717]/20 flex items-center justify-center text-[#C6F83A] group-hover:bg-[#C6F83A]/20 transition-colors">
+        {service.icon}
       </div>
-      
-     
-
-      {/* <div className="absolute top-4 right-4 opacity-10 group-hover:opacity-100 transition-opacity">
-        <svg className="w-8 h-8 text-[#171717]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-        </svg>
-      </div> */}
+      <h3 className="text-[#171717] text-sm md:text-base font-semibold leading-tight">
+        {service.title}
+      </h3>
     </div>
   );
 };

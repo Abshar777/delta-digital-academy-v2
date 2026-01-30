@@ -4,32 +4,33 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
+import "swiper/css";
 
-gsap.registerPlugin(ScrollTrigger);
+if (typeof window !== "undefined") {
+  gsap.registerPlugin(ScrollTrigger);
+}
 
-const CERTIFICATES = [
+const BLOGS = [
   {
-    title:
-      "Meta Andromeda: Meta’s AI Supercomputer Shaping the Future of Digital Technology",
+    title: "Meta Andromeda: Meta's AI Supercomputer Shaping the Future of Digital Technology",
     issuer: "Delta Digital Academy",
     date: "2026",
     image: "/bl1.png",
-    id: "CERT-001",
+    id: "BLOG-001",
   },
   {
-    title: "Meet Your Algorithm: Instagram’s New Power Feature Explained",
+    title: "Meet Your Algorithm: Instagram's New Power Feature Explained",
     issuer: "Delta Digital Academy",
     date: "2026",
     image: "/bl2.png",
-    id: "CERT-002",
+    id: "BLOG-002",
   },
   {
-    title:
-      "Apple Rumored to Explore Billion-Dollar AI Deal with Google to Upgrade Siri",
+    title: "Apple Rumored to Explore Billion-Dollar AI Deal with Google to Upgrade Siri",
     issuer: "Delta Digital Academy",
     date: "2026",
     image: "/bl3.png",
-    id: "CERT-003",
+    id: "BLOG-003",
   },
 ];
 
@@ -38,121 +39,80 @@ const Blogs: React.FC = () => {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.from(".cert-card", {
-        scrollTrigger: {
-          trigger: containerRef.current,
-          start: "top 80%",
-          end: "bottom 20%",
-          toggleActions: "play none none reverse",
-        },
-        y: 100,
+      gsap.from(".blog-header", {
+        y: 50,
         opacity: 0,
-        scale: 0.8,
+        duration: 1,
+        ease: "power3.out",
+        scrollTrigger: { trigger: containerRef.current, start: "top 80%" },
+      });
+      gsap.from(".blog-card", {
+        y: 60,
+        opacity: 0,
+        scale: 0.95,
         stagger: 0.15,
         duration: 1,
-        ease: "back.out(1.7)",
+        ease: "power3.out",
+        scrollTrigger: { trigger: ".blog-slider", start: "top 85%" },
       });
     }, containerRef);
-
     return () => ctx.revert();
   }, []);
 
   return (
-    <div id="blogs" className="bg-foreground -mt-1 pt-2">
-      <section
-        ref={containerRef}
-        className="
-          py-20 px-4
-          md:py-32 md:px-20
-          grid-bg bg-background
-          rounded-t-[4rem] rounded-b-[4rem]
-          border-b-4 border-[#171717]
-          overflow-hidden relative
-        "
-      >
-        <div className="w-full mx-auto relative z-10">
-          {/* HEADER */}
-          <div className="text-center flex flex-col items-center justify-center gap-3">
-            <p className="w-fit bg-primary px-5 py-2 rounded-full text-foreground text-sm md:text-md font-semibold font-poppins">
-              our blogs
-            </p>
+    <section id="blogs" ref={containerRef} className="py-28 md:py-36 relative overflow-hidden">
+      <div className="absolute inset-0 line-grid opacity-20" />
+      <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+        {/* Header */}
+        <div className="blog-header text-center mb-16">
+          <span className="text-[#C6F83A] text-xs tracking-[0.3em] uppercase font-medium">
+            Our Blog
+          </span>
+          <h2 className="text-4xl md:text-6xl font-bold text-[#171717] mt-4 tracking-tight">
+            Stay Updated with
+            <br />
+            <span className="italic text-[#C6F83A]">Latest Insights</span>
+          </h2>
+        </div>
 
-            <h2
-              className="
-                text-4xl sm:text-5xl md:text-6xl
-                font-black text-[#171717]
-                uppercase tracking-tighter leading-none
-                italic mb-10 md:mb-16
-              "
-            >
-              Stay Updated with <br />
-              <span className="text-[#C1F42D] bg-[#171717] px-4 py-1 inline-block transform -rotate-1 mt-2">
-                Our&nbsp;Latest&nbsp;Insights
-              </span>
-            </h2>
-          </div>
-
-          {/* SLIDER */}
+        {/* Slider */}
+        <div className="blog-slider">
           <Swiper
             breakpoints={{
-              640: { slidesPerView: 2.2 },
+              640: { slidesPerView: 2 },
               1024: { slidesPerView: 3 },
             }}
             modules={[Autoplay]}
-            spaceBetween={16}
+            spaceBetween={20}
             loop
-            slidesPerView={1.15}
+            slidesPerView={1.1}
             autoplay={{ delay: 4000, disableOnInteraction: false }}
-            className="!pb-12 md:!pb-16"
+            className="!pb-8"
           >
-            {CERTIFICATES.map((cert) => (
-              <SwiperSlide
-                key={cert.id}
-                className="cert-card group relative"
-              >
-                <div
-                  className="
-                    bg-white relative
-                    border-4 border-[#171717]
-                    rounded-2xl overflow-hidden
-                    p-2 neo-shadow
-                    transition-all
-                    min-h-[22rem] sm:min-h-[26rem] md:min-h-[30rem]
-                    shadow-[6px_6px_0px_0px_#000]
-                    group-hover:scale-[.99]
-                    group-hover:shadow-[9px_9px_0px_0px_#000]
-                  "
-                >
-                  <div className="w-full h-[22rem] sm:h-[26rem] md:h-[30rem] flex items-end">
-                    <div className="px-2 pb-4 z-[1] border-2 border-foreground bg-background rounded-sm w-full">
-                      <span className="text-[10px] font-black uppercase tracking-widest text-[#C1F42D] bg-[#171717] px-2 py-0.5 mb-2 inline-block">
-                        {cert.issuer}
-                      </span>
-
-                      <h3 className="text-base sm:text-lg font-black uppercase tracking-tight leading-none mb-1 text-[#171717]">
-                        {cert.title}
-                      </h3>
-
-                      <div className="flex justify-between items-center text-[10px] font-bold text-gray-500 uppercase tracking-widest">
-                        <span>Issued: {cert.date}</span>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="absolute inset-0 z-[0]">
-                    <img
-                      src={cert.image}
-                      alt={cert.title}
-                      className="w-full h-full object-cover"
-                    />
+            {BLOGS.map((blog) => (
+              <SwiperSlide key={blog.id} className="blog-card">
+                <div className="glass-panel rounded-2xl overflow-hidden group cursor-default h-[400px] md:h-[480px] relative">
+                  <img
+                    src={blog.image}
+                    alt={blog.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-all duration-700"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#FFFFFF]/80 via-transparent to-transparent" />
+                  <div className="absolute bottom-0 left-0 right-0 p-6">
+                    <span className="text-[#C6F83A] text-[10px] tracking-[0.2em] uppercase font-medium">
+                      {blog.issuer} &mdash; {blog.date}
+                    </span>
+                    <h3 className="text-[#171717] text-base md:text-lg font-semibold mt-2 leading-tight">
+                      {blog.title}
+                    </h3>
                   </div>
                 </div>
               </SwiperSlide>
             ))}
           </Swiper>
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
   );
 };
 
