@@ -75,8 +75,9 @@ const Hero = () => {
         {/* Desktop Headings - Masked Reveal Effect */}
         <div className="overflow-hidden py-1">
           <h1 className="md:text-7xl text-4xl italic relative text-center md:flex hidden items-center uppercase font-bold expanded-one animate-text">
-            Building &nbsp;
-            <img src="/peace.gif" className="w-20 h-20" alt="" /> the Future
+            Building&nbsp;
+            {/* <img src="/peace.gif" className="w-20 h-20" alt="" />  */}
+            the Future
           </h1>
         </div>
 

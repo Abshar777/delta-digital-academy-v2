@@ -1,17 +1,19 @@
 "use client";
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useEffect, useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import {
   Play,
   Star,
   TrendingUp,
   ChevronLeft,
   ChevronRight,
+  X,
 } from "lucide-react";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
+import { FaPlay } from "react-icons/fa";
 
 export const TESTIMONIALS = [
   {
@@ -45,7 +47,7 @@ export const TESTIMONIALS = [
     id: 4,
     name: "Ebin Alex",
     role: "Student",
-    profit: "+$1,150",
+    profit: "+$1,150",  
     thumbnail: "/t5.mp4",
     quote:
       "The support team is incredible. They are available 24/7 whenever I have a question about my trades.",
@@ -53,7 +55,17 @@ export const TESTIMONIALS = [
 ];
 
 const Testimonials: React.FC = () => {
+  const [activeVideo, setActiveVideo] = useState<string | null>(null);
+
+  // Lock body scroll when modal is open
+  useEffect(() => {
+    document.body.style.overflow = activeVideo ? "hidden" : "auto";
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [activeVideo]);
   return (
+    <>
     <div id="v-testimonials" className=" bg-foreground pb-4">
       <section className="md:py-24 py-16 -mt-2 bg-background grid-bg rounded-b-[4rem] overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 mb-16">
@@ -133,7 +145,7 @@ const Testimonials: React.FC = () => {
           >
             {TESTIMONIALS.map((t) => (
               <SwiperSlide key={t.id}>
-                <motion.div className="group h-full">
+                <motion.div onClick={() => setActiveVideo(t.thumbnail)} className="group h-full cursor-pointer">
                   <div className="relative rounded-[2.5rem] border-4 border-foreground shadow-[3px_3px_0_0_#000] overflow-hidden aspect-[4/5] bg-slate-100  transition-transform duration-500 group-hover:scale-[1.01]">
                     <video
                       src={t.thumbnail}
@@ -149,11 +161,7 @@ const Testimonials: React.FC = () => {
 
                     {/* Play Button */}
                     <div
-                      onClick={() => {
-                        if (typeof window !== "undefined") {
-                          window.open(t.thumbnail, "_blank");
-                        }
-                      }}
+                      
                       className="absolute inset-0 flex items-center justify-center"
                     >
                       <motion.div
@@ -161,7 +169,7 @@ const Testimonials: React.FC = () => {
                         whileTap={{ scale: 0.9 }}
                         className="w-16 h-16 md:w-20 md:h-20 bg-primary  rounded-full flex items-center justify-center shadow-2xl shadow-red-500/50 cursor-pointer"
                       >
-                        <Play className="text-white fill-white w-6 h-6 md:w-8 md:h-8 ml-1" />
+                        <FaPlay className="text-foreground/50  w-6 h-6 md:w-8 md:h-8 ml-1" />
                       </motion.div>
                     </div>
 
@@ -188,7 +196,45 @@ const Testimonials: React.FC = () => {
           </Swiper>
         </div>
       </section>
+            
     </div>
+     <AnimatePresence>
+        {activeVideo && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 max-h-[90vh] bg-black/80 backdrop-blur-sm flex items-center justify-center px-4"
+            onClick={() => setActiveVideo(null)}
+          >
+            <motion.div
+              initial={{ scale: 0.85, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.85, opacity: 0 }}
+              transition={{ type: "spring", stiffness: 120, damping: 18 }}
+              className="relative w-full max-w-4xl bg-black rounded-2xl overflow-hidden"
+              onClick={(e) => e.stopPropagation()}
+            >
+              {/* Close */}
+              <button
+                onClick={() => setActiveVideo(null)}
+                className="absolute top-4 right-4 z-10 bg-white/10 hover:bg-red-600 transition text-white p-2 rounded-full"
+              >
+                <X className="w-5 h-5" />
+              </button>
+
+              {/* Video with Sound */}
+              <video
+                src={activeVideo}
+                controls
+                autoPlay
+                className="w-full h-[80vh] object-contain"
+              />
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
   );
 };
 

@@ -15,6 +15,7 @@ import Graduates from "@/components/page-sections/graduates";
 import LifeGallery from "@/components/page-sections/gallery";
 import Blogs from "@/components/page-sections/blog";
 import ApplyModal from "@/components/page-sections/applyModal";
+import AISection from "@/components/page-sections/aiSection";
 
 export default function Home() {
   
@@ -23,6 +24,7 @@ export default function Home() {
       <Hero />
       <AboutUs />
       <Services />
+      <AISection />
       <Marquee text1=" Delta Digital Academy" text2="Delta Digital Academy" />
       <Courses />
       <VideoTestimonials />

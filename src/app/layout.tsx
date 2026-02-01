@@ -77,7 +77,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={` ${specialGothicExpandedOne.variable} ${poppins.variable} relative antialiased`}
+        className={` ${specialGothicExpandedOne.variable} ${poppins.variable} relative tt-magic-cursor antialiased`}
       >
         <IndexLayout>{children}</IndexLayout>
       </body>

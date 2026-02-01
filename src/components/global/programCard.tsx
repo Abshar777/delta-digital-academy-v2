@@ -65,7 +65,7 @@ const ProgramCard: React.FC<ProgramCardProps> = ({ title, duration, mode, stats,
         <img 
           src={image} 
           alt={title} 
-          className="w-full h-full object-cover  group-hover:scale-105 transition-all duration-700" 
+          className="w-full h-full object-cover  group-hover:scale-[1.01] transition-all duration-700" 
         />
         <div className="absolute inset-0 bg-[#C1F42D] mix-blend-multiply opacity-20 group-hover:opacity-0 transition-opacity"></div>
         {/* Floating Tag */}

@@ -22,7 +22,7 @@ const PROFESSIONALS: Professional[] = [
     // description:
     //   "Guides the academy’s vision by upholding high curriculum standards and delivering training that bridges theory with real world industry execution.",
     description:
-      "Handled and scaled ₹5.2 Crore+ ad  budgets across Meta & Google platforms, driving measurable growth for brands across multiple industries.",
+      "Handled and scaled 5.2 Crore+ ad  budgets across Meta & Google platforms, driving measurable growth for brands across multiple industries. Brings a strategic leadership mindset to mentoring teams and turning ad spend into predictable, sustainable business growth.",
     image: "/m1-1.png",
   },
   {
@@ -30,7 +30,7 @@ const PROFESSIONALS: Professional[] = [
     role: "Chief Mentor",
     specilisation: "Specialized in SEO and Digital Advertising ",
     description:
-      "A multi-certified digital marketing expert with certifications from Google, LinkedIn, NIDM, SEMrush, HubSpot Academy, and NSDC. Managed ₹10 Lakhs+ ad spend, with hands on expertise in Google Ads, SEO, analytics, and conversion optimisation, blending certified knowledge with real world execution.",
+      "A multi-certified digital marketing expert with certifications from Google, LinkedIn, NIDM, SEMrush, HubSpot Academy, and NSDC. Managed 10 Lakhs+ ad spend, with hands on expertise in Google Ads, SEO, analytics, and conversion optimisation, blending certified knowledge with real world execution.",
     image: "/m2.png",
   },
   // {
@@ -122,7 +122,7 @@ const AIProfessionalSection: React.FC = () => {
 
               {/* Image Frame */}
               <motion.div
-                className="relative w-48 h-56 bg-white rounded-3xl overflow-hidden border-4 border-[#171717] z-10"
+                className="relative w-50 h-58 bg-white rounded-3xl overflow-hidden border-4 border-[#171717] z-10"
                 whileHover={{ scale: 1.05, rotate: -2 }}
                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
               >
@@ -145,7 +145,7 @@ const AIProfessionalSection: React.FC = () => {
               <p className="text-[#C1F42D] text-xs font-bold uppercase tracking-widest leading-snug min-h-[30px]">
                 {pro.specilisation}
               </p>
-              <p className="text-gray-400 w-3/4 text-center text-sm leading-relaxed font-medium">
+              <p className="text-gray-400 w-[90%] text-center text-sm leading-relaxed font-medium">
                 {pro.description}
               </p>
             </div>
