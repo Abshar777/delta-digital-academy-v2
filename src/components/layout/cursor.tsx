@@ -10,7 +10,7 @@ const Cursor = () => {
 
   useEffect(() => {
     if (typeof window === "undefined") return;
-    // if (window.innerWidth <= 1024) return;
+    if (window.innerWidth <= 1024) return;
 
     const ball = ballRef.current;
     if (!ball) return;
@@ -42,7 +42,7 @@ const Cursor = () => {
     const mouseMove = (e: MouseEvent) => {
       mouse.x = e.clientX;
       mouse.y = e.clientY;
-      console.log(mouse.x, mouse.y);
+      // console.log(mouse.x, mouse.y);
     };
 
     const update = () => {
@@ -50,11 +50,13 @@ const Cursor = () => {
         pos.x += (mouse.x - pos.x) * ratio;
         pos.y += (mouse.y - pos.y) * ratio;
         gsap.set(ball, { x: pos.x, y: pos.y });
+        document.body.style.cursor = "none";
       }
     };
 
     gsap.ticker.add(update);
     window.addEventListener("mousemove", mouseMove);
+    
 
     
     
@@ -70,7 +72,7 @@ const Cursor = () => {
       el.addEventListener("mouseenter", () => {
         gsap.to(ball, { scale: 0, opacity: 0, duration: 0.3 });
       });
-
+      document.body.style.cursor = "pointer";
       el.addEventListener("mouseleave", () => {
         gsap.to(ball, { scale: 1, opacity: BALL.opacity, duration: 0.3 });
       });

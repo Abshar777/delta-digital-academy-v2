@@ -48,7 +48,7 @@ export const TESTIMONIALS = [
     name: "Ebin Alex",
     role: "Student",
     profit: "+$1,150",  
-    thumbnail: "/t5.mp4",
+    thumbnail: "/t6.mp4",
     quote:
       "The support team is incredible. They are available 24/7 whenever I have a question about my trades.",
   },
