@@ -16,7 +16,7 @@ const Hero = () => {
   useEffect(() => {
     const ctx = gsap.context(() => {
       const tl = gsap.timeline({
-        defaults: { ease: "expo.out", duration: 1.5 },
+        defaults: { ease: "expo.out", duration: 1.5,delay:4.2 },
       });
 
       // 1. Initial State: Hide text content

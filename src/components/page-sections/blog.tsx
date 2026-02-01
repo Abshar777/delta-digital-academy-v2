@@ -56,8 +56,10 @@ const Blogs: React.FC = () => {
 
     return () => ctx.revert();
   }, []);
+  
 
   return (
+    <>
     <div id="blogs" className="bg-foreground -mt-1 pt-2">
       <section
         ref={containerRef}
@@ -153,6 +155,8 @@ const Blogs: React.FC = () => {
         </div>
       </section>
     </div>
+    {/* <PostModal post={null} onClose={() => {}} /> */}
+    </>
   );
 };
 
