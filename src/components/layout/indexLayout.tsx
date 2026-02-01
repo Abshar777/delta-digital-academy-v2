@@ -5,12 +5,14 @@ import TopBar from "../global/topBar";
 import BottomBar from "./bottomBar";
 import IntroPreloader from "./preloader";
 import Cursor from "./cursor";
+import { Toaster } from "sonner";
 
 const IndexLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <>
     {/* <IntroPreloader  /> */}
       {/* <TopBar /> */}
+      <Toaster position="top-center" />
       <Cursor/>
       <Nav />
       {children}

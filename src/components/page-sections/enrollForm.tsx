@@ -71,6 +71,7 @@ const EnrollForm: React.FC = () => {
           Message: formData.message || "",
         }),
       });
+      
 
       toast.success("Application submitted successfully!");
 
