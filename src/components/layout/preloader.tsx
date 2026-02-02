@@ -34,6 +34,7 @@ export const Preloader: React.FC = () => {
         className="fixed inset-0 z-[1000] flex flex-col items-center justify-center bg-[#171717] text-[#fdfff7]"
         exit={{
           y: "-100%",
+          borderRadius:"0 0 50% 50%",
           transition: { duration: 1.2, ease: [0.76, 0, 0.24, 1] },
         }}
       >

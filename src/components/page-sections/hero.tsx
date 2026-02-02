@@ -8,6 +8,8 @@ import { motion } from "framer-motion";
 import gsap from "gsap";
 import { useRouter } from "next/navigation";
 import { downloadBrochure } from "@/const";
+import Image from "next/image";
+import GW from "@/../public/gw.png";
 
 const Hero = () => {
   const containerRef = useRef(null);
@@ -16,7 +18,7 @@ const Hero = () => {
   useEffect(() => {
     const ctx = gsap.context(() => {
       const tl = gsap.timeline({
-        defaults: { ease: "expo.out", duration: 1.5,delay:4.2 },
+        defaults: { ease: "expo.out", duration: 1.5, delay: 4.15 },
       });
 
       // 1. Initial State: Hide text content
@@ -28,7 +30,7 @@ const Hero = () => {
         y: 0,
         opacity: 1,
         stagger: 0.1,
-        delay: 0.2,
+        delay: 4,
       })
         .to(
           ".animate-btn",
@@ -37,7 +39,7 @@ const Hero = () => {
             opacity: 1,
             stagger: 0.1,
           },
-          "-=1"
+          "-1",
         ) // Overlap with text animation
         .from(
           ".grid-bg",
@@ -46,7 +48,7 @@ const Hero = () => {
             opacity: 0,
             duration: 2,
           },
-          0
+          0,
         ); // Start at the very beginning
     }, containerRef);
 
@@ -67,9 +69,9 @@ const Hero = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.5 }}
-          className="md:text-lg text-sm font-bold font-poppins animate-text"
+          className=" bg-primary mb-2 py-2 px-4 flex items-center gap-2 rounded-full  text-sm font-semibold font-poppins animate-text"
         >
-          School of <span className="text-primary">Digital </span>Marketing
+          <Image src={GW} alt="logo" width={20} height={20} />  Guinness World Record Holder
         </motion.p>
 
         {/* Desktop Headings - Masked Reveal Effect */}
