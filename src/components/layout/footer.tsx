@@ -28,7 +28,7 @@ const Footer: React.FC = () => {
             </div>
           </div>
 
-          <div className="grid grid-cols-2 gap-12">
+          <div className="grid md:grid-cols-2 md:gap-12 gap-4">
             <div className="space-y-6">
               <h5 className="text-[#C1F42D] font-black uppercase tracking-widest text-sm">
                 Navigation

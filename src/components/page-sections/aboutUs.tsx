@@ -89,11 +89,11 @@ const AboutUs = () => {
                 <h3 className="text-2xl font-bold font-poppins">Vision</h3>
                 <p className="text-xs mt-2 font-semibold font-poppins leading-relaxed">
                   Our vision is to build a future where digital education is
-                  accessible to anyone   students, professionals, homemakers,
-                  and entrepreneurs  regardless of time or circumstance. With
+                  accessible to everyone, including students, professionals, homemakers,
+                  and entrepreneurs regardless of time or circumstance. With
                   the goal of shaping confident future marketers, we created a
                   flexible, welcoming space that overcomes Dubai’s traditional
-                  learning limitations and offers high-quality digital marketing
+                  learning limitations and offers high quality digital marketing
                   education to all who aspire to grow.
                 </p>
               </div>
