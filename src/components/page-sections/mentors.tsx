@@ -30,7 +30,7 @@ const PROFESSIONALS: Professional[] = [
     role: "Chief Mentor",
     specilisation: "Specialized in SEO and Digital Advertising ",
     description:
-      "A multi-certified digital marketing expert with certifications from Google, LinkedIn, NIDM, SEMrush, HubSpot Academy, and NSDC. Managed 10 Lakhs+ ad spend, with hands on expertise in Google Ads, SEO, analytics, and conversion optimisation, blending certified knowledge with real world execution.",
+      "A multi-certified digital marketing expert with certifications from Google, LinkedIn, NIDM, SEMrush, HubSpot Academy, and NSDC. Managed 3.5 Crore+ ad spend, with hands on expertise in Google Ads, SEO, analytics, and conversion optimisation, blending certified knowledge with real world execution.",
     image: "/m2.png",
   },
   // {
