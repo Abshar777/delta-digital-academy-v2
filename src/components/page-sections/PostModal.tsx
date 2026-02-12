@@ -1,9 +1,24 @@
-import React from "react";
-import { Post } from "@/types";
+import React, { useEffect } from "react";
+
 import "react-quill-new/dist/quill.snow.css";
 import { IoClose } from "react-icons/io5";
 import { FaUserShield } from "react-icons/fa";
 
+
+
+
+export interface Post {
+  _id: string;
+  title: string;
+  description: string;
+  content: string;
+  photo: string;
+  tags: string[];
+  createdAt: string;
+  updatedAt: string;
+  author: string;
+  __v?: number;
+}
 interface PostModalProps {
   post: Post | null;
   onClose: () => void;
@@ -11,6 +26,8 @@ interface PostModalProps {
 
 const PostModal: React.FC<PostModalProps> = ({ post, onClose }) => {
   if (!post) return null;
+
+ 
 
   return (
     <div className="fixed inset-0 z-[100] flex items-center justify-center p-0 sm:p-4 md:p-8 overflow-hidden">
@@ -107,10 +124,10 @@ const PostModal: React.FC<PostModalProps> = ({ post, onClose }) => {
 
             <div>
               <p className="text-zinc-100 font-black text-lg sm:text-xl uppercase tracking-tighter">
-                {post.author}
+                Delta Digital Academy
               </p>
               <p className="text-zinc-600 text-[10px] sm:text-xs font-black uppercase tracking-widest mt-1">
-                Node Synced:{" "}
+               Created:{" "}
                 {new Date(post.createdAt).toLocaleDateString("en-US", {
                   month: "long",
                   day: "numeric",
