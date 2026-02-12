@@ -151,6 +151,26 @@
   }
 }
 
+.bulbe-flcker{
+  animation: bulbe-flcker .3s 2 ease-in-out;
+  animation-delay: 1.2s;
+}
+
+@keyframes bulbe-flcker {
+  0%{
+    text-shadow: 0 0 20px rgba(193,244,45,0.4);
+    color: #C1F42D !important;
+  }
+  50%{
+    text-shadow: 0 0 0px transparent;
+    color: white;
+  }
+  100%{
+    text-shadow: 0 0 20px rgba(193,244,45,0.4);
+    color: #C1F42D !important;
+  }
+}
+
 .hero-bg {
   background-image: radial-gradient(
       at 100% 0%,
