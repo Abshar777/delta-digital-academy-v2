@@ -174,7 +174,7 @@ const Blogs: React.FC = () => {
               autoplay={{ delay: 4000, disableOnInteraction: false }}
               className="!pb-12 md:!pb-16"
             >
-              {CERTIFICATES.map((cert) => (
+              {posts.map((cert) => (
                 <SwiperSlide
                   key={cert._id}
                   onClick={() => setSelectedPost(cert)}
