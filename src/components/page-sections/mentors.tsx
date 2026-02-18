@@ -96,7 +96,7 @@ const AIProfessionalSection: React.FC = () => {
         </h2>
       </div>
 
-      <div className="grid md:px-10 px-2 grid-cols-1 sm:grid-cols-2 md:gap-0 gap-8 lg:grid-cols-2 md:w-3/4 mx-auto">
+      <div className="grid md:px-10 px-2 grid-cols-1 sm:grid-cols-2   md:grid-cols-3 md:gap-8 gap-8 lg:grid-cols-3 md:w-3/4 mx-auto">
         {PROFESSIONALS.map((pro, index) => (
           <div
             key={index}
@@ -143,10 +143,10 @@ const AIProfessionalSection: React.FC = () => {
               <p className="text-[#C1F42D] text-xs font-bold uppercase tracking-widest leading-snug min-h-[30px]">
                 {pro.role}
               </p>
-              <p className="text-[#C1F42D] text-xs font-bold uppercase tracking-widest leading-snug min-h-[30px]">
+              <p className="text-[#C1F42D] mb-2 text-xs font-bold uppercase tracking-widest leading-snug min-h-[30px]">
                 {pro.specilisation}
               </p>
-              <p className="text-gray-400 w-[90%] text-center text-sm leading-relaxed font-medium">
+              <p className="text-gray-400 w-[98%] text-center text-sm leading-relaxed font-medium">
                 {pro.description}
               </p>
             </div>
