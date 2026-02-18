@@ -33,15 +33,16 @@ const PROFESSIONALS: Professional[] = [
       "A multi-certified digital marketing expert with certifications from Google, LinkedIn, NIDM, SEMrush, HubSpot Academy, and NSDC. Managed 3.5 Crore+ ad spend, with hands on expertise in Google Ads, SEO, analytics, and conversion optimisation, blending certified knowledge with real world execution.",
     image: "/m2.png",
   },
-  // {
-  //   name: "AARIA",
-  //   role: "Chief Evangelist & Strategy Officer",
-  //   description:
-  //     "Drives SaaS strategy, product roadmap, and go-to-market for no-code AI agents.",
-  //   image:
-  //     "/m3.png",
+  {
+    name: "Mohammed Fuad",
+    role: "Mentor",
+    specilisation:"Specialized in web design and digital marketing solutions",
+    description:
+      "Experienced digital marketing professional providing personalized guidance on SEO, PPC, social media, web design and AI tools, delivering ROI backed and data driven strategies. Hands on experience managing projects for both international and local clients. Mentored over 500+ students, equipping them with industry ready digital marketing and web design expertise.",
+    image:
+      "/m4.jpeg",
 
-  // },
+  },
 ];
 
 const AIProfessionalSection: React.FC = () => {
