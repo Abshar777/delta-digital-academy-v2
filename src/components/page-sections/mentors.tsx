@@ -43,6 +43,16 @@ const PROFESSIONALS: Professional[] = [
       "/m4.jpeg",
 
   },
+  {
+    name: "Surabhi Thekkuveettil",
+    role: "Mentor",
+    specilisation:"Specialized in Google Ads and Performance Marketing",
+    description:
+      "A Google Ads specialist experienced in SEM, SEO, and paid advertising, managing large search, display, and video campaigns for international clients with monthly budgets of $50,000–$70,000+. Skilled in improving CTR, conversions, and campaign performance.",
+    image:
+      "/m6.png",
+
+  },
 ];
 
 const AIProfessionalSection: React.FC = () => {
@@ -96,14 +106,14 @@ const AIProfessionalSection: React.FC = () => {
         </h2>
       </div>
 
-      <div className="grid md:px-10 px-2 grid-cols-1 sm:grid-cols-2   md:grid-cols-3 md:gap-8 gap-8 lg:grid-cols-3 md:w-3/4 mx-auto">
+      <div className="grid md:px-10 px-2 grid-cols-1 sm:grid-cols-2   md:grid-cols-2 md:gap-8 gap-8 lg:grid-cols-2 md:w-3/4 mx-auto">
         {PROFESSIONALS.map((pro, index) => (
           <div
             key={index}
             ref={(el) => {
               if (el) cardsRef.current[index] = el;
             }}
-            className="flex flex-col items-center text-center group"
+            className="flex flex-col md:mb-6 items-center text-center group"
           >
             {/* Image Container with Offset Shape */}
             <div className="relative mb-10">
