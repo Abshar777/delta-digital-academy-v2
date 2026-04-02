@@ -53,6 +53,26 @@ const PROFESSIONALS: Professional[] = [
       "/m6.png",
 
   },
+  {
+    name: "Aaliya Parveen",
+    role: "Mentor",
+    specilisation:"Specialist in Meta’s Advertising Ecosystem and Performance Marketing. Backed by a strong teaching and mentorship background.",
+    description:
+      "A performance marketing specialist with deep expertise in Meta Ads, Social Media Marketing (SMM), Search Engine Optimization (SEO), and data-driven paid advertising strategies. Known for building and scaling high-performing campaigns within the Meta ecosystem, focused on driving measurable growth, engagement, and conversions. Backed by a strong foundation in teaching and training, combines industry experience with a structured, easy-to-understand approach to learning. Over 3+ years, has trained 2000+ students across multiple batches, delivering practical, real-time insights through hands-on projects and industry-focused mentorship.",
+    image:
+      "/m8.png",
+
+  },
+  {
+    name: "Mary Mruthula Roy",
+    role: "Mentor",
+    specilisation:"Specialized in Google, Meta Advertising Platforms and Performance Marketing",
+    description:
+      "Strong expertise in Google Ads, Meta Ads, and Search Engine Optimization (SEO), with experience in managing client campaigns across multiple industries. Focused on executing data-driven strategies to improve engagement, conversions, and overall campaign performance. Experienced in managing enterprise-level advertising budgets ranging from 70,000 AUD to 90,000 AUD per month, with a focus on performance marketing, remarketing strategies, audience targeting, and conversion optimization to help businesses scale through targeted digital campaigns.",
+    image:
+      "/m5.png",
+
+  },
 ];
 
 const AIProfessionalSection: React.FC = () => {
