@@ -80,10 +80,27 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+
+        <Script id="google-tag-manager" strategy="beforeInteractive">
+          {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+          })(window,document,'script','dataLayer','GTM-TH8GHZPB');`}
+        </Script>
+      </head>
       <body
         className={` ${specialGothicExpandedOne.variable} ${poppins.variable} relative tt-magic-cursor antialiased`}
       >
-        <meta name="google-site-verification" content="fctD9fHzgi3_GimMtFrmJM8nLYjj08ZqtWvMOviqSkA" />
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-TH8GHZPB"
+            height="0"
+            width="0"
+            style={{ display: "none", visibility: "hidden" }}
+          />
+        </noscript>
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZYFELV91D4"></script>
         <script async id="google-analytics" >
           {`
@@ -93,6 +110,8 @@ export default function RootLayout({
             gtag('config', 'G-ZYFELV91D4');
           `}
         </script>
+
+
         <IndexLayout>{children}</IndexLayout>
       </body>
     </html>
