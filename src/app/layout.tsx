@@ -69,7 +69,7 @@ export const metadata: Metadata = {
     "Digital Marketing Courses in Dubai UAE Online and Offline with Certificate and Placement and Job Guarantee and Placement Support and Job Placement and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support",
     "Digital Marketing Courses in Dubai UAE Online and Offline with Certificate and Placement",
   ],
-   verification: {
+  verification: {
     google: "fctD9fHzgi3_GimMtFrmJM8nLYjj08ZqtWvMOviqSkA",
   },
 };
@@ -83,18 +83,16 @@ export default function RootLayout({
       <body
         className={` ${specialGothicExpandedOne.variable} ${poppins.variable} relative tt-magic-cursor antialiased`}
       >
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-ZYFELV91D4"
-          strategy="afterInteractive"
-        />
-        <Script id="google-analytics" strategy="afterInteractive">
+        <meta name="google-site-verification" content="fctD9fHzgi3_GimMtFrmJM8nLYjj08ZqtWvMOviqSkA" />
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZYFELV91D4"></script>
+        <script async id="google-analytics" >
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
             gtag('config', 'G-ZYFELV91D4');
           `}
-        </Script>
+        </script>
         <IndexLayout>{children}</IndexLayout>
       </body>
     </html>
