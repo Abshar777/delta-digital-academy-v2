@@ -69,6 +69,9 @@ export const metadata: Metadata = {
     "Digital Marketing Courses in Dubai UAE Online and Offline with Certificate and Placement and Job Guarantee and Placement Support and Job Placement and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support and Job Placement Support",
     "Digital Marketing Courses in Dubai UAE Online and Offline with Certificate and Placement",
   ],
+   verification: {
+    google: "fctD9fHzgi3_GimMtFrmJM8nLYjj08ZqtWvMOviqSkA",
+  },
 };
 export default function RootLayout({
   children,
