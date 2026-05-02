@@ -8,6 +8,7 @@ import {
 import "./globals.css";
 import IndexLayout from "@/components/layout/indexLayout";
 import { Inter } from "next/font/google";
+import Script from "next/script";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -79,6 +80,18 @@ export default function RootLayout({
       <body
         className={` ${specialGothicExpandedOne.variable} ${poppins.variable} relative tt-magic-cursor antialiased`}
       >
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-ZYFELV91D4"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-ZYFELV91D4');
+          `}
+        </Script>
         <IndexLayout>{children}</IndexLayout>
       </body>
     </html>
