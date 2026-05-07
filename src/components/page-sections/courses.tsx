@@ -4,9 +4,12 @@ import {
   FaAd,
   FaEdit,
   FaGoogle,
+  FaImage,
   FaLinkedin,
   FaSearchengin,
+  FaShoppingCart,
   FaUserGraduate,
+  FaVideo,
   FaWordpress,
 } from "react-icons/fa";
 import { FaMeta } from "react-icons/fa6";
@@ -94,6 +97,21 @@ const Courses = () => {
           label: "Fundamentals of Marketing",
           value: "",
           icon: <SiMarketo className="w-6 h-6 " />,
+        },
+        {
+          label: "AI Video Creation",
+          value: "",
+          icon: <FaVideo className="w-6 h-6 " />,
+        },
+        {
+          label: "AI Image Creation",
+          value: "",
+          icon: <FaImage className="w-6 h-6 " />,
+        },
+        {
+          label: "E-Commerce Creation",
+          value: "",
+          icon: <FaShoppingCart className="w-6 h-6 " />,
         },
       ],
     },

@@ -140,6 +140,72 @@ export const SERVICES = [
       </svg>
     ),
   },
+  {
+    id: "ai-video-creation",
+    title: "AI Video Creation",
+    description:
+      "Produce cinematic-quality videos at lightning speed. We harness the power of AI to create stunning, scroll-stopping video content that drives engagement and brand recall.",
+    tags: ["AI", "Video", "Automation"],
+    icon: (
+      <svg
+        className="md:w-8 md:h-8 h-6 w-6"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth={2.5}
+          d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M3 8a2 2 0 012-2h8a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V8z"
+        />
+      </svg>
+    ),
+  },
+  {
+    id: "ai-image-creation",
+    title: "AI Image Creation",
+    description:
+      "Transform ideas into jaw-dropping visuals instantly. Our AI-powered image creation delivers on-brand, high-resolution graphics that elevate your marketing to the next level.",
+    tags: ["AI", "Design", "Visuals"],
+    icon: (
+      <svg
+        className="md:w-8 md:h-8 h-6 w-6"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth={2.5}
+          d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
+        />
+      </svg>
+    ),
+  },
+  {
+    id: "ecommerce-creation",
+    title: "E-Commerce Creation",
+    description:
+      "Launch a revenue-generating online store with zero friction. We build conversion-optimised e-commerce platforms that turn visitors into loyal, repeat customers.",
+    tags: ["Store", "Conversion", "Sales"],
+    icon: (
+      <svg
+        className="md:w-8 md:h-8 h-6 w-6"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth={2.5}
+          d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
+        />
+      </svg>
+    ),
+  },
 ];
 const Services = () => {
   const sectionRef = useRef(null);
