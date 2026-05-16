@@ -1,9 +1,7 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useStore } from "@/store";
-import Image from "next/image";
-import ModalImage from "@/../public/c1.webp";
 import { detectCountry, phoneNumber as contactWhatsApp } from "@/const";
 import { toast } from "sonner";
 
@@ -20,7 +18,20 @@ const ApplyModal: React.FC = () => {
     mode: "Online",
   });
 
-  // Country Detection
+  // Ensures the auto-open only fires once per page load
+  const hasAutoOpened = useRef(false);
+
+  // Auto-open modal once after 5 seconds
+  useEffect(() => {
+    if (hasAutoOpened.current) return;
+    const timer = setTimeout(() => {
+      setIsModalOpen(true);
+      hasAutoOpened.current = true;
+    }, 5000);
+    return () => clearTimeout(timer);
+  }, [setIsModalOpen]);
+
+  // Country Detection — runs whenever modal opens
   useEffect(() => {
     if (isModalOpen) {
       detectCountry()
@@ -28,14 +39,6 @@ const ApplyModal: React.FC = () => {
         .catch(() => setCallingCode("+971"));
     }
   }, [isModalOpen]);
-
-  useEffect(() => {
-    if (!isModalOpen) {
-      setTimeout(() => {
-        setIsModalOpen(true)
-      }, 5000);
-    }
-  }, [isModalOpen])
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>,
