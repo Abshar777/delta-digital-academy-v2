@@ -73,7 +73,7 @@ const AboutUs = () => {
             <h1 className="md:text-5xl text-4xl capitalize font-bold font-poppins leading-tight">
               Professional Digital Marketing <br />
               <span className="text-primary color-flicker-text">Courses</span>{" "}
-              in Dubai – Online &amp; Offline Classes
+              in Dubai
             </h1>
             <p className="md:text-sm text-xs mt-2 font-semibold font-poppins max-w-lg">
               Our digital marketing courses in Dubai are designed to help you
