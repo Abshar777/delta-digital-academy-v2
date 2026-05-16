@@ -189,7 +189,7 @@ const AISection = () => {
             <h2 className="md:text-6xl text-5xl font-black text-[#171717] uppercase tracking-tighter leading-none mb- italic">
               AI-Integrated Digital <br />
               <span className="text-primary bg-[#171717] md:px-4 px-2 py-1 inline-block transform -rotate-1 mt-2">
-                Marketing Program
+                Marketing Courses
               </span>
             </h2>
             <p className="text-[#171717]/90 text-sm md:text-base max-w-xl mx-auto font-light ">

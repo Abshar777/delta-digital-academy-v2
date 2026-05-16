@@ -29,6 +29,14 @@ const ApplyModal: React.FC = () => {
     }
   }, [isModalOpen]);
 
+  useEffect(() => {
+    if (!isModalOpen) {
+      setTimeout(() => {
+        setIsModalOpen(true)
+      }, 5000);
+    }
+  }, [isModalOpen])
+
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>,
   ) => {
@@ -124,7 +132,7 @@ const ApplyModal: React.FC = () => {
               </button>
 
               {/* LEFT IMAGE */}
-              
+
               {/* RIGHT FORM */}
               <div className="flex-1 p-4 md:p-12 overflow-y-auto">
                 <div className="mb-6 md:mb-7">

@@ -71,16 +71,17 @@ const AboutUs = () => {
               About Us
             </p>
             <h1 className="md:text-5xl text-4xl capitalize font-bold font-poppins leading-tight">
-              Dubai's{" "}
-              <span className="text-primary color-flicker-text">Best</span>{" "}
-              Academy <br />
-              for Digital Marketing
+              Professional Digital Marketing <br />
+              <span className="text-primary color-flicker-text">Courses</span>{" "}
+              in Dubai – Online &amp; Offline Classes
             </h1>
             <p className="md:text-sm text-xs mt-2 font-semibold font-poppins max-w-lg">
-              Delta Digital Academy is a powerhouse of creative thinkers,
-              marketers, and strategists dedicated to helping brands grow
-              online. From smart ads to stunning websites and engaging content,
-              we build everything your digital presence needs.
+              Our digital marketing courses in Dubai are designed to help you
+              master in-demand skills and build a successful career in the
+              digital industry. Delta Digital Academy offers both offline and
+              online marketing courses in Dubai, giving students the flexibility
+              to learn from anywhere or experience classroom-based training with
+              expert mentors.
             </p>
 
             <div className="mt-5 w-full grid grid-cols-1 md:grid-cols-2 gap-4 info-card-container">

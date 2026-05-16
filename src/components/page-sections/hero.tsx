@@ -101,8 +101,7 @@ const Hero = () => {
 
         <div className="overflow-hidden">
           <p className="text-center font-semibold md:text-lg text-sm font-poppins md:mt-2 mt-4 animate-text">
-            Built in Collaboration with Top Digital Marketing Professionals With
-            Delta Digital Academy
+            Learn from Industry Experts with Digital Marketing Courses in Dubai
           </p>
         </div>
 
