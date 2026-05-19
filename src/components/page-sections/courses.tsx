@@ -109,7 +109,7 @@ const Courses = () => {
           icon: <FaImage className="w-6 h-6 " />,
         },
         {
-          label: "E-Commerce Creation",
+          label: "E-Commerce Website Creation",
           value: "",
           icon: <FaShoppingCart className="w-6 h-6 " />,
         },
@@ -133,12 +133,12 @@ const Courses = () => {
             {PROGRAMS.map((program, idx) => (
               <div
                 key={idx}
-                //   className="reveal-scroll"
-                //   style={{
-                //     animation: `fadeInUp 0.6s ease forwards ${idx * 0.2}s`,
-                //     opacity: 0,
-                //     transform: "translateY(30px)",
-                //   }}
+              //   className="reveal-scroll"
+              //   style={{
+              //     animation: `fadeInUp 0.6s ease forwards ${idx * 0.2}s`,
+              //     opacity: 0,
+              //     transform: "translateY(30px)",
+              //   }}
               >
                 <ProgramCard {...program} index={idx} />
               </div>

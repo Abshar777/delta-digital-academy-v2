@@ -19,7 +19,7 @@ export const SERVICES = [
       "We build high-octane digital experiences. From rapid prototypes to enterprise-grade web applications, our code is as sharp as our design.",
     tags: ["React", "Next.js", "Performance"],
     icon: (
-     <FaWordpress className="md:w-8 md:h-8 h-6 w-6"/>
+      <FaWordpress className="md:w-8 md:h-8 h-6 w-6" />
     ),
   },
   {
@@ -51,7 +51,7 @@ export const SERVICES = [
       "Precision targeting that turns searches into sales. Our PPC campaigns are data-backed and ROI-driven to maximize every dollar spent.",
     tags: ["PPC", "Conversions", "Bidding"],
     icon: (
-      <FaGoogle className="md:w-8 md:h-8 h-6 w-6"/>
+      <FaGoogle className="md:w-8 md:h-8 h-6 w-6" />
     ),
   },
   {
@@ -83,7 +83,7 @@ export const SERVICES = [
       "Stop the scroll on Facebook & Instagram. We leverage Meta's powerful algorithm to scale your sales with surgical precision.",
     tags: ["Scaling", "FB/IG", "Retargeting"],
     icon: (
-      <FaMeta className="md:w-8 md:h-8 h-6 w-6"/>
+      <FaMeta className="md:w-8 md:h-8 h-6 w-6" />
     ),
   },
   {
@@ -115,7 +115,7 @@ export const SERVICES = [
       "We help founders and executives build an unshakeable digital presence that commands respect.",
     tags: ["Authority", "LinkedIn", "Strategy"],
     icon: (
-     <FaLinkedin className="md:w-8 md:h-8 h-6 w-6"/>
+      <FaLinkedin className="md:w-8 md:h-8 h-6 w-6" />
     ),
   },
   {
@@ -186,7 +186,7 @@ export const SERVICES = [
   },
   {
     id: "ecommerce-creation",
-    title: "E-Commerce Creation",
+    title: "E-Commerce Website Creation",
     description:
       "Launch a revenue-generating online store with zero friction. We build conversion-optimised e-commerce platforms that turn visitors into loyal, repeat customers.",
     tags: ["Store", "Conversion", "Sales"],
@@ -252,9 +252,9 @@ const Services = () => {
   }, []);
 
   return (
-    <section 
-    id="services"
-      ref={sectionRef} 
+    <section
+      id="services"
+      ref={sectionRef}
       className="md:px-6 px-4 lg:mt-0 mt-10 grid-bg perspective-1000"
     >
       <div className="md:max-w-7xl md:mx-auto">
@@ -284,7 +284,7 @@ const Services = () => {
             </motion.div>
           ))}
         </div>
-        
+
         <div className="h-10"></div>
       </div>
     </section>
