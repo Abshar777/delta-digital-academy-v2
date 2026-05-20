@@ -27,7 +27,7 @@ const ApplyModal: React.FC = () => {
     const timer = setTimeout(() => {
       setIsModalOpen(true);
       hasAutoOpened.current = true;
-    }, 20000);
+    }, 200000);
     return () => clearTimeout(timer);
   }, [setIsModalOpen]);
 
