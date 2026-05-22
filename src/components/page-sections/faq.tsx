@@ -21,7 +21,7 @@ const FAQS = [
     a: "We ensure that you’ll be placed in an alternate batch covering the same topics, or we’ll schedule extra sessions depending on the mentor’s availability.",
   },
   {
-    q: "What makes Delta Digital Academy stand out?",
+    q: "Why should I choose Delta for digital marketing courses in Dubai?",
     a: "We offer a 100% internship guarantee for selected students, setting us apart from traditional institutes. Along with this, our training is built on real-world learning — live projects, practical assignments, agency-style workflows, and continuous mentor support. Our industry-aligned curriculum ensures students develop job-ready skills from day one.",
   },
 ];

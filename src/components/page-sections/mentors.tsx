@@ -38,7 +38,7 @@ const PROFESSIONALS: Professional[] = [
     role: "Mentor",
     specilisation:"Specialized in web design and digital marketing solutions",
     description:
-      "Experienced digital marketing professional providing personalized guidance on SEO, PPC, social media, web design and AI tools, delivering ROI backed and data driven strategies. Hands on experience managing projects for both international and local clients. Mentored over 500+ students, equipping them with industry ready digital marketing and web design expertise.",
+      "Experienced digital marketing professional specializing in SEO, PPC, social media marketing, web design, and AI tools. Expert in delivering result driven strategies for businesses and guiding 2000+ students through industry focused digital marketing courses and online marketing courses, helping them build real world skills in SEO, web design, and performance marketing.",
     image:
       "/m4.jpeg",
 
@@ -58,7 +58,7 @@ const PROFESSIONALS: Professional[] = [
     role: "Mentor",
     specilisation:"Specialist in Meta’s Advertising Ecosystem and Performance Marketing. Backed by a strong teaching and mentorship background.",
     description:
-      "A performance marketing specialist with deep expertise in Meta Ads, Social Media Marketing (SMM), Search Engine Optimization (SEO), and data-driven paid advertising strategies. Known for building and scaling high-performing campaigns within the Meta ecosystem, focused on driving measurable growth, engagement, and conversions. Backed by a strong foundation in teaching and training, combines industry experience with a structured, easy-to-understand approach to learning. Over 3+ years, has trained 2000+ students across multiple batches, delivering practical, real-time insights through hands-on projects and industry-focused mentorship.",
+      "A performance marketing specialist with expertise in Meta Ads, Social Media Marketing , Search Engine Optimization , and data driven advertising strategies. Skilled in building and scaling high performing campaigns focused on growth, engagement, and conversions. With over 3+ years of experience, has trained 4000+ students through practical digital marketing courses and online marketing courses, delivering hands on industry focused mentorship and real time learning experiences",
     image:
       "/m8.png",
 
@@ -68,7 +68,7 @@ const PROFESSIONALS: Professional[] = [
     role: "Mentor",
     specilisation:"Specialized in Google, Meta Advertising Platforms and Performance Marketing",
     description:
-      "Strong expertise in Google Ads, Meta Ads, and Search Engine Optimization (SEO), with experience in managing client campaigns across multiple industries. Focused on executing data-driven strategies to improve engagement, conversions, and overall campaign performance. Experienced in managing enterprise-level advertising budgets ranging from 70,000 AUD to 90,000 AUD per month, with a focus on performance marketing, remarketing strategies, audience targeting, and conversion optimization to help businesses scale through targeted digital campaigns.",
+      "Experienced in Google Ads, Meta Ads, and SEO, delivering data driven strategies to improve conversions and campaign performance. Skilled in performance marketing, remarketing, audience targeting, and managing enterprise level ad budgets up to 90,000 AUD per month. Passionate about mentoring students through digital marketing courses and online marketing courses with practical industry expertise",
     image:
       "/m5.png",
 

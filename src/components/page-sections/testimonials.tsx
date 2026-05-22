@@ -26,7 +26,7 @@ const TESTIMONIALS = [
   {
     name: "jidesh Chettiyoden",
     role: "Product Lead",
-    text: "This course helped me get clarity about my career.  It feels more practical than online courses",
+    text: "Delta is the best digital marketing course in Dubai for anyone looking to build a successful career in SEO, Google Ads, social media marketing, and performance marketing",
     avatar: "/b3.png",
   },
   {
