@@ -22,7 +22,7 @@ const specialGothicExpandedOne = Special_Gothic_Expanded_One({
 });
 
 export const metadata: Metadata = {
-  title: "Professional Digital Marketing Courses in Dubai – Online & Offline Classes",
+  title: "Professional Digital Marketing Courses in Dubai | Online & Offline Classes",
   description:
     "Our digital marketing courses in Dubai are designed to help you master in-demand skills and build a successful career in the digital industry. Delta Digital Academy offers both offline and online marketing courses in Dubai, giving students the flexibility to learn from anywhere or experience classroom-based training with expert mentors.",
   keywords: [
