@@ -12,7 +12,7 @@ const IndexLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <>
     <Preloader  />
-    <PageTransitionLoader />
+   
       {/* <TopBar /> */}
       <Toaster position="top-center" />
       <Cursor/>
