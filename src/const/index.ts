@@ -9,7 +9,10 @@ export const navLinks = [
     name: "About",
     href: "#about",
   },
-
+  {
+    name: "SEO Course",
+    href: "/seo-course",
+  },
   {
     name: "Contact",
     href: "#enroll",
