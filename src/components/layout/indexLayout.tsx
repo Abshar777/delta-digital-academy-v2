@@ -6,11 +6,13 @@ import BottomBar from "./bottomBar";
 import {Preloader} from "./preloader";
 import Cursor from "./cursor";
 import { Toaster } from "sonner";
+import { PageTransitionLoader } from "./pageTransition";
 
 const IndexLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <>
     <Preloader  />
+    <PageTransitionLoader />
       {/* <TopBar /> */}
       <Toaster position="top-center" />
       <Cursor/>
