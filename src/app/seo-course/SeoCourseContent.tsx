@@ -3,6 +3,7 @@ import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { motion } from "framer-motion";
+import { LiaCertificateSolid } from "react-icons/lia";
 import {
   FaGoogle,
   FaSearch,
@@ -27,6 +28,12 @@ import { CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { downloadBrochure } from "@/const";
 import { useRouter } from "next/navigation";
+import Timer from "@/components/page-sections/timer";
+import ApplyModal from "@/components/page-sections/applyModal";
+import CTASection from "@/components/page-sections/cta";
+import EnrollForm from "@/components/page-sections/enrollForm";
+import TestimonialSection from "@/components/page-sections/testimonials";
+import FAQSection from "@/components/page-sections/faq";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -46,12 +53,50 @@ const SEO_TOPICS = [
 ];
 
 const FLEXIBLE_FEATURES = [
-  { label: "Classroom Training in Dubai", icon: <FaChalkboardTeacher className="w-5 h-5" /> },
-  { label: "Live Online Sessions", icon: <FaLaptop className="w-5 h-5" /> },
-  { label: "Weekend Batches", icon: <FaCalendarAlt className="w-5 h-5" /> },
-  { label: "Flexible Timings", icon: <FaClock className="w-5 h-5" /> },
-  { label: "Practical Assignments", icon: <FaTasks className="w-5 h-5" /> },
-  { label: "Certification Support", icon: <FaCertificate className="w-5 h-5" /> },
+  {
+    label: "Classroom Training in Dubai",
+    desc: "Expert-led in-person sessions at our Dubai campus with hands-on practice.",
+    icon: <FaChalkboardTeacher className="w-8 h-8" />,
+    span: "col-span-2 md:col-span-2 row-span-1",
+    theme: "lime",
+  },
+  {
+    label: " Certification Support",
+    
+     desc: "Globally recognised certifications to accelerate your career.",
+    icon: <LiaCertificateSolid className="w-8 h-8" />,
+    span: "col-span-2 md:col-span-1 row-span-3",
+    theme: "white",
+    img:"/g2.png"
+  },
+  {
+    label: "Weekend Batches",
+    desc: "Designed for working professionals who need flexibility.",
+    icon: <FaCalendarAlt className="w-7 h-7" />,
+    span: "col-span-1 row-span-1",
+    theme: "white",
+  },
+  {
+    label: "Flexible Timings",
+    desc: "Morning, evening, or weekend — your schedule, your choice.",
+    icon: <FaClock className="w-7 h-7" />,
+    span: "col-span-1 row-span-1",
+    theme: "white",
+  },
+  {
+    label: "Practical Assignments",
+    desc: "Real-world projects that build your portfolio from day one.",
+    icon: <FaTasks className="w-8 h-8" />,
+    span: "col-span-2 md:col-span-1 row-span-1",
+    theme: "lime",
+  },
+  {
+    label: "Live Online Sessions",
+   desc: "Join from anywhere — real-time interaction with mentors and peers.",
+    icon: <FaLaptop className="w-8 h-8" />,
+    span: "col-span-2 md:col-span-1 row-span-1",
+    theme: "white",
+  },
 ];
 
 const SEO_BENEFITS = [
@@ -124,10 +169,11 @@ const SeoCourseContent = () => {
   }, []);
 
   return (
+    <>
     <div ref={heroRef} className="w-full bg-foreground">
 
       {/* ── HERO ── */}
-      <div className="w-full bg-background grid-bg rounded-b-[4rem] flex flex-col justify-center items-center min-h-screen px-6 py-32 text-center relative overflow-hidden">
+      <div className="w-full bg-background grid-bg md:rounded-b-[4rem] rounded-b-[3rem] flex flex-col justify-center items-center min-h-screen px-6 py-32 text-center relative overflow-hidden">
         <motion.p
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
@@ -173,6 +219,23 @@ const SeoCourseContent = () => {
           </div>
         </div>
       </div>
+         <motion.div
+        initial={{ y: 50, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        className="w-full md:px-20 px-4 md:py-20 py-10 flex md:flex-row flex-col md:gap-10 gap-2 justify-between items-center md:h-[10vh] bg-foreground"
+      >
+        <h2 className="text-white md:text-4xl text-2xl font-semibold font-poppins">
+          Be A Skilled Professional <br />
+          <span className="text-primary font-bold ">
+            Learn Today. Lead Tomorrow
+          </span>
+        </h2>
+        <div className="flex items-center gap-10">
+          <Timer />
+        </div>
+      </motion.div>
 
       {/* ── WHY CHOOSE / CURRICULUM ── */}
       <div className="bg-foreground pt-4">
@@ -210,59 +273,95 @@ const SeoCourseContent = () => {
             </div>
           </div>
         </section>
-      </div>
-
-      {/* ── FLEXIBLE LEARNING ── */}
-      <div className="bg-foreground pt-4">
-        <section className="bg-background grid-bg md:rounded-t-[4rem] rounded-t-[3rem] md:px-20 px-6 py-16 md:py-24">
+           <section className="bg-white grid-bg md:rounded-b-[4rem] rounded-b-[3rem] md:px-20 px-6 py-16 md:py-24">
           <div className="max-w-7xl mx-auto">
-            <div className="section-title flex flex-col items-center text-center gap-3 mb-12">
-              <p className="w-fit bg-primary px-6 rounded-full text-foreground text-sm py-2 font-semibold font-poppins">
-                Flexible Learning
-              </p>
-              <h2 className="md:text-5xl text-3xl font-black text-[#171717] tracking-tighter leading-tight capitalize">
-                Best SEO Course for{" "}
-                <span className="text-primary color-flicker-text">Beginners</span>{" "}
-                &amp; Professionals
-              </h2>
-              <p className="text-[#171717]/70 max-w-2xl font-poppins text-sm md:text-base">
-                Whether you want to start a career in SEO, grow your business online, or become a
-                freelancer — our trusted online learning platform ensures flexible learning your way.
+
+            {/* heading row */}
+            <div className="section-title flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10">
+              <div>
+                <p className="w-fit bg-primary px-6 rounded-full text-foreground text-sm py-2 font-semibold font-poppins mb-4">
+                  Flexible Learning
+                </p>
+                <h2 className="md:text-6xl text-4xl font-black text-black tracking-tighter leading-none capitalize">
+                  Best SEO Course for<br />
+                  <span className="text-primary color-flicker-text">Beginners</span>{" "}
+                  &amp; Pros
+                </h2>
+              </div>
+              <p className="text-white/50 max-w-xs font-poppins text-sm md:text-base leading-relaxed md:text-right">
+                Whether you want to start a career, grow your business, or freelance — learn your way.
               </p>
             </div>
 
-            <div className="features-grid grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
-              {FLEXIBLE_FEATURES.map((f, i) => (
-                <motion.div
-                  key={i}
-                  whileHover={{ y: -6, transition: { duration: 0.2 } }}
-                  className="feature-card bg-white border-2 border-[#171717] shadow-[3px_3px_0_0_#000] rounded-xl p-5 flex flex-row items-center gap-4"
-                >
-                  <div className="bg-primary p-2.5 rounded-lg border border-[#171717] flex-shrink-0">
-                    {f.icon}
-                  </div>
-                  <p className="font-bold font-poppins text-[#171717] text-sm leading-snug">
-                    {f.label}
-                  </p>
-                </motion.div>
-              ))}
+            {/* bento grid */}
+            <div className="features-grid grid grid-cols-2 md:grid-cols-3 auto-rows-[180px] md:auto-rows-[200px] gap-3 md:gap-4">
+              {FLEXIBLE_FEATURES.map((f, i) => {
+                const isLime = f.theme === "lime";
+                const isDark = f.theme === "dark";
+                const bg = isLime ? "bg-primary " : isDark ? "bg-white border-[#171717] shadow-[4px_4px_0_0_#000]" : "bg-white border-[#171717] shadow-[4px_4px_0_0_#000]";
+                const textColor = isLime ? "text-[#171717]" : isDark ? "text-white" : "text-[#171717]";
+                const subColor = isLime ? "text-[#171717]/60" : isDark ? "text-white/50" : "text-[#171717]/60";
+                const iconBg = isLime ? "bg-[#171717]" : isDark ? "bg-primary" : "bg-primary";
+                const iconColor = isLime ? "text-primary" : isDark ? "text-[#171717]" : "text-[#171717]";
+                const border = isDark ? "border border-white/10" : "border-2 border-[#171717]";
+                const shadow = isDark ? "" : isLime ? "shadow-[4px_4px_0_0_#000]" : "shadow-[4px_4px_0_0_#000]";
+                return (
+                  <motion.div
+                    key={i}
+                    whileHover={{ scale: 1.02, transition: { duration: 0.18 } }}
+                    className={`feature-card relative ${f.span} ${bg} ${border} ${shadow} rounded-2xl p-6 flex flex-col justify-between overflow-hidden relative`}
+                  >
+                    {
+                      f.img && (
+              <div className="bg-black absolute  w-full h-full top-0 left-0 z-[0]">
+                        <img
+                  src={f.img}
+                  alt="Student"
+                  className="w-full opacity-40 h-full object-cover"
+                />
+              </div>
+                      )
+                    }
+                    {/* large faded number */}
+                    <span className={`absolute z-[10] top-2 right-4 text-7xl font-black opacity-[0.06] select-none ${f.img ? "text-white" : textColor} leading-none`}>
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+
+                    <div className={` z-[10] relative w-12 h-12 rounded-xl ${iconBg} flex items-center justify-center flex-shrink-0 ${border}`}>
+                      <span className={iconColor}>{f.icon}</span>
+                    </div>
+
+                    <div className="relative z-[10]">
+                      <p className={`font-black font-poppins text-base md:text-lg leading-tight mb-1 ${f.img?"text-white":textColor} `}>
+                        {f.label}
+                      </p>
+                      <p className={`font-poppins text-xs leading-snug ${f.img?"text-white/50":subColor} hidden md:block`}>
+                        {f.desc}
+                      </p>
+                    </div>
+                  </motion.div>
+                );
+              })}
             </div>
           </div>
         </section>
       </div>
 
+   
+
+
       {/* ── WHY SEO MATTERS ── */}
       <div className="bg-foreground pt-4">
-        <section className="bg-[#C1F42D] border-y-4 border-[#171717] md:px-20 px-6 py-16 md:py-24">
+        <section className=" border-y-4 border-[#171717] md:px-20 px-6 py-16 md:py-24">
           <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-10 md:gap-16 items-center">
             <div className="section-title">
-              <p className="w-fit bg-[#171717] text-primary px-6 rounded-full text-sm py-2 font-semibold font-poppins mb-5">
+              <p className="w-fit bg-[#171717] text-primary rounded-full text-sm py-2 font-semibold font-poppins mb-5">
                 Why SEO Matters
               </p>
-              <h2 className="md:text-4xl text-3xl font-black text-[#171717] tracking-tighter leading-tight capitalize mb-5">
+              <h2 className="md:text-4xl text-3xl font-black text-[white] tracking-tighter leading-tight capitalize mb-5">
                 Why SEO Courses in Dubai Is Important in Digital Marketing
               </h2>
-              <p className="text-[#171717]/80 font-poppins text-sm md:text-base leading-relaxed">
+              <p className="text-[white] font-poppins text-sm md:text-base leading-relaxed">
                 Search Engine Optimization is one of the most important skills in modern digital
                 marketing. Businesses today depend on Google visibility to attract customers and
                 increase sales. By learning SEO from Delta Digital Academy, students understand how to grow organically.
@@ -274,7 +373,7 @@ const SeoCourseContent = () => {
                 <motion.div
                   key={i}
                   whileHover={{ x: 6, transition: { duration: 0.2 } }}
-                  className="benefit-item flex items-center gap-4 bg-white border-2 border-[#171717] shadow-[3px_3px_0_0_#171717] rounded-xl px-5 py-4"
+                  className="benefit-item flex items-center gap-4  bg-[white] border-2 border-[#171717] shadow-[3px_3px_0_0_#C1F42D] rounded-xl px-5 py-4"
                 >
                   <CheckCircle2 className="w-5 h-5 text-[#171717] flex-shrink-0" />
                   <span className="font-bold font-poppins text-[#171717] text-sm md:text-base">
@@ -291,7 +390,7 @@ const SeoCourseContent = () => {
       </div>
 
       {/* ── CAREER OPPORTUNITIES ── */}
-      <div className="bg-foreground pt-4">
+      {/* <div className="bg-foreground pt-4">
         <section className="bg-background grid-bg md:rounded-t-[4rem] rounded-t-[3rem] md:px-20 px-6 py-16 md:py-24">
           <div className="max-w-7xl mx-auto">
             <div className="section-title flex flex-col items-center text-center gap-3 mb-12">
@@ -325,45 +424,17 @@ const SeoCourseContent = () => {
             </div>
           </div>
         </section>
-      </div>
+      </div> */}
 
-      {/* ── JOIN CTA ── */}
-      <div className="bg-foreground pt-4 md:p-4 p-2">
-        <section className="cta-section bg-[#C1F42D] border-4 border-[#171717] rounded-2xl md:py-24 py-16 px-6 relative overflow-hidden">
-          <div className="max-w-4xl mx-auto text-center relative z-10">
-            <span className="text-sm font-black uppercase tracking-[0.4em] text-[#171717] mb-6 block font-poppins">
-              Delta Digital Academy
-            </span>
-            <h2 className="cta-text md:text-7xl text-5xl font-black text-[#171717] uppercase tracking-tighter leading-none mb-6">
-              Join Delta Digital<br />
-              <span className="bg-[#171717] text-[#C1F42D] px-6 py-2 inline-block -rotate-1 mt-2">
-                Academy Today
-              </span>
-            </h2>
-            <p className="cta-text text-[#171717]/80 font-poppins text-sm md:text-base max-w-2xl mx-auto mb-12">
-              Our practical training, expert mentorship, and flexible online and offline classes make
-              us one of the preferred destinations for learning SEO and digital marketing in Dubai.
-            </p>
+      
 
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-5">
-              <button
-                onClick={() => router.push("/#enroll")}
-                className="bg-[#171717] text-white font-black uppercase md:px-12 md:py-6 px-8 py-5 md:text-xl text-base rounded-2xl shadow-[6px_6px_0_0_white] hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all w-full sm:w-auto"
-              >
-                Enroll Now
-              </button>
-              <button
-                onClick={downloadBrochure}
-                className="bg-white text-[#171717] border-4 border-[#171717] font-black uppercase md:px-12 md:py-6 px-8 py-5 md:text-xl text-base rounded-2xl shadow-[6px_6px_0_0_#171717] hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all w-full sm:w-auto"
-              >
-                Download Brochure
-              </button>
-            </div>
-          </div>
-        </section>
-      </div>
-
-    </div>
+    </div> 
+<EnrollForm />
+      <TestimonialSection />
+    <CTASection />
+      <ApplyModal />
+        <FAQSection />
+</>
   );
 };
 

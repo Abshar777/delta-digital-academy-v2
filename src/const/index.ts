@@ -1,10 +1,7 @@
 import { FaInstagram, FaLinkedin, FaWhatsapp, FaYoutube } from "react-icons/fa";
 
 export const navLinks = [
-  {
-    name: "Home",
-    href: "/",
-  },
+  
   {
     name: "About",
     href: "#about",
