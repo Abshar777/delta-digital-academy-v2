@@ -59,8 +59,7 @@ const PROFESSIONALS: Professional[] = [
     specilisation:"Specialist in Meta’s Advertising Ecosystem and Performance Marketing. Backed by a strong teaching and mentorship background.",
     description:
       "A performance marketing specialist with expertise in Meta Ads, Social Media Marketing , Search Engine Optimization , and data driven advertising strategies. Skilled in building and scaling high performing campaigns focused on growth, engagement, and conversions. With over 3+ years of experience, has trained 4000+ students through practical digital marketing courses and online marketing courses, delivering hands on industry focused mentorship and real time learning experiences",
-    image:
-      "/m8.png",
+    image: "/aaliya-parveen.jpg",
 
   },
   {
@@ -69,8 +68,7 @@ const PROFESSIONALS: Professional[] = [
     specilisation:"Specialized in Google, Meta Advertising Platforms and Performance Marketing",
     description:
       "Experienced in Google Ads, Meta Ads, and SEO, delivering data driven strategies to improve conversions and campaign performance. Skilled in performance marketing, remarketing, audience targeting, and managing enterprise level ad budgets up to 90,000 AUD per month. Passionate about mentoring students through digital marketing courses and online marketing courses with practical industry expertise",
-    image:
-      "/m5.png",
+    image: "/mary-roy.jpg",
 
   },
 ];
