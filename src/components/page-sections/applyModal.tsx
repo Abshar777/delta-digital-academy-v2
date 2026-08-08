@@ -15,6 +15,7 @@ const ApplyModal: React.FC = () => {
     name: "",
     email: "",
     phone: "",
+    challenge: "",
     mode: "Online",
   });
 
@@ -41,7 +42,7 @@ const ApplyModal: React.FC = () => {
   }, [isModalOpen]);
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>,
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>,
   ) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
@@ -69,6 +70,7 @@ const ApplyModal: React.FC = () => {
           Name: formData.name,
           Email: formData.email,
           PhoneNumber: "_ " + fullPhoneNumber + " _",
+          Challenge: formData.challenge || "",
           Message: `Mode: ${formData.mode}`,
         }),
       });
@@ -76,14 +78,14 @@ const ApplyModal: React.FC = () => {
       toast.success("Application submitted successfully!");
 
       // Open WhatsApp
-      const whatsappMsg = `*New Application*%0AName: ${formData.name}%0AEmail: ${formData.email}%0APhone: ${fullPhoneNumber}%0AMode: ${formData.mode}`;
+      const whatsappMsg = `*New Application*%0AName: ${formData.name}%0AEmail: ${formData.email}%0APhone: ${fullPhoneNumber}%0AMode: ${formData.mode}%0AChallenge: ${formData.challenge || "N/A"}`;
       window.open(
         `https://wa.me/${contactWhatsApp.replace(/\D/g, "")}?text=${whatsappMsg}`,
         "_blank",
       );
 
       // Reset and Close
-      setFormData({ name: "", email: "", phone: "", mode: "Online" });
+      setFormData({ name: "", email: "", phone: "", challenge: "", mode: "Online" });
       setIsModalOpen(false);
     } catch (error) {
       console.error(error);
@@ -238,6 +240,21 @@ const ApplyModal: React.FC = () => {
                         </label>
                       ))}
                     </div>
+                  </div>
+
+                  {/* CHALLENGE */}
+                  <div>
+                    <label className="text-[10px] font-black uppercase tracking-widest text-gray-400">
+                      What is your biggest challenge in digital marketing right now?
+                    </label>
+                    <textarea
+                      name="challenge"
+                      value={formData.challenge}
+                      onChange={handleChange}
+                      rows={3}
+                      placeholder="TELL US YOUR CURRENT CHALLENGE..."
+                      className="w-full bg-[#F5F5F5] border-4 border-[#171717] p-4 font-bold focus:bg-[#C1F42D] focus:outline-none resize-none mt-1"
+                    />
                   </div>
 
                   {/* SUBMIT */}
