@@ -14,6 +14,7 @@ const EnrollForm: React.FC = () => {
     name: "",
     email: "",
     phone: "",
+    challenge: "",
     message: "",
   });
 
@@ -63,11 +64,12 @@ const EnrollForm: React.FC = () => {
     try {
       await fetch(url, {
         method: "POST",
-        mode: "no-cors", // Use no-cors if GSPS doesn't have CORS enabled
+        mode: "no-cors",
         body: JSON.stringify({
           Name: formData.name,
           Email: formData.email,
           PhoneNumber: "_ "+fullPhoneNumber+" _",
+          Challenge: formData.challenge || "",
           Message: formData.message || "",
         }),
       });
@@ -76,11 +78,11 @@ const EnrollForm: React.FC = () => {
       toast.success("Application submitted successfully!");
 
       // Open WhatsApp
-      const whatsappMsg = `Name: ${formData.name}%0AEmail: ${formData.email}%0APhone: ${fullPhoneNumber}`;
+      const whatsappMsg = `Name: ${formData.name}%0AEmail: ${formData.email}%0APhone: ${fullPhoneNumber}%0AChallenge: ${formData.challenge || "N/A"}`;
       window.open(`https://wa.me/${contactWhatsApp.replace(/\D/g, "")}?text=${whatsappMsg}`, "_blank");
 
       // Reset Form
-      setFormData({ name: "", email: "", phone: "", message: "" });
+      setFormData({ name: "", email: "", phone: "", challenge: "", message: "" });
     } catch (error) {
       console.error(error);
       toast.error("Submission failed. Please try again.");
@@ -151,8 +153,23 @@ const EnrollForm: React.FC = () => {
                   </div>
                 </div>
 
+                {/* Challenge */}
+                <div className="space-y-2">
+                  <label className="text-sm font-poppins font-black capitalize tracking-widest text-[#171717]">
+                    What is your biggest challenge in digital marketing right now?
+                  </label>
+                  <textarea
+                    name="challenge"
+                    value={formData.challenge}
+                    onChange={handleChange}
+                    rows={3}
+                    placeholder="Tell us your current challenge..."
+                    className="w-full bg-primary rounded-2xl border-4 border-[#171717] p-4 font-bold focus:outline-none focus:bg-[#C1F42D] transition-colors resize-none"
+                  />
+                </div>
+
                 {/* Submit */}
-                <button 
+                <button
                   disabled={isLoading}
                   className="w-full shadow-[4px_4px_0px_0px_#C1F42D] hover:shadow-none rounded-2xl bg-[#171717] text-[#C1F42D] font-black text-xl capitalize py-6 border-4 border-[#171717] hover:bg-[#C1F42D] hover:text-[#171717] transition-all duration-300 disabled:opacity-70"
                 >
