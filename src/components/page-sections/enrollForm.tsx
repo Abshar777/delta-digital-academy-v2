@@ -59,7 +59,7 @@ const EnrollForm: React.FC = () => {
 
     setIsLoading(true);
     const fullPhoneNumber = `${callingCode} ${formData.phone}`;
-    const url = "https://script.google.com/macros/s/AKfycbylGch2L12CkfqtP5Vck1cEB_TMcnqMIfy6os6iIOWgm_InQjN3_wrgnOi1gYWZ6tI3/exec";
+    const url = "https://script.google.com/macros/s/AKfycbzGU4JIwBhXJ71kqaBX1avg_FbqedLRQGC1y4-1-uf2cnWhP7XiahzbMlEEYmHS_jKy/exec";
 
     try {
       await fetch(url, {
