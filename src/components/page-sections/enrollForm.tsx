@@ -14,7 +14,6 @@ const EnrollForm: React.FC = () => {
     name: "",
     email: "",
     phone: "",
-    challenge: "",
     message: "",
   });
 
@@ -69,7 +68,6 @@ const EnrollForm: React.FC = () => {
           Name: formData.name,
           Email: formData.email,
           PhoneNumber: "_ "+fullPhoneNumber+" _",
-          Challenge: formData.challenge || "",
           Message: formData.message || "",
         }),
       });
@@ -78,11 +76,11 @@ const EnrollForm: React.FC = () => {
       toast.success("Application submitted successfully!");
 
       // Open WhatsApp
-      const whatsappMsg = `Name: ${formData.name}%0AEmail: ${formData.email}%0APhone: ${fullPhoneNumber}%0AChallenge: ${formData.challenge || "N/A"}`;
+      const whatsappMsg = `Name: ${formData.name}%0AEmail: ${formData.email}%0APhone: ${fullPhoneNumber}`;
       window.open(`https://wa.me/${contactWhatsApp.replace(/\D/g, "")}?text=${whatsappMsg}`, "_blank");
 
       // Reset Form
-      setFormData({ name: "", email: "", phone: "", challenge: "", message: "" });
+      setFormData({ name: "", email: "", phone: "", message: "" });
     } catch (error) {
       console.error(error);
       toast.error("Submission failed. Please try again.");
@@ -151,21 +149,6 @@ const EnrollForm: React.FC = () => {
                       placeholder="50 123 4567"
                     />
                   </div>
-                </div>
-
-                {/* Challenge */}
-                <div className="space-y-2">
-                  <label className="text-sm font-poppins font-black capitalize tracking-widest text-[#171717]">
-                    What is your biggest challenge in digital marketing right now?
-                  </label>
-                  <textarea
-                    name="challenge"
-                    value={formData.challenge}
-                    onChange={handleChange}
-                    rows={3}
-                    placeholder="Tell us your current challenge..."
-                    className="w-full bg-primary rounded-2xl border-4 border-[#171717] p-4 font-bold focus:outline-none focus:bg-[#C1F42D] transition-colors resize-none"
-                  />
                 </div>
 
                 {/* Submit */}
