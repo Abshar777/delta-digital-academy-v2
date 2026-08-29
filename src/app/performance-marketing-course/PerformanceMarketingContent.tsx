@@ -34,7 +34,8 @@ import { useRouter } from "next/navigation";
 import Timer from "@/components/page-sections/timer";
 import EnrollForm from "@/components/page-sections/enrollForm";
 import TestimonialSection from "@/components/page-sections/testimonials";
-import FAQSection from "@/components/page-sections/faq";
+import ApplyModal from "@/components/page-sections/applyModal";
+import CTASection from "@/components/page-sections/cta";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -168,10 +169,29 @@ const COURSE_MODULES = [
 ];
 
 const TOOLS = [
-  "Google Ads", "Google Analytics 4 (GA4)", "Google Tag Manager",
-  "Meta Ads Manager", "Meta Pixel", "LinkedIn Campaign Manager",
-  "Google Keyword Planner", "Looker Studio", "Microsoft Clarity",
-  "ChatGPT", "Canva AI", "AI Marketing Tools",
+  { name: "Google Ads", icon: <FaGoogle className="w-3.5 h-3.5" /> },
+  { name: "Google Analytics 4", icon: <FaGoogle className="w-3.5 h-3.5" /> },
+  { name: "Google Tag Manager", icon: <FaGoogle className="w-3.5 h-3.5" /> },
+  { name: "Meta Ads Manager", icon: <FaFacebook className="w-3.5 h-3.5" /> },
+  { name: "Meta Pixel", icon: <FaFacebook className="w-3.5 h-3.5" /> },
+  { name: "LinkedIn Campaign Manager", icon: <FaLinkedin className="w-3.5 h-3.5" /> },
+  { name: "YouTube Ads", icon: <FaYoutube className="w-3.5 h-3.5" /> },
+  { name: "Google Keyword Planner", icon: <FaGoogle className="w-3.5 h-3.5" /> },
+  { name: "Looker Studio", icon: <FaChartLine className="w-3.5 h-3.5" /> },
+  { name: "Microsoft Clarity", icon: <FaRegChartBar className="w-3.5 h-3.5" /> },
+  { name: "ChatGPT", icon: <LuBot className="w-3.5 h-3.5" /> },
+  { name: "AI Marketing Tools", icon: <LuBot className="w-3.5 h-3.5" /> },
+];
+
+const CERT_SKILLS = [
+  { label: "Google Ads", icon: <FaGoogle className="w-4 h-4" /> },
+  { label: "Meta Ads", icon: <FaFacebook className="w-4 h-4" /> },
+  { label: "LinkedIn Ads", icon: <FaLinkedin className="w-4 h-4" /> },
+  { label: "Campaign Optimization", icon: <FaBullseye className="w-4 h-4" /> },
+  { label: "Google Analytics 4", icon: <FaGoogle className="w-4 h-4" /> },
+  { label: "Google Tag Manager", icon: <FaGoogle className="w-4 h-4" /> },
+  { label: "Conversion Tracking", icon: <FaCode className="w-4 h-4" /> },
+  { label: "Performance Reporting", icon: <FaChartLine className="w-4 h-4" /> },
 ];
 
 const WHO_SHOULD_JOIN = [
@@ -349,9 +369,9 @@ const PerformanceMarketingContent = () => {
           </div>
         </motion.div>
 
-        {/* ── WHY CHOOSE ── */}
+        {/* ── WHY CHOOSE — full pill ── */}
         <div className="bg-foreground pt-4">
-          <section className="bg-background grid-bg md:rounded-t-[4rem] rounded-t-[3rem] md:px-20 px-6 py-16 md:py-24">
+          <section className="bg-background grid-bg md:rounded-[4rem] rounded-[3rem] md:px-20 px-6 py-16 md:py-24">
             <div className="max-w-7xl mx-auto">
               <div className="section-title flex flex-col items-center text-center gap-3 mb-12">
                 <p className="w-fit bg-primary px-6 rounded-full text-foreground text-sm py-2 font-semibold font-poppins">
@@ -385,62 +405,62 @@ const PerformanceMarketingContent = () => {
           </section>
         </div>
 
-        {/* ── WHAT IS PM + WHY LEARN ── */}
-        <div className="bg-foreground pt-4">
-          <section className="border-y-4 border-[#171717] md:px-20 px-6 py-16 md:py-24">
-            <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-10 md:gap-16 items-start">
-              <div className="section-title">
-                <p className="w-fit bg-[#171717] text-primary rounded-full text-sm py-2 px-6 font-semibold font-poppins mb-5">
-                  What is Performance Marketing?
-                </p>
-                <h2 className="md:text-4xl text-3xl font-black text-white tracking-tighter leading-tight capitalize mb-5">
-                  Data-Driven Marketing That Delivers Measurable Results
-                </h2>
-                <p className="text-white/70 font-poppins text-sm md:text-base leading-relaxed mb-6">
-                  Performance marketing is a digital marketing strategy where businesses pay for measurable outcomes such as website visits, leads, sales, app installs, or conversions. Every campaign is tracked and optimized using real-time data to maximize Return on Investment (ROI).
-                </p>
-                <p className="text-white/70 font-poppins text-sm md:text-base leading-relaxed">
-                  Today, businesses across Dubai and around the world rely on skilled performance marketers to generate leads, increase online sales, and grow their digital presence.
-                </p>
-              </div>
+        {/* ── WHAT IS PM + WHY LEARN — dark section, no wrapper ── */}
+        <section className="md:px-20 px-6 py-16 md:py-24">
+          <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-10 md:gap-16 items-start">
+            <div className="section-title">
+              <p className="w-fit bg-[#171717] text-primary rounded-full text-sm py-2 px-6 font-semibold font-poppins mb-5 border-2 border-primary/30">
+                What is Performance Marketing?
+              </p>
+              <h2 className="md:text-4xl text-3xl font-black text-white tracking-tighter leading-tight capitalize mb-5">
+                Data-Driven Marketing That Delivers Measurable Results
+              </h2>
+              <p className="text-white/70 font-poppins text-sm md:text-base leading-relaxed mb-6">
+                Performance marketing is a digital marketing strategy where businesses pay for measurable outcomes such as website visits, leads, sales, app installs, or conversions. Every campaign is tracked and optimized using real-time data to maximize Return on Investment (ROI).
+              </p>
+              <p className="text-white/70 font-poppins text-sm md:text-base leading-relaxed">
+                Today, businesses across Dubai and around the world rely on skilled performance marketers to generate leads, increase online sales, and grow their digital presence.
+              </p>
+            </div>
 
-              <div className="section-title">
-                <p className="w-fit bg-[#171717] text-primary rounded-full text-sm py-2 px-6 font-semibold font-poppins mb-5">
-                  Why Learn Performance Marketing?
-                </p>
-                <h2 className="md:text-3xl text-2xl font-black text-white tracking-tighter leading-tight capitalize mb-6">
-                  By completing our course, you will learn how to:
-                </h2>
-                <div className="flex flex-col gap-3">
-                  {[
-                    "Generate quality leads",
-                    "Increase online sales",
-                    "Create profitable advertising campaigns",
-                    "Optimize advertising budgets",
-                    "Improve Return on Ad Spend (ROAS)",
-                    "Analyze campaign performance",
-                    "Track conversions accurately",
-                    "Build data-driven marketing strategies",
-                  ].map((b, i) => (
-                    <motion.div
-                      key={i}
-                      whileHover={{ x: 6, transition: { duration: 0.2 } }}
-                      className="flex items-center gap-4 bg-white border-2 border-[#171717] shadow-[3px_3px_0_0_#C1F42D] rounded-xl px-5 py-3"
-                    >
-                      <CheckCircle2 className="w-5 h-5 text-[#171717] flex-shrink-0" />
-                      <span className="font-bold font-poppins text-[#171717] text-sm">{b}</span>
-                    </motion.div>
-                  ))}
-                </div>
+            <div className="section-title">
+              <p className="w-fit bg-[#171717] text-primary rounded-full text-sm py-2 px-6 font-semibold font-poppins mb-5 border-2 border-primary/30">
+                Why Learn Performance Marketing?
+              </p>
+              <h2 className="md:text-3xl text-2xl font-black text-white tracking-tighter leading-tight capitalize mb-6">
+                By completing our course, you will learn how to:
+              </h2>
+              <div className="flex flex-col gap-3">
+                {[
+                  "Generate quality leads",
+                  "Increase online sales",
+                  "Create profitable advertising campaigns",
+                  "Optimize advertising budgets",
+                  "Improve Return on Ad Spend (ROAS)",
+                  "Analyze campaign performance",
+                  "Track conversions accurately",
+                  "Build data-driven marketing strategies",
+                ].map((b, i) => (
+                  <motion.div
+                    key={i}
+                    whileHover={{ x: 6, transition: { duration: 0.2 } }}
+                    className="flex items-center gap-4 bg-white/10 border border-white/20 rounded-xl px-5 py-3"
+                  >
+                    <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0" />
+                    <span className="font-bold font-poppins text-white text-sm">{b}</span>
+                  </motion.div>
+                ))}
               </div>
             </div>
-          </section>
-        </div>
+          </div>
+        </section>
 
-        {/* ── COURSE MODULES ── */}
+        {/* ── COURSE MODULES + PRACTICAL TRAINING — single connected pill ── */}
         <div className="bg-foreground pt-4">
-          <section className="bg-background grid-bg md:rounded-t-[4rem] rounded-t-[3rem] md:px-20 px-6 py-16 md:py-24">
+          <section className="bg-background grid-bg md:rounded-[4rem] rounded-[3rem] md:px-20 px-6 py-16 md:py-24">
             <div className="max-w-7xl mx-auto">
+
+              {/* Course Modules */}
               <div className="section-title flex flex-col items-center text-center gap-3 mb-12">
                 <p className="w-fit bg-primary px-6 rounded-full text-foreground text-sm py-2 font-semibold font-poppins">
                   Curriculum
@@ -453,7 +473,7 @@ const PerformanceMarketingContent = () => {
                 </p>
               </div>
 
-              <div className="modules-grid grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="modules-grid grid grid-cols-1 md:grid-cols-2 gap-4 mb-20">
                 {COURSE_MODULES.map((mod, i) => (
                   <motion.div
                     key={i}
@@ -500,189 +520,186 @@ const PerformanceMarketingContent = () => {
                   </motion.div>
                 ))}
               </div>
+
+              {/* Practical Training + Tools — same pill, divider */}
+              <div className="border-t-2 border-dashed border-[#171717]/20 pt-20 grid md:grid-cols-2 gap-12 md:gap-16">
+
+                {/* Practical Training */}
+                <div className="section-title">
+                  <p className="w-fit bg-primary px-6 rounded-full text-foreground text-sm py-2 font-semibold font-poppins mb-4">
+                    Practical Training
+                  </p>
+                  <h2 className="md:text-4xl text-3xl font-black text-[#171717] tracking-tighter leading-tight capitalize mb-6">
+                    Learn by Doing — Every Session
+                  </h2>
+                  <div className="flex flex-col gap-3">
+                    {[
+                      "Live Google Ads campaigns",
+                      "Meta Ads campaign creation",
+                      "Audience & keyword research",
+                      "Budget allocation & optimization",
+                      "Conversion tracking setup",
+                      "Analytics reporting",
+                      "Competitor analysis",
+                      "Live business case studies",
+                    ].map((item, i) => (
+                      <div key={i} className="flex items-center gap-3 bg-white border-2 border-[#171717] shadow-[3px_3px_0_0_#000] rounded-xl px-4 py-3">
+                        <CheckCircle2 className="w-4 h-4 text-[#171717] flex-shrink-0" />
+                        <span className="font-bold font-poppins text-[#171717] text-sm">{item}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Tools */}
+                <div className="section-title">
+                  <p className="w-fit bg-primary px-6 rounded-full text-foreground text-sm py-2 font-semibold font-poppins mb-4">
+                    Tools You&apos;ll Master
+                  </p>
+                  <h2 className="md:text-4xl text-3xl font-black text-[#171717] tracking-tighter leading-tight capitalize mb-6">
+                    Industry-Standard Platforms
+                  </h2>
+                  <div className="tools-grid flex flex-wrap gap-3">
+                    {TOOLS.map((tool, i) => (
+                      <motion.span
+                        key={i}
+                        whileHover={{ scale: 1.05 }}
+                        className="tool-tag bg-[#171717] text-white border-2 border-[#171717] shadow-[3px_3px_0_0_#C1F42D] rounded-full px-4 py-2 text-xs font-bold font-poppins flex items-center gap-2"
+                      >
+                        {tool.icon}
+                        {tool.name}
+                      </motion.span>
+                    ))}
+                  </div>
+                </div>
+              </div>
             </div>
           </section>
         </div>
 
-        {/* ── PRACTICAL TRAINING + TOOLS ── */}
-        <div className="bg-foreground pt-4">
-          <section className="bg-background grid-bg md:rounded-b-[4rem] rounded-b-[3rem] md:px-20 px-6 py-16 md:py-24">
-            <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 md:gap-16">
+        {/* ── WHO SHOULD JOIN + CAREER ROLES — lime section, no wrapper ── */}
+        <section className="bg-[#C1F42D] md:px-20 px-6 py-16 md:py-24">
+          <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 md:gap-16">
 
-              {/* Practical Training */}
-              <div className="section-title">
-                <p className="w-fit bg-primary px-6 rounded-full text-foreground text-sm py-2 font-semibold font-poppins mb-4">
-                  Practical Training
-                </p>
-                <h2 className="md:text-4xl text-3xl font-black text-[#171717] tracking-tighter leading-tight capitalize mb-6">
-                  Learn by Doing — Every Session
-                </h2>
-                <div className="flex flex-col gap-3">
-                  {[
-                    "Live Google Ads campaigns",
-                    "Meta Ads campaign creation",
-                    "Audience & keyword research",
-                    "Budget allocation & optimization",
-                    "Conversion tracking setup",
-                    "Analytics reporting",
-                    "Competitor analysis",
-                    "Live business case studies",
-                  ].map((item, i) => (
-                    <div key={i} className="flex items-center gap-3 bg-white border-2 border-[#171717] shadow-[3px_3px_0_0_#000] rounded-xl px-4 py-3">
-                      <CheckCircle2 className="w-4 h-4 text-[#171717] flex-shrink-0" />
-                      <span className="font-bold font-poppins text-[#171717] text-sm">{item}</span>
+            {/* Who Should Join */}
+            <div className="section-title">
+              <p className="w-fit bg-[#171717] text-primary px-6 rounded-full text-sm py-2 font-semibold font-poppins mb-4">
+                Who Should Join?
+              </p>
+              <h2 className="md:text-4xl text-3xl font-black text-[#171717] tracking-tighter leading-tight capitalize mb-6">
+                This Course is Ideal For
+              </h2>
+              <div className="flex flex-wrap gap-3">
+                {WHO_SHOULD_JOIN.map((who, i) => (
+                  <span key={i} className="bg-[#171717] text-white rounded-full px-5 py-2 text-sm font-bold font-poppins border-2 border-[#171717]">
+                    {who}
+                  </span>
+                ))}
+              </div>
+              <p className="mt-6 text-[#171717]/70 font-poppins text-sm leading-relaxed">
+                No prior experience is required. We start from the basics and gradually progress to advanced performance marketing strategies.
+              </p>
+            </div>
+
+            {/* Career Roles */}
+            <div className="section-title">
+              <p className="w-fit bg-[#171717] text-primary px-6 rounded-full text-sm py-2 font-semibold font-poppins mb-4">
+                Career Growth
+              </p>
+              <h2 className="md:text-4xl text-3xl font-black text-[#171717] tracking-tighter leading-tight capitalize mb-6">
+                Career Opportunities After Training
+              </h2>
+              <div className="roles-grid grid grid-cols-1 sm:grid-cols-2 gap-3">
+                {CAREER_ROLES.map((role, i) => (
+                  <motion.div
+                    key={i}
+                    whileHover={{ y: -4, transition: { duration: 0.2 } }}
+                    className="role-card bg-white border-2 border-[#171717] shadow-[3px_3px_0_0_#000] rounded-xl p-4 flex items-center gap-3"
+                  >
+                    <div className="bg-primary p-2 rounded-lg border border-[#171717] flex-shrink-0">
+                      {role.icon}
+                    </div>
+                    <p className="font-bold font-poppins text-[#171717] text-xs leading-snug">
+                      {role.title}
+                    </p>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ── CERTIFICATION + FAQ — single connected pill ── */}
+        <div className="bg-foreground pt-4">
+          <section className="bg-background grid-bg md:rounded-[4rem] rounded-[3rem] md:px-20 px-6 py-16 md:py-24">
+            <div className="max-w-7xl mx-auto">
+
+              {/* Certification */}
+              <div className="grid md:grid-cols-2 gap-12 items-center mb-20">
+                <div className="section-title">
+                  <p className="w-fit bg-primary px-6 rounded-full text-foreground text-sm py-2 font-semibold font-poppins mb-4">
+                    Certification
+                  </p>
+                  <h2 className="md:text-5xl text-3xl font-black text-[#171717] tracking-tighter leading-tight capitalize mb-5">
+                    Performance Marketing Certification
+                  </h2>
+                  <p className="text-[#171717]/70 font-poppins text-sm md:text-base leading-relaxed mb-6">
+                    Upon successful completion, students receive a Performance Marketing Course Completion Certificate from Delta Digital Academy. The skills gained also help prepare learners for platform-specific certifications offered by Google and Meta.
+                  </p>
+                  <p className="text-[#171717]/70 font-poppins text-sm md:text-base leading-relaxed">
+                    Course duration may vary depending on the batch schedule and learning mode (weekday, weekend, online, or classroom). Contact our admissions team for the latest schedule.
+                  </p>
+                </div>
+                <div className="grid grid-cols-2 gap-3">
+                  {CERT_SKILLS.map((item, i) => (
+                    <div key={i} className="bg-white border-2 border-[#171717] shadow-[3px_3px_0_0_#C1F42D] rounded-xl p-4 flex items-center gap-3">
+                      <div className="bg-primary p-1.5 rounded-lg border border-[#171717] flex-shrink-0">
+                        {item.icon}
+                      </div>
+                      <span className="font-bold font-poppins text-[#171717] text-xs">{item.label}</span>
                     </div>
                   ))}
                 </div>
               </div>
 
-              {/* Tools */}
-              <div className="section-title">
-                <p className="w-fit bg-primary px-6 rounded-full text-foreground text-sm py-2 font-semibold font-poppins mb-4">
-                  Tools You&apos;ll Master
-                </p>
-                <h2 className="md:text-4xl text-3xl font-black text-[#171717] tracking-tighter leading-tight capitalize mb-6">
-                  Industry-Standard Platforms
-                </h2>
-                <div className="tools-grid flex flex-wrap gap-3">
-                  {TOOLS.map((tool, i) => (
-                    <motion.span
-                      key={i}
-                      whileHover={{ scale: 1.05 }}
-                      className="tool-tag bg-[#171717] text-white border-2 border-[#171717] shadow-[3px_3px_0_0_#C1F42D] rounded-full px-4 py-2 text-xs font-bold font-poppins"
-                    >
-                      {tool}
-                    </motion.span>
+              {/* FAQ */}
+              <div className="border-t-2 border-dashed border-[#171717]/20 pt-20">
+                <div className="section-title flex flex-col items-center text-center gap-3 mb-12">
+                  <p className="w-fit bg-primary px-6 rounded-full text-foreground text-sm py-2 font-semibold font-poppins">
+                    FAQ
+                  </p>
+                  <h2 className="md:text-5xl text-3xl font-black text-[#171717] tracking-tighter leading-tight capitalize">
+                    Frequently Asked Questions
+                  </h2>
+                </div>
+                <div className="max-w-4xl mx-auto flex flex-col gap-3">
+                  {FAQ_ITEMS.map((item, i) => (
+                    <div key={i} className="bg-white border-2 border-[#171717] shadow-[3px_3px_0_0_#000] rounded-2xl overflow-hidden">
+                      <button
+                        onClick={() => setOpenFaq(openFaq === i ? null : i)}
+                        className="w-full p-5 flex items-center justify-between text-left gap-4"
+                      >
+                        <span className="font-black font-poppins text-[#171717] text-sm md:text-base">{item.q}</span>
+                        <ChevronDown className={`w-5 h-5 text-[#171717] flex-shrink-0 transition-transform duration-300 ${openFaq === i ? "rotate-180" : ""}`} />
+                      </button>
+                      <AnimatePresence initial={false}>
+                        {openFaq === i && (
+                          <motion.div
+                            initial={{ height: 0, opacity: 0 }}
+                            animate={{ height: "auto", opacity: 1 }}
+                            exit={{ height: 0, opacity: 0 }}
+                            transition={{ duration: 0.3, ease: "easeInOut" }}
+                            className="overflow-hidden"
+                          >
+                            <div className="px-5 pb-5 border-t-2 border-[#171717] pt-4">
+                              <p className="text-[#171717]/70 font-poppins text-sm leading-relaxed">{item.a}</p>
+                            </div>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </div>
                   ))}
                 </div>
-              </div>
-            </div>
-          </section>
-        </div>
-
-        {/* ── WHO SHOULD JOIN + CAREER ROLES ── */}
-        <div className="bg-foreground pt-4">
-          <section className="bg-[#C1F42D] border-y-4 border-[#171717] md:px-20 px-6 py-16 md:py-24">
-            <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 md:gap-16">
-
-              {/* Who Should Join */}
-              <div className="section-title">
-                <p className="w-fit bg-[#171717] text-primary px-6 rounded-full text-sm py-2 font-semibold font-poppins mb-4">
-                  Who Should Join?
-                </p>
-                <h2 className="md:text-4xl text-3xl font-black text-[#171717] tracking-tighter leading-tight capitalize mb-6">
-                  This Course is Ideal For
-                </h2>
-                <div className="flex flex-wrap gap-3">
-                  {WHO_SHOULD_JOIN.map((who, i) => (
-                    <span key={i} className="bg-[#171717] text-white rounded-full px-5 py-2 text-sm font-bold font-poppins border-2 border-[#171717]">
-                      {who}
-                    </span>
-                  ))}
-                </div>
-                <p className="mt-6 text-[#171717]/70 font-poppins text-sm leading-relaxed">
-                  No prior experience is required. We start from the basics and gradually progress to advanced performance marketing strategies.
-                </p>
-              </div>
-
-              {/* Career Roles */}
-              <div className="section-title">
-                <p className="w-fit bg-[#171717] text-primary px-6 rounded-full text-sm py-2 font-semibold font-poppins mb-4">
-                  Career Growth
-                </p>
-                <h2 className="md:text-4xl text-3xl font-black text-[#171717] tracking-tighter leading-tight capitalize mb-6">
-                  Career Opportunities After Training
-                </h2>
-                <div className="roles-grid grid grid-cols-1 sm:grid-cols-2 gap-3">
-                  {CAREER_ROLES.map((role, i) => (
-                    <motion.div
-                      key={i}
-                      whileHover={{ y: -4, transition: { duration: 0.2 } }}
-                      className="role-card bg-white border-2 border-[#171717] shadow-[3px_3px_0_0_#000] rounded-xl p-4 flex items-center gap-3"
-                    >
-                      <div className="bg-primary p-2 rounded-lg border border-[#171717] flex-shrink-0">
-                        {role.icon}
-                      </div>
-                      <p className="font-bold font-poppins text-[#171717] text-xs leading-snug">
-                        {role.title}
-                      </p>
-                    </motion.div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </section>
-        </div>
-
-        {/* ── CERTIFICATION ── */}
-        <div className="bg-foreground pt-4">
-          <section className="bg-background grid-bg md:rounded-t-[4rem] rounded-t-[3rem] md:px-20 px-6 py-16 md:py-24">
-            <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-              <div className="section-title">
-                <p className="w-fit bg-primary px-6 rounded-full text-foreground text-sm py-2 font-semibold font-poppins mb-4">
-                  Certification
-                </p>
-                <h2 className="md:text-5xl text-3xl font-black text-[#171717] tracking-tighter leading-tight capitalize mb-5">
-                  Performance Marketing Certification
-                </h2>
-                <p className="text-[#171717]/70 font-poppins text-sm md:text-base leading-relaxed mb-6">
-                  Upon successful completion, students receive a Performance Marketing Course Completion Certificate from Delta Digital Academy. The skills gained also help prepare learners for platform-specific certifications offered by Google and Meta.
-                </p>
-                <p className="text-[#171717]/70 font-poppins text-sm md:text-base leading-relaxed">
-                  Course duration may vary depending on the batch schedule and learning mode (weekday, weekend, online, or classroom). Contact our admissions team for the latest schedule.
-                </p>
-              </div>
-              <div className="grid grid-cols-2 gap-3">
-                {["Google Ads", "Meta Ads", "LinkedIn Ads", "Campaign Optimization", "Google Analytics 4", "Google Tag Manager", "Conversion Tracking", "Performance Reporting"].map((item, i) => (
-                  <div key={i} className="bg-white border-2 border-[#171717] shadow-[3px_3px_0_0_#C1F42D] rounded-xl p-4 flex items-center gap-3">
-                    <FaCertificate className="w-4 h-4 text-[#171717] flex-shrink-0" />
-                    <span className="font-bold font-poppins text-[#171717] text-xs">{item}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </section>
-        </div>
-
-        {/* ── FAQ ── */}
-        <div className="bg-foreground pt-4">
-          <section className="bg-background grid-bg md:px-20 px-6 py-16 md:py-24">
-            <div className="max-w-4xl mx-auto">
-              <div className="section-title flex flex-col items-center text-center gap-3 mb-12">
-                <p className="w-fit bg-primary px-6 rounded-full text-foreground text-sm py-2 font-semibold font-poppins">
-                  FAQ
-                </p>
-                <h2 className="md:text-5xl text-3xl font-black text-[#171717] tracking-tighter leading-tight capitalize">
-                  Frequently Asked Questions
-                </h2>
-              </div>
-              <div className="flex flex-col gap-3">
-                {FAQ_ITEMS.map((item, i) => (
-                  <div key={i} className="bg-white border-2 border-[#171717] shadow-[3px_3px_0_0_#000] rounded-2xl overflow-hidden">
-                    <button
-                      onClick={() => setOpenFaq(openFaq === i ? null : i)}
-                      className="w-full p-5 flex items-center justify-between text-left gap-4"
-                    >
-                      <span className="font-black font-poppins text-[#171717] text-sm md:text-base">{item.q}</span>
-                      <ChevronDown className={`w-5 h-5 text-[#171717] flex-shrink-0 transition-transform duration-300 ${openFaq === i ? "rotate-180" : ""}`} />
-                    </button>
-                    <AnimatePresence initial={false}>
-                      {openFaq === i && (
-                        <motion.div
-                          initial={{ height: 0, opacity: 0 }}
-                          animate={{ height: "auto", opacity: 1 }}
-                          exit={{ height: 0, opacity: 0 }}
-                          transition={{ duration: 0.3, ease: "easeInOut" }}
-                          className="overflow-hidden"
-                        >
-                          <div className="px-5 pb-5 border-t-2 border-[#171717] pt-4">
-                            <p className="text-[#171717]/70 font-poppins text-sm leading-relaxed">{item.a}</p>
-                          </div>
-                        </motion.div>
-                      )}
-                    </AnimatePresence>
-                  </div>
-                ))}
               </div>
             </div>
           </section>
@@ -690,11 +707,17 @@ const PerformanceMarketingContent = () => {
 
       </div>
 
+      {/* ── CTA ── */}
+      <CTASection />
+
       {/* ── TESTIMONIALS ── */}
       <TestimonialSection />
 
       {/* ── ENROLL FORM ── */}
       <EnrollForm />
+
+      {/* ── APPLY MODAL ── */}
+      <ApplyModal />
     </>
   );
 };

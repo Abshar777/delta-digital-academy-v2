@@ -15,10 +15,6 @@ export const navLinks = [
     href: "/performance-marketing-course",
   },
   {
-    name: "Contact",
-    href: "#enroll",
-  },
-  {
     name: "Call Us",
     href: "tel:+971521240237",
   },
