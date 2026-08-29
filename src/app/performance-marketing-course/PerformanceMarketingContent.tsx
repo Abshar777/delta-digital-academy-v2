@@ -35,7 +35,6 @@ import Timer from "@/components/page-sections/timer";
 import EnrollForm from "@/components/page-sections/enrollForm";
 import TestimonialSection from "@/components/page-sections/testimonials";
 import ApplyModal from "@/components/page-sections/applyModal";
-import CTASection from "@/components/page-sections/cta";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -577,61 +576,63 @@ const PerformanceMarketingContent = () => {
           </section>
         </div>
 
-        {/* ── WHO SHOULD JOIN + CAREER ROLES — lime section, no wrapper ── */}
-        <section className="bg-[#C1F42D] md:px-20 px-6 py-16 md:py-24">
-          <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 md:gap-16">
+        {/* ── WHO SHOULD JOIN + CAREER ROLES — CTA card style ── */}
+        <section className="bg-foreground md:px-20 px-6 py-10 md:py-14">
+          <div className="max-w-7xl mx-auto">
+            <div className="bg-[#C1F42D] border-4 border-[#171717] shadow-[8px_8px_0_0_#000] rounded-3xl p-8 md:p-12 grid md:grid-cols-2 gap-10 md:gap-16">
 
-            {/* Who Should Join */}
-            <div className="section-title">
-              <p className="w-fit bg-[#171717] text-primary px-6 rounded-full text-sm py-2 font-semibold font-poppins mb-4">
-                Who Should Join?
-              </p>
-              <h2 className="md:text-4xl text-3xl font-black text-[#171717] tracking-tighter leading-tight capitalize mb-6">
-                This Course is Ideal For
-              </h2>
-              <div className="flex flex-wrap gap-3">
-                {WHO_SHOULD_JOIN.map((who, i) => (
-                  <span key={i} className="bg-[#171717] text-white rounded-full px-5 py-2 text-sm font-bold font-poppins border-2 border-[#171717]">
-                    {who}
-                  </span>
-                ))}
+              {/* Who Should Join */}
+              <div className="section-title">
+                <p className="w-fit bg-[#171717] text-primary px-6 rounded-full text-sm py-2 font-semibold font-poppins mb-4">
+                  Who Should Join?
+                </p>
+                <h2 className="md:text-4xl text-3xl font-black text-[#171717] tracking-tighter leading-tight capitalize mb-6">
+                  This Course is Ideal For
+                </h2>
+                <div className="flex flex-wrap gap-3">
+                  {WHO_SHOULD_JOIN.map((who, i) => (
+                    <span key={i} className="bg-[#171717] text-white rounded-full px-5 py-2 text-sm font-bold font-poppins border-2 border-[#171717]">
+                      {who}
+                    </span>
+                  ))}
+                </div>
+                <p className="mt-6 text-[#171717]/70 font-poppins text-sm leading-relaxed">
+                  No prior experience is required. We start from the basics and gradually progress to advanced performance marketing strategies.
+                </p>
               </div>
-              <p className="mt-6 text-[#171717]/70 font-poppins text-sm leading-relaxed">
-                No prior experience is required. We start from the basics and gradually progress to advanced performance marketing strategies.
-              </p>
-            </div>
 
-            {/* Career Roles */}
-            <div className="section-title">
-              <p className="w-fit bg-[#171717] text-primary px-6 rounded-full text-sm py-2 font-semibold font-poppins mb-4">
-                Career Growth
-              </p>
-              <h2 className="md:text-4xl text-3xl font-black text-[#171717] tracking-tighter leading-tight capitalize mb-6">
-                Career Opportunities After Training
-              </h2>
-              <div className="roles-grid grid grid-cols-1 sm:grid-cols-2 gap-3">
-                {CAREER_ROLES.map((role, i) => (
-                  <motion.div
-                    key={i}
-                    whileHover={{ y: -4, transition: { duration: 0.2 } }}
-                    className="role-card bg-white border-2 border-[#171717] shadow-[3px_3px_0_0_#000] rounded-xl p-4 flex items-center gap-3"
-                  >
-                    <div className="bg-primary p-2 rounded-lg border border-[#171717] flex-shrink-0">
-                      {role.icon}
-                    </div>
-                    <p className="font-bold font-poppins text-[#171717] text-xs leading-snug">
-                      {role.title}
-                    </p>
-                  </motion.div>
-                ))}
+              {/* Career Roles */}
+              <div className="section-title">
+                <p className="w-fit bg-[#171717] text-primary px-6 rounded-full text-sm py-2 font-semibold font-poppins mb-4">
+                  Career Growth
+                </p>
+                <h2 className="md:text-4xl text-3xl font-black text-[#171717] tracking-tighter leading-tight capitalize mb-6">
+                  Career Opportunities After Training
+                </h2>
+                <div className="roles-grid grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  {CAREER_ROLES.map((role, i) => (
+                    <motion.div
+                      key={i}
+                      whileHover={{ y: -4, transition: { duration: 0.2 } }}
+                      className="role-card bg-white border-2 border-[#171717] shadow-[3px_3px_0_0_#000] rounded-xl p-4 flex items-center gap-3"
+                    >
+                      <div className="bg-primary p-2 rounded-lg border border-[#171717] flex-shrink-0">
+                        {role.icon}
+                      </div>
+                      <p className="font-bold font-poppins text-[#171717] text-xs leading-snug">
+                        {role.title}
+                      </p>
+                    </motion.div>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* ── CERTIFICATION + FAQ — single connected pill ── */}
+        {/* ── CERTIFICATION + FAQ — open top arc, no bottom arc (flows into testimonials) ── */}
         <div className="bg-foreground pt-4">
-          <section className="bg-background grid-bg md:rounded-[4rem] rounded-[3rem] md:px-20 px-6 py-16 md:py-24">
+          <section className="bg-background grid-bg md:rounded-t-[4rem] rounded-t-[3rem] md:px-20 px-6 py-16 md:py-24">
             <div className="max-w-7xl mx-auto">
 
               {/* Certification */}
@@ -706,9 +707,6 @@ const PerformanceMarketingContent = () => {
         </div>
 
       </div>
-
-      {/* ── CTA ── */}
-      <CTASection />
 
       {/* ── TESTIMONIALS ── */}
       <TestimonialSection />
