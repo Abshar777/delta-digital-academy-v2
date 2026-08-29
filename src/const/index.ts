@@ -11,6 +11,10 @@ export const navLinks = [
     href: "/seo-course",
   },
   {
+    name: "Performance Marketing",
+    href: "/performance-marketing-course",
+  },
+  {
     name: "Contact",
     href: "#enroll",
   },
